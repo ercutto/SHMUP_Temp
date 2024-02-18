@@ -28,17 +28,19 @@ public class GameInitialiser : MonoBehaviour
             }
         }
 
-        Invoke(nameof(Check), 7);
+      
        
     }
     private void Update()
     {
-       
+       if(!menuLoaded)
+        {
+            ChangeGameMode();
+        }
     }
 
-    void Check()
+    void ChangeGameMode()
     {
-        gameMode=GameMode.Menus;
        
         switch (gameMode)
         {
@@ -50,10 +52,10 @@ public class GameInitialiser : MonoBehaviour
 
             case GameMode.Gameplay:
                 Debug.Log("Game");
-
                 MenuManager.instance.SwitchToGameplayMenus();
                 break;
         };
 
+        menuLoaded = true;
     }
 }

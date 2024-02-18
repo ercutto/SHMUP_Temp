@@ -16,4 +16,25 @@ public class OptionsMenu : Menu
 
         instance = this;
     }
+
+    public void OnBackButton()
+    {
+        TurnOff(true); //Simdi bu menuyu kapatiyoruz ve bir oncekine donuyoruz
+    }
+
+    public void OnGraphicsButton()
+    {
+        TurnOff(false);
+        GraphicsOptionsMenu.instance.TurnOn(this);
+    }
+    public void OnAudioButton()
+    {
+        TurnOff(false);
+        AudioOptionsMenu.instance.TurnOn(this);
+    }
+    public void OnControlsButton()
+    {
+        TurnOff(false);
+        ControlsOptionsMenu.instance.TurnOn(this);
+    }
 }

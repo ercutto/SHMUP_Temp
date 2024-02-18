@@ -16,4 +16,19 @@ public class PlayMenu : Menu
 
         instance = this;
     }
+
+    public void OnNormalButton()
+    {
+        TurnOff(false);//eger sadece sayfa icinde islem ise false yapip bu sayfanin kapanmasini engeller
+        CraftSelectMenu.instance.TurnOn(this);//bu menuyu istedigimiz icin 
+    }
+    public void OnBullHellButton()
+    {
+        TurnOff(false);//eger sadece sayfa icinde islem ise false yapip bu sayfanin kapanmasini engeller
+        CraftSelectMenu.instance.TurnOn(this);//bu menuyu istedigimiz icin 
+    }
+    public void OnBackButton()
+    {
+        TurnOff(true); //Simdi bu menuyu kapatiyoruz ve bir oncekine donuyoruz
+    }
 }

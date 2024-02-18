@@ -16,4 +16,43 @@ public class MainMenu : Menu
 
         instance = this;
     }
+    public void OnPlayButton()
+    {
+        TurnOff(false);
+        PlayMenu.instance.TurnOn(this);
+    }
+    public void OnPracticeButton()
+    {
+        TurnOff(false);
+        PracticeMenu.instance.TurnOn(this);
+    }
+    public void OnOptionsButton()
+    {
+        TurnOff(false);
+        OptionsMenu.instance.TurnOn(this);
+    }
+    public void OnScoreButton()
+    {
+        TurnOff(false);
+        ScoresMenu.instance.TurnOn(this);
+    }
+    public void OnMedalsButton()
+    {
+        TurnOff(false);
+        MedalsMenu.instance.TurnOn(this);
+    }
+    public void OnReplaysButton()
+    {
+        TurnOff(false);
+        ReplaysMenu.instance.TurnOn(this);
+    }
+    public void OnCreditsButton()
+    {
+        TurnOff(false);
+        CreditsMenu.instance.TurnOn(this);
+    }
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

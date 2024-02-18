@@ -2,20 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class YesNoMenu : Menu
+public class AudioOptionsMenu : Menu
 {
-    public static YesNoMenu instance = null;
+    public static AudioOptionsMenu instance = null;
 
     private void Start()
     {
         if (instance)
         {
-            Debug.LogError("Trying to create more than one YesNo Menu! ");
+            Debug.LogError("Trying to create more than AudioOptions Menu! ");
             Destroy(gameObject);
             return;
         }
 
         instance = this;
     }
-
+    public void OnBackButton()
+    {
+        TurnOff(true); //Simdi bu menuyu kapatiyoruz ve bir oncekine donuyoruz
+    }
 }

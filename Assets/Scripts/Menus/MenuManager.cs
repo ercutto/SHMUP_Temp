@@ -23,7 +23,7 @@ public class MenuManager : MonoBehaviour
     }
     public void SwitchToGameplayMenus()
     {
-        Debug.Log("Gameplayok");
+        Debug.Log("Switch to game play");
         SceneManager.LoadScene("PauseMenu",             LoadSceneMode.Additive);
         SceneManager.LoadScene("GraphicsOptionsMenu", LoadSceneMode.Additive);
         SceneManager.LoadScene("AudioOptionsMenu", LoadSceneMode.Additive);
@@ -34,8 +34,8 @@ public class MenuManager : MonoBehaviour
     }
     public void SwitchToMainMenuMenus()
     {
-        Debug.Log("MainMenu");
-        SceneManager.LoadScene("MainMenuMenu",       LoadSceneMode.Additive);
+        Debug.Log("Switch to Main Menu");
+        SceneManager.LoadScene("MainMenu",       LoadSceneMode.Additive);
         SceneManager.LoadScene("ScoresMenu", LoadSceneMode.Additive);
         SceneManager.LoadScene("MedalsMenu", LoadSceneMode.Additive);
         SceneManager.LoadScene("CreditsMenu", LoadSceneMode.Additive);
@@ -50,6 +50,8 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("ControlsOptionsMenu", LoadSceneMode.Additive);
         SceneManager.LoadScene("OptionsMenu", LoadSceneMode.Additive);
         SceneManager.LoadScene("GraphicsOptionsMenu", LoadSceneMode.Additive);
+        SceneManager.LoadScene("YesNoMenu", LoadSceneMode.Additive);
+        SceneManager.LoadScene("TitleSceneMenu", LoadSceneMode.Additive);
 
 
     }

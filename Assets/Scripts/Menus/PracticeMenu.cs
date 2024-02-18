@@ -17,5 +17,8 @@ public class PracticeMenu : Menu
 
         instance = this;
     }
-
+    public void OnBackButton()
+    {
+        TurnOff(true); //Simdi bu menuyu kapatiyoruz ve bir oncekine donuyoruz
+    }
 }

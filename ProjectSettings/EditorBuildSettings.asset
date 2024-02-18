@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/GraphicsOptionsMenu.unity
     guid: 651d3c2d0f9e1154ca8a7db73243c8f2
   - enabled: 1
-    path: Assets/Scenes/Menus/MainMenuMenu.unity
+    path: Assets/Scenes/Menus/MainMenu.unity
     guid: cbda38a4196da1442bca54869757b28c
   - enabled: 1
     path: Assets/Scenes/Menus/MedalsMenu.unity

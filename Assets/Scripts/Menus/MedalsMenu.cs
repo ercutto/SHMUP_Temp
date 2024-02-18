@@ -16,4 +16,5 @@ public class MedalsMenu : Menu
 
         instance = this;
     }
+   
 }
