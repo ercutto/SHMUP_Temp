@@ -53,6 +53,8 @@ public class MainMenu : Menu
     }
     public void Quit()
     {
-        Application.Quit();
+        TurnOff(false);
+        YesNoMenu.instance.TurnOn(this);
+
     }
 }
