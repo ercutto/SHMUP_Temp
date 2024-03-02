@@ -201,7 +201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 425316283938837931, guid: ed9f7028a994953478d85d3f270482c0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50.071606
+      value: -50.07161
       objectReference: {fileID: 0}
     - target: {fileID: 425316283938837931, guid: ed9f7028a994953478d85d3f270482c0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -263,6 +263,11 @@ PrefabInstance:
 --- !u!224 &77922022 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 425316283938837931, guid: ed9f7028a994953478d85d3f270482c0, type: 3}
+  m_PrefabInstance: {fileID: 77922021}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &77922023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6999231976432830584, guid: ed9f7028a994953478d85d3f270482c0, type: 3}
   m_PrefabInstance: {fileID: 77922021}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &161252880
@@ -993,7 +998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 77922023}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!1 &1790832092

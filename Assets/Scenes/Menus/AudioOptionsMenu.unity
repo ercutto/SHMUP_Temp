@@ -579,6 +579,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slider
       objectReference: {fileID: 0}
+    - target: {fileID: 8836545086125254609, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836545086125254609, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836545086125254609, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.45986307
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -587,6 +599,11 @@ PrefabInstance:
 --- !u!224 &1002647208 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 260260238811657015, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
+  m_PrefabInstance: {fileID: 1002647207}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1002647209 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6402946380763563138, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
   m_PrefabInstance: {fileID: 1002647207}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1289101753
@@ -1206,7 +1223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1002647209}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!1 &1790832092

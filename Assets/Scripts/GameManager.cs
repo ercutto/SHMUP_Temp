@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
    public static GameManager Instance=null;
 
-
+    public bool twoPlayer = false;
     void Start()
     {
         if(Instance)

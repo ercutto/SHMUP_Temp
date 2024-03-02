@@ -30,6 +30,7 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("ControlsOptionsMenu", LoadSceneMode.Additive);
         SceneManager.LoadScene("OptionsMenu", LoadSceneMode.Additive);
         SceneManager.LoadScene("YesNoMenu", LoadSceneMode.Additive);
+        SceneManager.LoadScene("ControllerMenu", LoadSceneMode.Additive);
 
     }
     public void SwitchToMainMenuMenus()
@@ -52,6 +53,7 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("GraphicsOptionsMenu", LoadSceneMode.Additive);
         SceneManager.LoadScene("YesNoMenu", LoadSceneMode.Additive);
         SceneManager.LoadScene("TitleSceneMenu", LoadSceneMode.Additive);
+        SceneManager.LoadScene("ControllerMenu", LoadSceneMode.Additive);
 
 
     }
