@@ -146,6 +146,19 @@ public class InputManager : MonoBehaviour
         }
         return result;
     }
+    public int DetectButtonPress()//return button index
+    {
+        int result = -1;
+
+        for (int jstick = 0; jstick < 6; jstick++)
+        {
+            for (int btn = 0; btn < 8; btn++)
+            {
+                if (Input.GetButton(playerButtonNames[jstick, btn])) return btn;
+            }
+        }
+        return result;
+    }
 
     public int DetectKeyPress()
     {
@@ -326,6 +339,9 @@ public class InputManager : MonoBehaviour
         return key.ToString();
 
     }
+
+   
+
     public class InputState
     {
         public bool left, right, up, down;//directions
@@ -364,5 +380,88 @@ public class InputManager : MonoBehaviour
         public KeyCode right = KeyCode.RightArrow;
         public KeyCode up    = KeyCode.UpArrow;
         public KeyCode down  = KeyCode.DownArrow;
+    }
+    public void BindingPlayerAxisKey(int playerBinding, int actionBinding, KeyCode key)
+    {
+        switch (actionBinding)
+        {
+            case 0:
+                playerKeyAxis[playerBinding].left = key;
+                break;
+            case 1:
+                playerKeyAxis[playerBinding].right = key;
+                break;
+            case 2:
+                playerKeyAxis[playerBinding].up = key;
+                break;
+            case 3:
+                playerKeyAxis[playerBinding].down = key;
+                break;
+           
+        }
+    }
+
+    public void BindingPlayerKey(int playerBinding, int actionBinding, KeyCode key)
+    {
+       
+        switch(actionBinding)
+        {
+            case 0:
+                playerKeyButtons[playerBinding].shoot= key;
+                break;
+            case 1:
+                playerKeyButtons[playerBinding].bomb = key;
+                break;
+            case 2:
+                playerKeyButtons[playerBinding].options = key;
+                break;
+            case 3:
+                playerKeyButtons[playerBinding].auto = key;
+                break;
+            case 4:
+                playerKeyButtons[playerBinding].beam = key;
+                break;
+            case 5:
+                playerKeyButtons[playerBinding].menu = key;
+                break;
+            case 6:
+                playerKeyButtons[playerBinding].extra2 = key;
+                break;
+            case 7:
+                playerKeyButtons[playerBinding].extra3 = key;
+                break;
+        }
+    }
+
+    public void BindPlayerButton(int playerBinding, int actionBinding, byte button)
+    {
+        switch (actionBinding)
+        {
+            case 0:
+                playerButtons[playerBinding].shoot = button;
+                break;
+            case 1:
+                playerButtons[playerBinding].bomb = button;
+                break;
+            case 2:
+                playerButtons[playerBinding].options = button;
+                break;
+            case 3:
+                playerButtons[playerBinding].auto = button;
+                break;
+            case 4:
+                playerButtons[playerBinding].beam = button;
+                break;
+            case 5:
+                playerButtons[playerBinding].menu = button;
+                break;
+            case 6:
+                playerButtons[playerBinding].extra2 = button;
+                break;
+            case 7:
+                playerButtons[playerBinding].extra3 = button;
+                break;
+        }
+
     }
 }

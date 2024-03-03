@@ -585,11 +585,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8836545086125254609, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
       propertyPath: m_Colors.m_SelectedColor.g
-      value: 1
+      value: 0.9975273
       objectReference: {fileID: 0}
     - target: {fileID: 8836545086125254609, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
       propertyPath: m_Colors.m_SelectedColor.r
-      value: 0.45986307
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836545086125254609, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836545086125254609, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836545086125254609, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.51145864
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -976,9 +988,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.4064399, g: 1, b: 0, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.94509804, g: 0.9529412, b: 0.06666667, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1364,6 +1376,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slider (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8836545086125254609, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836545086125254609, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.9975273
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836545086125254609, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836545086125254609, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836545086125254609, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836545086125254609, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.51145864
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1531,6 +1567,30 @@ PrefabInstance:
     - target: {fileID: 6402946380763563138, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
       propertyPath: m_Name
       value: Slider (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836545086125254609, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836545086125254609, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.9975273
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836545086125254609, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836545086125254609, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836545086125254609, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836545086125254609, guid: 477fed8cce9187743a58872ded30f01a, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.51145864
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
