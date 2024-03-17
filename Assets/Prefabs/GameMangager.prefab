@@ -46,6 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbfe884ae1f05994cb4f93d753a98a5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  twoPlayer: 0
+  craftPrefab:
+  - {fileID: 4473339645908611704, guid: 5c737d7381584dd4fa7004d0f58d5b19, type: 3}
 --- !u!114 &2034960511212166451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,6 +61,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c32caf79c064b548b15977e5e8218e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: 0000000000000000
+  playerUsingKeys: 0000
+  oldJoysticks: []
 --- !u!114 &6993074456353869775
 MonoBehaviour:
   m_ObjectHideFlags: 0
