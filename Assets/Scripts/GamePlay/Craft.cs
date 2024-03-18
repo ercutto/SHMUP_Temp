@@ -22,7 +22,15 @@ public class Craft : MonoBehaviour
 
 
     public int playerIndex;
+
+    bool alive = true;
+    bool invunerable=true;
+
+    int invunerableTimer = 120;
+    const int INVUNERABLELENGTH = 120;
     public CraftConfiguration config;
+
+    SpriteRenderer spriteRenderer = null;
 
     private void Start()
     {
@@ -31,10 +39,36 @@ public class Craft : MonoBehaviour
 
         leftBoolID = Animator.StringToHash("Left");
         rightBoolID = Animator.StringToHash("Right");
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        Debug.Assert(spriteRenderer);
     }
     private void FixedUpdate()
     {
-        if (InputManager.instance)
+        if (invunerable)
+        {
+            if(invunerableTimer%12<6)
+            {
+                spriteRenderer.material.SetColor("_Overbrigth", Color.black);
+            }
+            else
+            {
+                spriteRenderer.material.SetColor("_Overbrigth", Color.white);
+
+            }
+
+            invunerableTimer--;
+
+            if(invunerableTimer <= 0)
+            {
+                invunerable = false;
+                spriteRenderer.material.SetColor("_Overbrigth", Color.black);
+
+            }
+
+        }
+
+        if (InputManager.instance && alive)
         {
             craftData.positionX += InputManager.instance.playerState[0].movement.x*config.speed;
             craftData.positionY += InputManager.instance.playerState[0].movement.y*config.speed;
@@ -101,10 +135,33 @@ public class Craft : MonoBehaviour
 
     public void Explode()
     {
-        EffectSystem.instance.CraftExplosion(transform.position);
-        Destroy(gameObject);
+        alive = false;
+        StartCoroutine(Exploding());
     }
 
+    IEnumerator Exploding()
+    {
+        Color col=Color.white;
+        for (float redness=0;redness<=1;redness+=0.3f)
+        {
+            col.g = 1-redness;
+            col.b = 1-redness;
+            spriteRenderer.color = col;
+
+            yield return new WaitForSeconds(0.1f);
+           
+        }
+        EffectSystem.instance.CraftExplosion(transform.position);
+        Destroy(gameObject);
+        GameManager.Instance.playerOneCraft = null;
+        yield return null;
+    }
+
+    public void Invunerable()
+    {
+        invunerable = true;
+        invunerableTimer = INVUNERABLELENGTH;
+    }
 }
 
 public class CraftData

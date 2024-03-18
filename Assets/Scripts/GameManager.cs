@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     
 
-    Craft playerOneCraft = null;
+    public Craft playerOneCraft = null;
     //Craft playerTwoCraft = null;
     void Start()
     {

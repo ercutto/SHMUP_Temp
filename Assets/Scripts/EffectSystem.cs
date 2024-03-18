@@ -7,6 +7,9 @@ public class EffectSystem : MonoBehaviour
     public static EffectSystem instance=null;
 
     public GameObject craftExplotionPrefab = null;
+
+    public ParticleSystem craftParticlesPrefab = null;
+    public ParticleSystem craftDebrisParticlesPrefab = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +25,8 @@ public class EffectSystem : MonoBehaviour
     public void CraftExplosion(Vector3 position)
     {
         Instantiate(craftExplotionPrefab,position,Quaternion.identity);
+        Instantiate(craftParticlesPrefab,position,Quaternion.identity);
+        Instantiate(craftDebrisParticlesPrefab,position,Quaternion.identity);
     }
    
 }
