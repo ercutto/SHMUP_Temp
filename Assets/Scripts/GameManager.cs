@@ -41,5 +41,10 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space)) {
             if (!playerOneCraft) SpawnPlayer(1, 0);
         }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            if (playerOneCraft) playerOneCraft.Explode();
+        }
     }
 }

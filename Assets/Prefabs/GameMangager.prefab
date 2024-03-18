@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4424811138332520084}
   - component: {fileID: 2034960511212166451}
   - component: {fileID: 6993074456353869775}
+  - component: {fileID: 4129657027577982195}
   m_Layer: 0
   m_Name: GameMangager
   m_TagString: Untagged
@@ -76,3 +77,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f123a1f80d8952943b3b129a90d3f002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4129657027577982195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328556624654870501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdd93bfc070e01e41b788d4a5b4c1eac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  craftExplotionPrefab: {fileID: 8641640222487113334, guid: e59fcbc856110e7449af118458aa2126, type: 3}
