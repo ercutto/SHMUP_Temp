@@ -112,7 +112,7 @@ public class InputManager : MonoBehaviour
                         }
                         else//connected
                         {
-                            Debug.Log(string.Format("Controller {0} is connected using: {1}", i, currentJoysticks[i]));
+                            Debug.Log(string.Format("Controller {0} is connected using: {1}", i+1, currentJoysticks[i]));
                         }
                     }
                 }

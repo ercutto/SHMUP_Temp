@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public bool twoPlayer = false;
     public GameObject[] craftPrefab;
 
-    
+    private BulletManager bulletManager=null;
 
     public Craft playerOneCraft = null;
     //Craft playerTwoCraft = null;
@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
         Instance = this;    
         DontDestroyOnLoad(gameObject);
         Debug.Log("GameManager created. ");
+        bulletManager = GetComponent<BulletManager>();
 
     }
     public void SpawnPlayer(int playerIndex,int craftType)
@@ -38,13 +39,21 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) {
-            if (!playerOneCraft) SpawnPlayer(1, 0);
+        if(Input.GetKeyDown(KeyCode.Alpha0)){
+            if (!playerOneCraft) SpawnPlayer(0, 0);
         }
 
         if (Input.GetKeyDown(KeyCode.B))
         {
             if (playerOneCraft) playerOneCraft.Explode();
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+           if(bulletManager)
+            {
+                bulletManager.SpawnBullet(BulletManager.BulletType.Bullet1_Size3,0,150,Random.Range(-10f,10), Random.Range(-10f, 10),0);
+            }
         }
     }
 }

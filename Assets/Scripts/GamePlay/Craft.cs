@@ -45,31 +45,50 @@ public class Craft : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (invunerable)
-        {
-            if(invunerableTimer%12<6)
-            {
-                spriteRenderer.material.SetColor("_Overbrigth", Color.black);
-            }
-            else
-            {
-                spriteRenderer.material.SetColor("_Overbrigth", Color.white);
 
-            }
-
-            invunerableTimer--;
-
-            if(invunerableTimer <= 0)
-            {
-                invunerable = false;
-                spriteRenderer.material.SetColor("_Overbrigth", Color.black);
-
-            }
-
-        }
 
         if (InputManager.instance && alive)
         {
+            if (invunerable)
+            {
+                if (invunerableTimer % 12 < 6)
+                {
+                    spriteRenderer.material.SetColor("_Overbrigth", Color.black);
+                }
+                else
+                {
+                    spriteRenderer.material.SetColor("_Overbrigth", Color.white);
+
+                }
+
+                invunerableTimer--;
+
+                if (invunerableTimer <= 0)
+                {
+                    invunerable = false;
+                    spriteRenderer.material.SetColor("_Overbrigth", Color.black);
+
+                }
+
+            }
+
+            // hit Detection hafiza kullanmiyor
+            //int maxColliders = 10;
+            Collider[] hits = new Collider[20];
+            Vector2 halfSize = new Vector2(3f, 4f);
+            
+            int noOfHits = Physics.OverlapBoxNonAlloc(transform.position,halfSize,hits, Quaternion.identity);
+          
+            
+            if (noOfHits > 0)
+            {
+                Debug.Log(noOfHits + " hasar aldi");
+                if (!invunerable)
+                {
+                    Explode();
+                }
+            }
+
             craftData.positionX += InputManager.instance.playerState[0].movement.x*config.speed;
             craftData.positionY += InputManager.instance.playerState[0].movement.y*config.speed;
             newPositon.x=(int)craftData.positionX;

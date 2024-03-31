@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2034960511212166451}
   - component: {fileID: 6993074456353869775}
   - component: {fileID: 4129657027577982195}
+  - component: {fileID: 2286166511040603444}
   m_Layer: 0
   m_Name: GameMangager
   m_TagString: Untagged
@@ -50,6 +51,7 @@ MonoBehaviour:
   twoPlayer: 0
   craftPrefab:
   - {fileID: 4473339645908611704, guid: 5c737d7381584dd4fa7004d0f58d5b19, type: 3}
+  playerOneCraft: {fileID: 0}
 --- !u!114 &2034960511212166451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,3 +94,29 @@ MonoBehaviour:
   craftExplotionPrefab: {fileID: 8641640222487113334, guid: e59fcbc856110e7449af118458aa2126, type: 3}
   craftParticlesPrefab: {fileID: 4555299157992842795, guid: ab60b2a07bc83ed4c9957b3ed58c1c25, type: 3}
   craftDebrisParticlesPrefab: {fileID: 4555299157992842795, guid: b11a69fb82e152d458471b63288ed285, type: 3}
+--- !u!114 &2286166511040603444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328556624654870501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 391f752979584ec46899af3bc2e3a500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefabs:
+  - {fileID: 7426957234259115727, guid: e9be9451989188b43b0e1cf4dce34c90, type: 3}
+  - {fileID: 7280328169306520605, guid: dc4ecca8bcf7ec54e983c6ae111a65dd, type: 3}
+  - {fileID: -7517504524855839145, guid: 91d6f298bf2d537478d640b4a16c7e01, type: 3}
+  - {fileID: 1712734648436136473, guid: c985bdba8e701cc4fb1a4f0d5ac3e7c4, type: 3}
+  - {fileID: 6342987697330180077, guid: 93aee31291fe2a04992a3569fa723c82, type: 3}
+  - {fileID: 7426957234259115727, guid: 1c23d2f3e1266c84db8e9eebec264145, type: 3}
+  - {fileID: 7426957234259115727, guid: e871c75d2decb43438aaecb4e83ca55a, type: 3}
+  - {fileID: 7426957234259115727, guid: dd81cf0a8cf75434b82cacec7592d6c2, type: 3}
+  - {fileID: 7426957234259115727, guid: 03ec7da2bca47264c86fe301eec80613, type: 3}
+  - {fileID: 7426957234259115727, guid: ca61cdaad637dae4488ea868d94fe3e4, type: 3}
+  - {fileID: 7426957234259115727, guid: 5de346acdc878664692098dfbc73150d, type: 3}
+  - {fileID: 7426957234259115727, guid: 5e1b5a7eaeccabb47af4f78c8d7e6d89, type: 3}
+  - {fileID: 7426957234259115727, guid: 7186a296e2f8edc42a04e17ea6c7045c, type: 3}

@@ -259,6 +259,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1607325230}
     m_Modifications:
+    - target: {fileID: 1348727815324340116, guid: 863027aac016f2f4cb06fc30603b7315, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -8.0908165
+      objectReference: {fileID: 0}
     - target: {fileID: 1639121495982599510, guid: 863027aac016f2f4cb06fc30603b7315, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -535,6 +539,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1607325230}
     m_Modifications:
+    - target: {fileID: 1348727815324340116, guid: 863027aac016f2f4cb06fc30603b7315, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -8.0908165
+      objectReference: {fileID: 0}
     - target: {fileID: 1639121495982599510, guid: 863027aac016f2f4cb06fc30603b7315, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -673,6 +681,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1607325230}
     m_Modifications:
+    - target: {fileID: 1348727815324340116, guid: 863027aac016f2f4cb06fc30603b7315, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -8.0908165
+      objectReference: {fileID: 0}
     - target: {fileID: 1639121495982599510, guid: 863027aac016f2f4cb06fc30603b7315, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1034,6 +1046,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1607325230}
     m_Modifications:
+    - target: {fileID: 1348727815324340116, guid: 863027aac016f2f4cb06fc30603b7315, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -8.0908165
+      objectReference: {fileID: 0}
     - target: {fileID: 1639121495982599510, guid: 863027aac016f2f4cb06fc30603b7315, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1623,6 +1639,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1607325230}
     m_Modifications:
+    - target: {fileID: 1348727815324340116, guid: 863027aac016f2f4cb06fc30603b7315, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -8.0908165
+      objectReference: {fileID: 0}
     - target: {fileID: 1639121495982599510, guid: 863027aac016f2f4cb06fc30603b7315, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1

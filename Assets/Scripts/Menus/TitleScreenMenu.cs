@@ -17,12 +17,15 @@ public class TitleScreenMenu : Menu
         instance = this;
     }
     private void Update()
-    { if (ROOT.gameObject.activeInHierarchy)
+    { 
+        if (ROOT.gameObject.activeInHierarchy)
         {
             if (InputManager.instance.CheckForPlayerInput(0))
             {
                 TurnOff(true);
                 MainMenu.instance.TurnOn(this);
+                Debug.Log("clicked");
+
             }
         }
     }

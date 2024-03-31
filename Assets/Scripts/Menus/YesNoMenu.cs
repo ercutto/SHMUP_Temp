@@ -23,6 +23,6 @@ public class YesNoMenu : Menu
     }
     public void OnQuitButton()
     {
-
+        Application.Quit();
     }
 }
