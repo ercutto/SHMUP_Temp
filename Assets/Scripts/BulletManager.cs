@@ -135,7 +135,7 @@ public class BulletManager : MonoBehaviour
                 Vector3 newPosition = new Vector3(x, y, 0);
                 transform.position = newPosition;
                 //facing rotation
-                //transform.rotation=Quaternion.LookRotation(Vector3.forward, new Vector3(dX,dY,0));
+                transform.rotation=Quaternion.LookRotation(Vector3.forward, new Vector3(dX,dY,0));
             }
         }
     }

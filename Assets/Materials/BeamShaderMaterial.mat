@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CrafA_Material
-  m_Shader: {fileID: -6465566751694194690, guid: e42194b71af448047a350001f3af0c00, type: 3}
-  m_Parent: {fileID: -876546973899608171, guid: e42194b71af448047a350001f3af0c00, type: 3}
+  m_Name: BeamShaderMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 92c7b613d694ca0468e3ae0e49d65716, type: 3}
+  m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -23,25 +23,30 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Effect:
-        m_Texture: {fileID: 2800000, guid: 58e03f15eb94d524a8634fec9a1f4f79, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 00cef14569b146445a74cf27ad259374, type: 3}
+        m_Texture: {fileID: 2800000, guid: 228d450300fc83c40a6a27cfffc50c06, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Masks:
-        m_Texture: {fileID: 2800000, guid: ce3624f8231348341859e5016057d22e, type: 3}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _QueueControl: 0
-    m_Colors:
-    - _Overbrigth: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 0}
+    - _QueueOffset: 0
+    - _Speed: -1
+    m_Colors: []
   m_BuildTextureStacks: []
---- !u!114 &5306274264086701770
+--- !u!114 &8618737385024154933
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

@@ -228,7 +228,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_5
+      name: B2_s1
       rect:
         serializedVersion: 2
         x: 29
@@ -249,7 +249,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_6
+      name: B2_S2
       rect:
         serializedVersion: 2
         x: 34
@@ -270,7 +270,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_7
+      name: B2_S3
       rect:
         serializedVersion: 2
         x: 41
@@ -291,7 +291,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_8
+      name: B2_S4
       rect:
         serializedVersion: 2
         x: 50
@@ -312,7 +312,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_9
+      name: B4_S2
       rect:
         serializedVersion: 2
         x: 65
@@ -333,7 +333,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_10
+      name: B4_S4
       rect:
         serializedVersion: 2
         x: 75
@@ -354,7 +354,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_11
+      name: B5_S1
       rect:
         serializedVersion: 2
         x: 81
@@ -375,7 +375,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_12
+      name: B5_S2
       rect:
         serializedVersion: 2
         x: 92
@@ -396,7 +396,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_13
+      name: B5_S3
       rect:
         serializedVersion: 2
         x: 105
@@ -417,7 +417,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_14
+      name: B5_S4
       rect:
         serializedVersion: 2
         x: 120
@@ -522,7 +522,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_19
+      name: B3_S1
       rect:
         serializedVersion: 2
         x: 29
@@ -543,7 +543,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_20
+      name: B3_S2
       rect:
         serializedVersion: 2
         x: 34
@@ -564,7 +564,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_21
+      name: B3_S3
       rect:
         serializedVersion: 2
         x: 40
@@ -585,7 +585,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_22
+      name: B3_S4
       rect:
         serializedVersion: 2
         x: 46
@@ -648,7 +648,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_25
+      name: B7_S2
       rect:
         serializedVersion: 2
         x: 85
@@ -669,7 +669,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_26
+      name: B7_S4
       rect:
         serializedVersion: 2
         x: 94
@@ -774,7 +774,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_31
+      name: B6_S1
       rect:
         serializedVersion: 2
         x: 2
@@ -795,7 +795,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_32
+      name: B6_S3
       rect:
         serializedVersion: 2
         x: 12
@@ -816,7 +816,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_33
+      name: B6_S4
       rect:
         serializedVersion: 2
         x: 20
@@ -837,7 +837,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_34
+      name: B8_S1
       rect:
         serializedVersion: 2
         x: 102
@@ -858,7 +858,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_35
+      name: B8_S2
       rect:
         serializedVersion: 2
         x: 108
@@ -879,7 +879,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_36
+      name: B8_S3
       rect:
         serializedVersion: 2
         x: 114
@@ -900,7 +900,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_37
+      name: B8_S4
       rect:
         serializedVersion: 2
         x: 122
@@ -1425,7 +1425,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_62
+      name: B9_S1
       rect:
         serializedVersion: 2
         x: 1
@@ -1446,7 +1446,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_63
+      name: B9_S2
       rect:
         serializedVersion: 2
         x: 10
@@ -1467,7 +1467,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_64
+      name: B9_S3
       rect:
         serializedVersion: 2
         x: 21
@@ -1488,7 +1488,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_65
+      name: B9_S4
       rect:
         serializedVersion: 2
         x: 35
@@ -1509,7 +1509,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_66
+      name: B10_S1
       rect:
         serializedVersion: 2
         x: 51
@@ -1530,7 +1530,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_67
+      name: B10_S2
       rect:
         serializedVersion: 2
         x: 64
@@ -1551,7 +1551,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_68
+      name: B10_S3
       rect:
         serializedVersion: 2
         x: 79
@@ -1572,7 +1572,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_69
+      name: B10_S4
       rect:
         serializedVersion: 2
         x: 95
@@ -1593,7 +1593,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_70
+      name: B11_S1
       rect:
         serializedVersion: 2
         x: 113
@@ -1614,7 +1614,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_71
+      name: B11_S2
       rect:
         serializedVersion: 2
         x: 120
@@ -1635,7 +1635,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_72
+      name: B11_S3
       rect:
         serializedVersion: 2
         x: 129
@@ -1656,7 +1656,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_73
+      name: B12_S1
       rect:
         serializedVersion: 2
         x: 220
@@ -1677,7 +1677,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_74
+      name: B12_S2
       rect:
         serializedVersion: 2
         x: 230
@@ -1698,7 +1698,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_75
+      name: B12_S3
       rect:
         serializedVersion: 2
         x: 242
@@ -1761,7 +1761,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_0
+      name: B4_S3
       rect:
         serializedVersion: 2
         x: 69
@@ -1782,7 +1782,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_1
+      name: B7_S1
       rect:
         serializedVersion: 2
         x: 81
@@ -1803,7 +1803,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_2
+      name: B7_S3
       rect:
         serializedVersion: 2
         x: 89
@@ -1824,7 +1824,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_3
+      name: B6_S2
       rect:
         serializedVersion: 2
         x: 6
@@ -1845,7 +1845,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_4
+      name: B4_S1
       rect:
         serializedVersion: 2
         x: 61
@@ -1853,7 +1853,7 @@ TextureImporter:
         width: 3
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1876,46 +1876,65 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      B10_S1: -452518537
+      B10_S2: -1648957533
+      B10_S3: 718244938
+      B10_S4: 39445037
+      B11_S1: -1485285955
+      B11_S2: 1226081738
+      B11_S3: -1607459408
+      B12_S1: 1570188584
+      B12_S2: 398595932
+      B12_S3: -281768222
       B1_s1: -1443011953
       B1_s2: -2072593290
       B1_s3: 2111023251
       B1_s4: -1277833865
       B1_s5: -1069029464
-      Bullets_0: 1082061560
-      Bullets_1: 2137011646
-      Bullets_10: -1931520737
-      Bullets_11: -965459310
-      Bullets_12: 1582563201
-      Bullets_13: 706408215
-      Bullets_14: -1389965343
+      B2_S2: -933388292
+      B2_S3: 1704114736
+      B2_S4: 1178734858
+      B2_s1: -502824807
+      B3_S1: -2030443831
+      B3_S2: -1852378734
+      B3_S3: -164997893
+      B3_S4: 1491402422
+      B4_S1: 1539238636
+      B4_S2: 608805231
+      B4_S3: 1082061560
+      B4_S4: -1931520737
+      B5_S1: -965459310
+      B5_S2: 1582563201
+      B5_S3: 706408215
+      B5_S4: -1389965343
+      B6_S1: 1700900279
+      B6_S2: -721094419
+      B6_S3: -274073959
+      B6_S4: 972575818
+      B7_S1: 2137011646
+      B7_S2: -855296392
+      B7_S3: 462136221
+      B7_S4: -548318343
+      B8_S1: 64345042
+      B8_S2: -1399899347
+      B8_S3: -691412222
+      B8_S4: -1861663628
+      B9_S1: -1617580178
+      B9_S2: -1643505139
+      B9_S3: -556536013
+      B9_S4: 1209231445
       Bullets_15: -558451430
       Bullets_16: -1586628942
       Bullets_17: -689093666
       Bullets_18: 746065413
-      Bullets_19: -2030443831
-      Bullets_2: 462136221
-      Bullets_20: -1852378734
-      Bullets_21: -164997893
-      Bullets_22: 1491402422
       Bullets_23: -2145165128
       Bullets_24: -1116982815
-      Bullets_25: -855296392
-      Bullets_26: -548318343
       Bullets_27: 772118263
       Bullets_28: -1153234974
       Bullets_29: 1812966948
-      Bullets_3: -721094419
       Bullets_30: -584194290
-      Bullets_31: 1700900279
-      Bullets_32: -274073959
-      Bullets_33: 972575818
-      Bullets_34: 64345042
-      Bullets_35: -1399899347
-      Bullets_36: -691412222
-      Bullets_37: -1861663628
       Bullets_38: -1343971644
       Bullets_39: 469405899
-      Bullets_4: 1539238636
       Bullets_40: -2070789681
       Bullets_41: -496742854
       Bullets_42: -483566740
@@ -1926,7 +1945,6 @@ TextureImporter:
       Bullets_47: -1634225065
       Bullets_48: -1561097714
       Bullets_49: -358808108
-      Bullets_5: -502824807
       Bullets_50: 1443782359
       Bullets_51: 662045979
       Bullets_52: 807202095
@@ -1937,28 +1955,10 @@ TextureImporter:
       Bullets_57: -1246191440
       Bullets_58: 1596818844
       Bullets_59: 1210106878
-      Bullets_6: -933388292
       Bullets_60: 394790059
       Bullets_61: -1797647901
-      Bullets_62: -1617580178
-      Bullets_63: -1643505139
-      Bullets_64: -556536013
-      Bullets_65: 1209231445
-      Bullets_66: -452518537
-      Bullets_67: -1648957533
-      Bullets_68: 718244938
-      Bullets_69: 39445037
-      Bullets_7: 1704114736
-      Bullets_70: -1485285955
-      Bullets_71: 1226081738
-      Bullets_72: -1607459408
-      Bullets_73: 1570188584
-      Bullets_74: 398595932
-      Bullets_75: -281768222
       Bullets_76: -96340937
       Bullets_77: -250655734
-      Bullets_8: 1178734858
-      Bullets_9: 608805231
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

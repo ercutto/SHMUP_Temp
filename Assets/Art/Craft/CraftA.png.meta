@@ -564,15 +564,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CraftA_21
+      name: MuzzelFlash
       rect:
         serializedVersion: 2
         x: 49
         y: 27
         width: 21
         height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -666,7 +666,6 @@ TextureImporter:
       CraftA_18: -70836398
       CraftA_2: -374869867
       CraftA_20: -758503552
-      CraftA_21: 1570862952
       CraftA_22: -1603663933
       CraftA_3: -186166116
       CraftA_4: 1904707022
@@ -680,6 +679,7 @@ TextureImporter:
       Flame: -2129349983
       Flame2: -1699276476
       Flame3: 940839598
+      MuzzelFlash: 1570862952
       mFlame: -1982766974
       mFlame2: -456279788
       mFlame3: 1842430281

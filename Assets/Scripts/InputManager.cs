@@ -8,6 +8,7 @@ public class InputManager : MonoBehaviour
 {
     public static InputManager instance = null;
     public InputState[] playerState = new InputState[2];
+    public InputState[] playerPrevState = new InputState[2];
     public ButtonMapping[] playerButtons = new ButtonMapping[2];
     public AxisMapping[] playerAxis = new AxisMapping[2];
     public KeyButtonMapping[] playerKeyButtons = new KeyButtonMapping[2];
@@ -74,6 +75,8 @@ public class InputManager : MonoBehaviour
         playerState[0] = new InputState();
         playerState[1] = new InputState();
 
+        playerPrevState[0] = new InputState();
+        playerPrevState[1] = new InputState();
 
         oldJoysticks = Input.GetJoystickNames();
         StartCoroutine(CheckControllers());
@@ -195,6 +198,10 @@ public class InputManager : MonoBehaviour
     }
     void UpdatePlayerState(int playerIndex)
     {
+        playerPrevState[playerIndex].shoot = playerState[playerIndex].shoot;
+        playerPrevState[playerIndex].bomb = playerState[playerIndex].bomb;
+        playerPrevState[playerIndex].options = playerState[playerIndex].options;
+        playerPrevState[playerIndex].beam = playerState[playerIndex].beam;
         playerState[playerIndex].left = false;
         playerState[playerIndex].right = false;
         playerState[playerIndex].down = false;

@@ -51,6 +51,7 @@ MonoBehaviour:
   twoPlayer: 0
   craftPrefab:
   - {fileID: 4473339645908611704, guid: 5c737d7381584dd4fa7004d0f58d5b19, type: 3}
+  bulletManager: {fileID: 0}
   playerOneCraft: {fileID: 0}
 --- !u!114 &2034960511212166451
 MonoBehaviour:
@@ -112,6 +113,9 @@ MonoBehaviour:
   - {fileID: -7517504524855839145, guid: 91d6f298bf2d537478d640b4a16c7e01, type: 3}
   - {fileID: 1712734648436136473, guid: c985bdba8e701cc4fb1a4f0d5ac3e7c4, type: 3}
   - {fileID: 6342987697330180077, guid: 93aee31291fe2a04992a3569fa723c82, type: 3}
+  - {fileID: 7426957234259115727, guid: 4397e3e6552e36d469dc937d229f6bc7, type: 3}
+  - {fileID: 7426957234259115727, guid: ca91f585a82be254492b08cd1cb9f848, type: 3}
+  - {fileID: 7426957234259115727, guid: 9f56e0e05873b2f4d9143d9f8be7711f, type: 3}
   - {fileID: 7426957234259115727, guid: 1c23d2f3e1266c84db8e9eebec264145, type: 3}
   - {fileID: 7426957234259115727, guid: e871c75d2decb43438aaecb4e83ca55a, type: 3}
   - {fileID: 7426957234259115727, guid: dd81cf0a8cf75434b82cacec7592d6c2, type: 3}
@@ -120,3 +124,15 @@ MonoBehaviour:
   - {fileID: 7426957234259115727, guid: 5de346acdc878664692098dfbc73150d, type: 3}
   - {fileID: 7426957234259115727, guid: 5e1b5a7eaeccabb47af4f78c8d7e6d89, type: 3}
   - {fileID: 7426957234259115727, guid: 7186a296e2f8edc42a04e17ea6c7045c, type: 3}
+  - {fileID: 7426957234259115727, guid: dc8829d1be67eef42ab3d68e466825a5, type: 3}
+  - {fileID: 7426957234259115727, guid: 8fb7cbcff08f5e54b8a4112770b5232a, type: 3}
+  - {fileID: 7426957234259115727, guid: aeda228cf6aa0cc48962f5f9a60d31db, type: 3}
+  - {fileID: 7426957234259115727, guid: c7ac1291b566d17408b4ac03db3e6a46, type: 3}
+  - {fileID: 7426957234259115727, guid: c2d51e79b46ea854eaf310cf8256d4fb, type: 3}
+  - {fileID: 7426957234259115727, guid: 22913af18097bba44bc3352c5695ecd6, type: 3}
+  - {fileID: 7426957234259115727, guid: dd91a174e6aaaca43b24c480e025ec71, type: 3}
+  - {fileID: 7426957234259115727, guid: 6a90b179f02ccbd43be88933b44c3c31, type: 3}
+  - {fileID: 7426957234259115727, guid: b66a654a0c5879d4c86a936168cc9b99, type: 3}
+  - {fileID: 7426957234259115727, guid: 6e667855b9fd0814180730ce5962a3e2, type: 3}
+  - {fileID: 7426957234259115727, guid: de23dc862705d1443b0d8c1a95462576, type: 3}
+  - {fileID: 7426957234259115727, guid: f7d808ecb5491ad48b919f15be19428b, type: 3}
