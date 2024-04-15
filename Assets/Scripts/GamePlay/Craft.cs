@@ -39,6 +39,8 @@ public class Craft : MonoBehaviour
     public GameObject[] optionMarkers3= new GameObject[4];
     public GameObject[] optionMarkers4= new GameObject[4];
 
+    public GameObject bombPrefeb = null;
+
     public Beam beam=null;
     private  void Start()
     {
@@ -52,7 +54,7 @@ public class Craft : MonoBehaviour
         Debug.Assert(spriteRenderer);
 
         layerMask = ~LayerMask.GetMask("PlayerBullets") & ~LayerMask.GetMask("PlayerBombs");
-        craftData.beamCharge = (char)20;
+        craftData.beamCharge = (char)100;
     }
     private void FixedUpdate()
     {
@@ -140,6 +142,13 @@ public class Craft : MonoBehaviour
             {
                 beam.Fire();
             }
+
+            //Bomb
+            if (!InputManager.instance.playerPrevState[playerIndex].bomb && InputManager.instance.playerState[playerIndex].bomb)
+            {
+                //Fire bomb
+                FireBomb();
+            }
         }
     }
     void CheckFlames()
@@ -192,10 +201,15 @@ public class Craft : MonoBehaviour
             rightFlame1.SetActive(false);
             animator.SetBool(leftBoolID,false);
 
-
+           
         }
     }
-
+    void FireBomb()
+    {
+        Vector3 pos = transform.position;
+        pos.y += 100;
+        Instantiate(bombPrefeb, pos, Quaternion.identity);
+    }
     public void Explode()
     {
         alive = false;
@@ -264,19 +278,32 @@ public class Craft : MonoBehaviour
         }
     }
 
-    public class CraftData
+    public void IncreaseBeamStrength()
     {
-        public float positionX;
-        public float positionY;
-
-        public char ShotPower;
-
-        public char noOfEnableOptions;
-        public char optionsLayout;
-        //beam
-        public bool beamFiring;
-        public char beamPower; //power setting and width
-        public char beamCharge; // maximum charge (upgradable)
-        public char beamTimer; //current charge how much beam left
+        if (craftData.beamPower < 5)
+        {
+            craftData.beamPower++;
+            UpdateBeam();
+        }
     }
+    void UpdateBeam()
+    {
+        beam.beamWidth = (craftData.beamPower + 2) * 8f;
+    }
+   
+}
+public class CraftData
+{
+    public float positionX;
+    public float positionY;
+
+    public char ShotPower;
+
+    public char noOfEnableOptions;
+    public char optionsLayout;
+    //beam
+    public bool beamFiring;
+    public char beamPower; //power setting and width
+    public char beamCharge; // maximum charge (upgradable)
+    public char beamTimer; //current charge how much beam left
 }
