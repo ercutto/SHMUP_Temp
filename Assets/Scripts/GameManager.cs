@@ -65,10 +65,18 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            EnemyPattern testPattern = GameObject.FindAnyObjectByType<EnemyPattern>();
+            testPattern.Spawn();
+        }
+
         if (Input.GetKeyDown(KeyCode.O))
         {
             if (playerOneCraft )
                 playerOneCraft.AddOption();
         }
+
+
     }
 }

@@ -372,8 +372,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 180
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -543,6 +543,73 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &698974736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 698974738}
+  - component: {fileID: 698974737}
+  m_Layer: 0
+  m_Name: EnemyPattern0
+  m_TagString: Untagged
+  m_Icon: {fileID: 2800000, guid: dd2d856ed44505a4288b7f5f50c7cebe, type: 3}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &698974737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698974736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb60382126113ab4db25aec7c00dc15f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  steps:
+  - movement: 2
+    direction: {x: 0, y: -100}
+    movementSpeed: 2
+    framesToWait: 30
+  - movement: 1
+    direction: {x: 0, y: 0}
+    movementSpeed: 0
+    framesToWait: 30
+  - movement: 2
+    direction: {x: 100, y: 0}
+    movementSpeed: 2
+    framesToWait: 30
+  - movement: 1
+    direction: {x: 0, y: 0}
+    movementSpeed: 0
+    framesToWait: 30
+  - movement: 2
+    direction: {x: 0, y: -100}
+    movementSpeed: 2
+    framesToWait: 30
+  stayOnLast: 0
+  enemyPrefab: {fileID: 7978735839294584867, guid: 125e17ff06f242c4aaba5fb3412c6e74, type: 3}
+--- !u!4 &698974738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698974736}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 145, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &799598151
 GameObject:
   m_ObjectHideFlags: 0
