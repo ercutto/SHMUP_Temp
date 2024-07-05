@@ -53,7 +53,7 @@ public class Craft : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         Debug.Assert(spriteRenderer);
 
-        layerMask = ~LayerMask.GetMask("PlayerBullets") & ~LayerMask.GetMask("PlayerBombs");
+        layerMask = ~LayerMask.GetMask("PlayerBullets") & ~LayerMask.GetMask("PlayerBombs")&~LayerMask.GetMask("Player");
         craftData.beamCharge = (char)100;
     }
     private void FixedUpdate()
@@ -96,10 +96,8 @@ public class Craft : MonoBehaviour
             if (noOfHits > 0)
             {
                 Debug.Log(noOfHits + " hasar aldi");
-                if (!invunerable)
-                {
-                    Explode();
-                }
+                Hit();
+               
             }
 
             craftData.positionX += InputManager.instance.playerState[0].movement.x*config.speed;
@@ -149,6 +147,13 @@ public class Craft : MonoBehaviour
                 //Fire bomb
                 FireBomb();
             }
+        }
+    }
+    public void Hit()
+    {
+        if (!invunerable)
+        {
+            Explode();
         }
     }
     void CheckFlames()

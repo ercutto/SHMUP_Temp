@@ -690,7 +690,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_27
+      name: B9_B1
       rect:
         serializedVersion: 2
         x: 101
@@ -711,7 +711,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_28
+      name: B9_B2
       rect:
         serializedVersion: 2
         x: 107
@@ -732,7 +732,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_29
+      name: B9_B3
       rect:
         serializedVersion: 2
         x: 116
@@ -753,7 +753,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_30
+      name: B9_B4
       rect:
         serializedVersion: 2
         x: 127
@@ -1425,7 +1425,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B9_S1
+      name: r1_S1
       rect:
         serializedVersion: 2
         x: 1
@@ -1446,7 +1446,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B9_S2
+      name: r1_S2
       rect:
         serializedVersion: 2
         x: 10
@@ -1467,7 +1467,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B9_S3
+      name: r1_S3
       rect:
         serializedVersion: 2
         x: 21
@@ -1488,7 +1488,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B9_S4
+      name: r1_S4
       rect:
         serializedVersion: 2
         x: 35
@@ -1509,7 +1509,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B10_S1
+      name: r2_S1
       rect:
         serializedVersion: 2
         x: 51
@@ -1530,7 +1530,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B10_S2
+      name: r2_S2
       rect:
         serializedVersion: 2
         x: 64
@@ -1551,7 +1551,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B10_S3
+      name: r2_S3
       rect:
         serializedVersion: 2
         x: 79
@@ -1572,7 +1572,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B10_S4
+      name: r2_S4
       rect:
         serializedVersion: 2
         x: 95
@@ -1593,7 +1593,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B11_S1
+      name: r3_S1
       rect:
         serializedVersion: 2
         x: 113
@@ -1614,7 +1614,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B11_S2
+      name: r3_S2
       rect:
         serializedVersion: 2
         x: 120
@@ -1635,10 +1635,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B11_S3
+      name: r3_S3
       rect:
         serializedVersion: 2
-        x: 129
+        x: 130
         y: 1
         width: 10
         height: 16
@@ -1656,7 +1656,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B12_S1
+      name: r4_S1
       rect:
         serializedVersion: 2
         x: 220
@@ -1677,7 +1677,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B12_S2
+      name: r4_S2
       rect:
         serializedVersion: 2
         x: 230
@@ -1698,7 +1698,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B12_S3
+      name: r4_S3
       rect:
         serializedVersion: 2
         x: 242
@@ -1876,16 +1876,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      B10_S1: -452518537
-      B10_S2: -1648957533
-      B10_S3: 718244938
-      B10_S4: 39445037
-      B11_S1: -1485285955
-      B11_S2: 1226081738
-      B11_S3: -1607459408
-      B12_S1: 1570188584
-      B12_S2: 398595932
-      B12_S3: -281768222
       B1_s1: -1443011953
       B1_s2: -2072593290
       B1_s3: 2111023251
@@ -1919,20 +1909,16 @@ TextureImporter:
       B8_S2: -1399899347
       B8_S3: -691412222
       B8_S4: -1861663628
-      B9_S1: -1617580178
-      B9_S2: -1643505139
-      B9_S3: -556536013
-      B9_S4: 1209231445
+      B9_B1: 772118263
+      B9_B2: -1153234974
+      B9_B3: 1812966948
+      B9_B4: -584194290
       Bullets_15: -558451430
       Bullets_16: -1586628942
       Bullets_17: -689093666
       Bullets_18: 746065413
       Bullets_23: -2145165128
       Bullets_24: -1116982815
-      Bullets_27: 772118263
-      Bullets_28: -1153234974
-      Bullets_29: 1812966948
-      Bullets_30: -584194290
       Bullets_38: -1343971644
       Bullets_39: 469405899
       Bullets_40: -2070789681
@@ -1959,6 +1945,20 @@ TextureImporter:
       Bullets_61: -1797647901
       Bullets_76: -96340937
       Bullets_77: -250655734
+      r1_S1: -1617580178
+      r1_S2: -1643505139
+      r1_S3: -556536013
+      r1_S4: 1209231445
+      r2_S1: -452518537
+      r2_S2: -1648957533
+      r2_S3: 718244938
+      r2_S4: 39445037
+      r3_S1: -1485285955
+      r3_S2: 1226081738
+      r3_S3: -1607459408
+      r4_S1: 1570188584
+      r4_S2: 398595932
+      r4_S3: -281768222
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

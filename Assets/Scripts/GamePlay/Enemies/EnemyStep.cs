@@ -28,13 +28,18 @@ public class EnemyStep
     public float movementSpeed = 4f;
     [SerializeField]
     public float framesToWait = 30;
+    
+    public List<String> activateStates =new List<String>();
+    public List<String> deActivateStates =new List<String>();
+
     public float TimeToComplate()
     {
         if(movement == MovementType.direction)
         {
             float timeToTravel = direction.magnitude / movementSpeed;
             return timeToTravel;
-        }else if(movement == MovementType.none)
+        }
+        else if(movement == MovementType.none)
         {
             return framesToWait;
         }
@@ -43,7 +48,7 @@ public class EnemyStep
         return 1;
     }
 
-   public Vector2 EndPosition(Vector2 startPosition)
+   public Vector2 EndPosition(Vector3 startPosition)
     {
         Vector2 result = startPosition;
         if(movement == MovementType.direction)
@@ -77,5 +82,27 @@ public class EnemyStep
 
             Debug.LogError("CalculetePosition unprocces movement type, returning startPosition ");
         return startPos;
+    }
+    public void FireActivateStates(Enemy enemy)
+    {
+        Debug.Log("Fire activate State:");
+
+        foreach (string state in activateStates)
+        {
+           
+            enemy.EnableState(state);
+           
+        }
+        
+    }
+    public void FireDeactivateStates(Enemy enemy)
+    {
+        Debug.Log("Fire Deactivate State:");
+        foreach (string state in deActivateStates)
+        {
+            enemy.DisableState(state);
+
+            
+        }
     }
 }

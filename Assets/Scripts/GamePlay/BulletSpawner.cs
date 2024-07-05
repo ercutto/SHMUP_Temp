@@ -1,37 +1,132 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletSpawner : MonoBehaviour
 {
-    public BulletManager.BulletType bulletType = BulletManager.BulletType.Bullet1_Size1;  
-    public float rate = 1f;
-    public float spped = 10f;
-    public float timer = 0;
+    public BulletManager.BulletType bulletType = BulletManager.BulletType.Bullet1_Size1;
+    public BulletSequence sequence;
+    [Header("Bullet Frames")]
+    public int rate = 1;
+    public int speed = 10;
+    public int timer = 0;
     public GameObject muzzleFlash = null;
+
+    [Header("Shooting direction and amount")]
+    public float startAngle = 0;
+    public float endAngle = 0;
+    public int radialNumber=1;
+
+    public float dAngle = 0;
+    private bool firing=false;
+    private int frame = 0;
+    //For Enemy Ships
+    public bool autoFireActive=false;
+
+    public bool fireAtPlayer=false;
+    public bool fireAtTarget=false;
+    public GameObject target = null;
+
+    public bool hooming = false;
+
     public void Shoot(int size)
     {
         if (size < 0) return;
 
-        if (timer == 0)
-        {
-            Vector3 velocity = transform.up * spped;
-            BulletManager.BulletType bulletToShoot = bulletType + size;
-            GameManager.Instance.bulletManager.SpawnBullet(bulletToShoot,transform.position.x,transform.position.y,velocity.x,velocity.y,0);
+        Vector2 primaryDirection = transform.up;
+       
+            if (fireAtPlayer || fireAtTarget)
+            {
+                Vector2 targetPosition = Vector2.zero;
+                if (fireAtPlayer&&target != null)
+                    targetPosition = GameManager.Instance.playerOneCraft.transform.position;
+                else if (fireAtTarget && target != null)
+                    targetPosition = target.transform.position;
 
+                primaryDirection = targetPosition - (Vector2)transform.position;
+                primaryDirection.Normalize();
+            }
+        
+
+        if (firing||timer == 0)
+        {
+            float angle =startAngle;
+            for (int a = 0; a < radialNumber; a++)
+            {
+                Quaternion myRotatioton = Quaternion.AngleAxis(angle, Vector3.forward);
+                Vector3 velocity =myRotatioton* primaryDirection * speed;
+                BulletManager.BulletType bulletToShoot = bulletType + size;
+                GameManager.Instance.bulletManager.SpawnBullet(bulletToShoot, transform.position.x, transform.position.y, velocity.x, velocity.y, angle,dAngle,hooming);
+                angle =angle +((endAngle-startAngle)/(radialNumber-1));
+            }
+            if(muzzleFlash != null)
                 muzzleFlash.SetActive(true);
         }
     }
     private void FixedUpdate()
     {
         timer++;
-        if (timer >= rate) {
+        if ( timer >= rate) {
 
             
             timer = 0;
             if(muzzleFlash)
                 muzzleFlash.SetActive(false);
 
+            if (autoFireActive)
+            {
+                firing = true;
+                frame = 0;
+                //Shoot(1);
+            }
+               
+           
         }
+
+        if (firing)
+        {
+            if (sequence.ShouldFire(frame))
+            {
+                Shoot(1);
+            }
+
+            frame++;
+            if(frame>sequence.totalFrames)
+                firing = false;
+        }
+    }
+    //Auto Fire
+    public void Activate()
+    {
+        autoFireActive = true;
+        timer = 0;
+        frame = 0;
+        firing = true;
+    }
+    //Auto Fire
+    public void DeActivate()
+    {
+        autoFireActive= false;
+    }
+}
+[Serializable]
+public class BulletSequence
+{
+    public List<int> emmitTimes = new List<int>();
+    public int totalFrames;
+
+    public bool ShouldFire(int currentFrame)
+    {
+        foreach (int frame in emmitTimes)
+        {
+            if ((currentFrame ==frame))
+            {
+                return true;
+            }
+            
+        }
+        return false;
+
     }
 }

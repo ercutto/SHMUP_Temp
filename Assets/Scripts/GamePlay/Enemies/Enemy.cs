@@ -7,6 +7,12 @@ public class Enemy : MonoBehaviour
 {
     private EnemyPattern pattern;
     public EnemyData data;
+
+    private EnemySection[] sections;
+    private void Start()
+    {
+        sections=gameObject.GetComponentsInChildren<EnemySection>();
+    }
     public void SetPattern(EnemyPattern inPattern)
     {
         pattern = inPattern;
@@ -14,11 +20,22 @@ public class Enemy : MonoBehaviour
     private void FixedUpdate()
     {
         data.progressTimer++;
-        Vector3 pos= pattern.CalculatePosition(data.progressTimer);
-        Quaternion rot=pattern.CalculateRotation(data.progressTimer);
 
-        transform.position = pos;
-        transform.rotation = rot;
+        pattern.Calculate(transform, data.progressTimer);
+    }
+    public void EnableState(String name)
+    {
+        foreach(EnemySection section in sections)
+        {
+            section.EnableState(name);
+        }
+    }
+    public void DisableState(String name)
+    {
+        foreach (EnemySection section in sections)
+        {
+            section.DisableState(name);
+        }
     }
     [Serializable]
     public struct EnemyData

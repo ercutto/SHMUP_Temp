@@ -10,6 +10,9 @@ public class EnemyPattern : MonoBehaviour
     public bool stayOnLast = true;
     public Enemy enemyPrefab;
     private Enemy spawnedEnemy;
+    private int currentStateIndex = 0;
+    private int previoustStateIndex = -1;
+
     [MenuItem("GameObject/SHMUP/EnemyPattern", false, 10)]
     static void CreateEnenmyPatternObject(MenuCommand menuComand)
     {
@@ -33,19 +36,53 @@ public class EnemyPattern : MonoBehaviour
 
     public void Spawn()
     {
-        spawnedEnemy = Instantiate(enemyPrefab, transform.position, transform.rotation).GetComponent<Enemy>();
-        spawnedEnemy.SetPattern(this);
+        if (spawnedEnemy == null)
+        {
+            spawnedEnemy = Instantiate(enemyPrefab, transform.position, transform.rotation).GetComponent<Enemy>();
+            spawnedEnemy.SetPattern(this);
+        }
     }
+    public void Calculate(Transform enemyTransform , float progressTimer)
+    {
+        Vector3 pos = CalculatePosition(progressTimer);
+        Quaternion rot = CalculateRotation(progressTimer);
 
+        enemyTransform.position=pos;
+        enemyTransform.rotation=rot;
+
+        if (currentStateIndex != previoustStateIndex) //So state is changed
+        {
+           
+            if (previoustStateIndex >= 0)
+            {
+
+                //call deActivateState
+               
+                EnemyStep prevStep = steps[previoustStateIndex];
+                prevStep.FireDeactivateStates(spawnedEnemy);
+            }
+            if (currentStateIndex >= 0)
+            {
+              
+                // call activateState
+                EnemyStep currStep = steps[currentStateIndex];
+                currStep.FireActivateStates(spawnedEnemy);
+
+            }
+            previoustStateIndex = currentStateIndex;
+        }
+
+
+    }
     public Vector2 CalculatePosition(float progressTimer)
     {
-        int s = WhichStep(progressTimer);
+        currentStateIndex = WhichStep(progressTimer);//in Charge of calculating State index
 
-        if(s<0) return spawnedEnemy.transform.position;
+        if(currentStateIndex<0) return spawnedEnemy.transform.position;
 
-        EnemyStep step = steps[s];
-        float stepTime = progressTimer - StartTime(s);
-        Vector3 startPos = EndPosition(s - 1);
+        EnemyStep step = steps[currentStateIndex];
+        float stepTime = progressTimer - StartTime(currentStateIndex);
+        Vector3 startPos = EndPosition(currentStateIndex - 1);
 
         return step.CalculetePosition(startPos, stepTime);
 
@@ -64,9 +101,10 @@ public class EnemyPattern : MonoBehaviour
             {
                 return s;
             }
-
-            timeToCheck -= steps[s].TimeToComplate();
-
+            else
+            {
+                timeToCheck -= steps[s].TimeToComplate();
+            }
 
         }
         if(stayOnLast)
