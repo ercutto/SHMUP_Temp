@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3033720759094171428
 Transform:
   m_ObjectHideFlags: 0
@@ -48,8 +48,8 @@ MonoBehaviour:
   sequence:
     emmitTimes: 000000000200000004000000
     totalFrames: 10
-  rate: 30
-  speed: 10
+  rate: 100
+  speed: 1
   timer: 0
   muzzleFlash: {fileID: 0}
   startAngle: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
   fireAtPlayer: 1
   fireAtTarget: 0
   target: {fileID: 0}
-  hooming: 0
+  hooming: 1
 --- !u!1 &1811722043559669774
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,7 +258,7 @@ Transform:
   m_GameObject: {fileID: 4622689671597401185}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.053, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3912500861756722121}
@@ -411,7 +411,7 @@ Transform:
   m_GameObject: {fileID: 7121690627400786668}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5405673973121049224}
@@ -531,6 +531,56 @@ MonoBehaviour:
     useTimer: 0
     timer: 0
     currentTime: 0
+  - stateName: Nothing
+    eventOnStart:
+      m_PersistentCalls:
+        m_Calls: []
+    eventOnEnd:
+      m_PersistentCalls:
+        m_Calls: []
+    evenOnTime:
+      m_PersistentCalls:
+        m_Calls: []
+    useTimer: 0
+    timer: 0
+    currentTime: 0
+  - stateName: Shooting
+    eventOnStart:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8781488804620038031}
+          m_TargetAssemblyTypeName: BulletSpawner, Assembly-CSharp
+          m_MethodName: Activate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOnEnd:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8781488804620038031}
+          m_TargetAssemblyTypeName: BulletSpawner, Assembly-CSharp
+          m_MethodName: DeActivate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    evenOnTime:
+      m_PersistentCalls:
+        m_Calls: []
+    useTimer: 0
+    timer: 0
+    currentTime: 0
 --- !u!1001 &7499730837222601394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -545,15 +595,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6600068510360416445, guid: b6523794c498f5043aa553a220892bc1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.007
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 6600068510360416445, guid: b6523794c498f5043aa553a220892bc1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.007
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 6600068510360416445, guid: b6523794c498f5043aa553a220892bc1, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.007
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6600068510360416445, guid: b6523794c498f5043aa553a220892bc1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -597,7 +647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6600068510360416445, guid: b6523794c498f5043aa553a220892bc1, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7571138067026514613, guid: b6523794c498f5043aa553a220892bc1, type: 3}
       propertyPath: m_Name

@@ -12,9 +12,9 @@ public class EnemyPattern : MonoBehaviour
     private Enemy spawnedEnemy;
     private int currentStateIndex = 0;
     private int previoustStateIndex = -1;
-
+#if UNITY_EDITOR
     [MenuItem("GameObject/SHMUP/EnemyPattern", false, 10)]
-    static void CreateEnenmyPatternObject(MenuCommand menuComand)
+    static void CreateEnenmyPatternObject(MenuCommand menuCommand)
     {
         Helpers helper = (Helpers)Resources.Load("Helper");
         if (helper != null)
@@ -33,7 +33,7 @@ public class EnemyPattern : MonoBehaviour
             Debug.LogError("Could not find Helper");
         }
     }
-
+#endif
     public void Spawn()
     {
         if (spawnedEnemy == null)

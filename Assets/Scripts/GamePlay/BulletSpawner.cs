@@ -55,7 +55,8 @@ public class BulletSpawner : MonoBehaviour
             for (int a = 0; a < radialNumber; a++)
             {
                 Quaternion myRotatioton = Quaternion.AngleAxis(angle, Vector3.forward);
-                Vector3 velocity =myRotatioton* primaryDirection * speed;
+                Vector2 velocity =myRotatioton* primaryDirection * speed;
+
                 BulletManager.BulletType bulletToShoot = bulletType + size;
                 GameManager.Instance.bulletManager.SpawnBullet(bulletToShoot, transform.position.x, transform.position.y, velocity.x, velocity.y, angle,dAngle,hooming);
                 angle =angle +((endAngle-startAngle)/(radialNumber-1));
