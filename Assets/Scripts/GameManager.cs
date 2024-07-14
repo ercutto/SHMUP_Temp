@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class GameManager : MonoBehaviour
     public BulletManager bulletManager=null;
 
     public Craft playerOneCraft = null;
+
+    public LevelProgress progressWindow = null;
     //Craft playerTwoCraft = null;
     void Start()
     {
@@ -26,6 +29,8 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         Debug.Log("GameManager created. ");
         bulletManager = GetComponent<BulletManager>();
+
+        Application.targetFrameRate = 60;
 
     }
     public void SpawnPlayer(int playerIndex,int craftType)
@@ -79,5 +84,9 @@ public class GameManager : MonoBehaviour
         }
 
 
+    }
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Stage01");
     }
 }

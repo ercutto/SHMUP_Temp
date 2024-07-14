@@ -20,4 +20,20 @@ public class CraftSelectMenu : Menu
     {
         TurnOff(true); //Simdi bu menuyu kapatiyoruz ve bir oncekine donuyoruz
     }
+    public void OnPlayButton()
+    {
+        GameManager.Instance.StartGame();
+    }
+    public void OnCraftA_P1Button()
+    {
+
+    }
+    public void OnCraftB_P1Button()
+    {
+
+    }
+    public void OnCraftC_P1Button()
+    {
+
+    }
 }

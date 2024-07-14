@@ -14,6 +14,9 @@ public class GameInitialiser : MonoBehaviour
     [Space]
     public GameObject gameManagerPrefab = null;
     private bool menuLoaded=false;
+
+    private Scene displayScene;
+
     void Start()
     {
         if (GameManager.Instance == null)
@@ -21,6 +24,7 @@ public class GameInitialiser : MonoBehaviour
             if (gameManagerPrefab)
             {
                 Instantiate(gameManagerPrefab);
+                displayScene = SceneManager.GetSceneByName("DisplayScene");
             }
             else
             {
@@ -35,6 +39,12 @@ public class GameInitialiser : MonoBehaviour
     {
        if(!menuLoaded)
         {
+            if(!displayScene.isLoaded)
+            {
+                SceneManager.LoadScene("DisplayScene",LoadSceneMode.Additive);
+
+            }
+
             ChangeGameMode();
         }
     }

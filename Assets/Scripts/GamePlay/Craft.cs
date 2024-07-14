@@ -99,12 +99,18 @@ public class Craft : MonoBehaviour
                 Hit();
                
             }
-
+            //movement
             craftData.positionX += InputManager.instance.playerState[0].movement.x*config.speed;
             craftData.positionY += InputManager.instance.playerState[0].movement.y*config.speed;
+            if (craftData.positionX < -146) craftData.positionX = -146;
+            if (craftData.positionX > 146) craftData.positionX = 146;
             newPositon.x=(int)craftData.positionX;
-            newPositon.y = (int)craftData.positionY;
-
+            if (!GameManager.Instance.progressWindow)
+                GameManager.Instance.progressWindow = GameObject.FindObjectOfType<LevelProgress>();
+            if (GameManager.Instance.progressWindow)
+                newPositon.y = (int)craftData.positionY + GameManager.Instance.progressWindow.transform.position.y;
+            else
+                newPositon.y = (int)craftData.positionY;
             gameObject.transform.position = newPositon;
             CheckFlames();
             //shooting
