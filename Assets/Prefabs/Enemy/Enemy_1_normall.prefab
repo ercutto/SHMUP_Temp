@@ -60,7 +60,9 @@ MonoBehaviour:
   fireAtPlayer: 1
   fireAtTarget: 0
   target: {fileID: 0}
+  hedefeAtes: 0
   hooming: 1
+  isPlayer: 0
 --- !u!1 &1811722043559669774
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3912500861756722121}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: endPoint
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -158,6 +160,9 @@ MonoBehaviour:
   radiusOrHeigth: 10
   hight: 10
   box: 0
+  DamageByBullets: 1
+  DamageByBeams: 1
+  DamageByBombs: 1
 --- !u!212 &421923918644820374
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -198,7 +203,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: dd2d856ed44505a4288b7f5f50c7cebe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -229,8 +234,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.24998403, y: 0.28, z: 0.2}
-  m_Center: {x: 0.0017218112, y: 0, z: 0}
+  m_Size: {x: 26.18, y: 26.72, z: 10.43}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4622689671597401185
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +247,7 @@ GameObject:
   - component: {fileID: 7058513676716799908}
   - component: {fileID: 7967276444420874025}
   - component: {fileID: 9169129221688385510}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,9 +503,9 @@ MonoBehaviour:
     eventOnStart:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 9169129221688385510}
-          m_TargetAssemblyTypeName: EnemyBeam, Assembly-CSharp
-          m_MethodName: Fire
+        - m_Target: {fileID: 8781488804620038031}
+          m_TargetAssemblyTypeName: BulletSpawner, Assembly-CSharp
+          m_MethodName: Activate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -513,9 +518,9 @@ MonoBehaviour:
     eventOnEnd:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 9169129221688385510}
-          m_TargetAssemblyTypeName: EnemyBeam, Assembly-CSharp
-          m_MethodName: StopFiring
+        - m_Target: {fileID: 8781488804620038031}
+          m_TargetAssemblyTypeName: BulletSpawner, Assembly-CSharp
+          m_MethodName: DeActivate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

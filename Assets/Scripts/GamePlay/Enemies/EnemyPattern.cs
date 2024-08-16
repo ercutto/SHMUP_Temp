@@ -12,6 +12,13 @@ public class EnemyPattern : MonoBehaviour
     private Enemy spawnedEnemy;
     private int currentStateIndex = 0;
     private int previoustStateIndex = -1;
+    public bool startActive = false;
+
+    //hardness
+    public bool spawnOnEasy = true;
+    public bool spawnOnNormal = true;
+    public bool spawnOnHard = false;
+    public bool spawnOnInsane = false;
 #if UNITY_EDITOR
     [MenuItem("GameObject/SHMUP/EnemyPattern", false, 10)]
     static void CreateEnenmyPatternObject(MenuCommand menuCommand)
@@ -34,6 +41,13 @@ public class EnemyPattern : MonoBehaviour
         }
     }
 #endif
+    private void Start()
+    {
+        if (startActive)
+        {
+            Spawn();
+        }
+    }
     public void Spawn()
     {
         if (spawnedEnemy == null)
@@ -134,6 +148,26 @@ public class EnemyPattern : MonoBehaviour
             }
         }
         return result;
+    }
+    public EnemyStep AddStep(EnemyStep.MovementType movement)
+    {
+        EnemyStep newStep = new EnemyStep(movement);
+        steps.Add(newStep);
+        return newStep;
+    }
+
+    private void OnValidate()
+    {
+        foreach(EnemyStep step in steps)
+        {
+            if (step.movementSpeed < 0.5f)
+                step.movementSpeed = 0.5f;
+
+            if (step.movement == EnemyStep.MovementType.spline)
+            {
+                step.spline.CalculatePoints(step.movementSpeed);
+            }
+        }
     }
 }
 

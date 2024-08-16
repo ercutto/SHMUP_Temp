@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public Craft playerOneCraft = null;
 
     public LevelProgress progressWindow = null;
+
+    public Session gameSession =new Session();
     //Craft playerTwoCraft = null;
     void Start()
     {

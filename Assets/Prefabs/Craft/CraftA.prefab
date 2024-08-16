@@ -61,7 +61,9 @@ MonoBehaviour:
   fireAtPlayer: 0
   fireAtTarget: 0
   target: {fileID: 0}
+  hedefeAtes: 0
   hooming: 0
+  isPlayer: 1
 --- !u!1 &934210384823399550
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +125,9 @@ MonoBehaviour:
   fireAtPlayer: 0
   fireAtTarget: 0
   target: {fileID: 0}
+  hedefeAtes: 0
   hooming: 0
+  isPlayer: 1
 --- !u!1 &970638287954419113
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,7 +424,9 @@ MonoBehaviour:
   fireAtPlayer: 0
   fireAtTarget: 0
   target: {fileID: 0}
+  hedefeAtes: 0
   hooming: 0
+  isPlayer: 0
 --- !u!1 &1200829996836913564
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,7 +488,9 @@ MonoBehaviour:
   fireAtPlayer: 0
   fireAtTarget: 0
   target: {fileID: 0}
+  hedefeAtes: 0
   hooming: 0
+  isPlayer: 1
 --- !u!1 &1219220731463155314
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +619,9 @@ MonoBehaviour:
   fireAtPlayer: 0
   fireAtTarget: 0
   target: {fileID: 0}
+  hedefeAtes: 0
   hooming: 0
+  isPlayer: 0
 --- !u!1 &1479866379566264629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1185,7 +1195,9 @@ MonoBehaviour:
   fireAtPlayer: 0
   fireAtTarget: 0
   target: {fileID: 0}
+  hedefeAtes: 0
   hooming: 0
+  isPlayer: 1
 --- !u!1 &3487488284238214269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,7 +1356,9 @@ MonoBehaviour:
   fireAtPlayer: 0
   fireAtTarget: 0
   target: {fileID: 0}
+  hedefeAtes: 0
   hooming: 0
+  isPlayer: 1
 --- !u!1 &4102454011168741551
 GameObject:
   m_ObjectHideFlags: 0
@@ -1648,6 +1662,7 @@ MonoBehaviour:
   - {fileID: 3546531432911715065}
   - {fileID: 5141706531294137017}
   - {fileID: 1691785496192040870}
+  screenSize: 170
   bombPrefeb: {fileID: 5291437734680056022, guid: d00dfc142c8be1a49a66f6eed2fe7010, type: 3}
   beam: {fileID: 4510467499539498804}
 --- !u!95 &8137849255037182369
@@ -2261,7 +2276,9 @@ MonoBehaviour:
   fireAtPlayer: 0
   fireAtTarget: 0
   target: {fileID: 0}
+  hedefeAtes: 0
   hooming: 0
+  isPlayer: 1
 --- !u!1 &6361272745918106317
 GameObject:
   m_ObjectHideFlags: 0
@@ -2452,7 +2469,9 @@ MonoBehaviour:
   fireAtPlayer: 0
   fireAtTarget: 0
   target: {fileID: 0}
+  hedefeAtes: 0
   hooming: 0
+  isPlayer: 0
 --- !u!1 &6463020728886008019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2514,7 +2533,9 @@ MonoBehaviour:
   fireAtPlayer: 0
   fireAtTarget: 0
   target: {fileID: 0}
+  hedefeAtes: 0
   hooming: 0
+  isPlayer: 1
 --- !u!1 &6511526953879660791
 GameObject:
   m_ObjectHideFlags: 0
@@ -2588,7 +2609,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -540379077, guid: 00b85fec00740d641a400c04fc67f234, type: 3}
   m_Color: {r: 0, g: 0.99020815, b: 1, a: 1}
   m_FlipX: 0
@@ -3093,7 +3114,9 @@ MonoBehaviour:
   fireAtPlayer: 0
   fireAtTarget: 0
   target: {fileID: 0}
+  hedefeAtes: 0
   hooming: 0
+  isPlayer: 1
 --- !u!1 &7577443928681750022
 GameObject:
   m_ObjectHideFlags: 0
@@ -3348,7 +3371,7 @@ GameObject:
   - component: {fileID: 6937860868452658934}
   - component: {fileID: 4510467499539498804}
   - component: {fileID: 2321253890557525768}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3672,7 +3695,9 @@ MonoBehaviour:
   fireAtPlayer: 0
   fireAtTarget: 0
   target: {fileID: 0}
+  hedefeAtes: 0
   hooming: 0
+  isPlayer: 1
 --- !u!1 &8298989442182023774
 GameObject:
   m_ObjectHideFlags: 0
@@ -4031,7 +4056,9 @@ MonoBehaviour:
   fireAtPlayer: 0
   fireAtTarget: 0
   target: {fileID: 0}
+  hedefeAtes: 0
   hooming: 0
+  isPlayer: 0
 --- !u!1 &8765733897370967998
 GameObject:
   m_ObjectHideFlags: 0

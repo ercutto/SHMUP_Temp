@@ -11,9 +11,16 @@ public class Shootable : MonoBehaviour
     private int layerMask = 0;
 
     private Vector2 halfExtend;
+
+    public bool DamageByBullets = true;
+    public bool DamageByBeams = true;
+    public bool DamageByBombs = true;
+
+
     private void Start()
     {
-        layerMask = ~LayerMask.GetMask("Enemy") & ~LayerMask.GetMask("EnemyBullets");
+        layerMask = ~LayerMask.GetMask("Enemy") & ~LayerMask.GetMask("EnemyBullets")
+            & ~LayerMask.GetMask("GroundEnemy");
         halfExtend = new Vector3(radiusOrHeigth / 2, hight / 2, 0);
     }
 
@@ -32,25 +39,38 @@ public class Shootable : MonoBehaviour
         {
             for(int _hits = 0; _hits < noOfHits; _hits++)
             {
-               
-                Bullet b = hits[_hits].GetComponent<Bullet>();
-                if (b != null)
+                if (DamageByBullets)
                 {
-                    TakeDamage(1);
-                    GameManager.Instance.bulletManager.DeActivateBullet(b.index);
+                    Bullet b = hits[_hits].GetComponent<Bullet>();
+                    if (b != null)
+                    {
+                        TakeDamage(1);
+                        GameManager.Instance.bulletManager.DeActivateBullet(b.index);
+                    }
                 }
-                else
+                if (DamageByBombs)
                 {
 
                     Bomb bomb = hits[_hits].GetComponent<Bomb>();
                     if (bomb != null)
                     {
-                       
+
                         TakeDamage(bomb.power);
 
                     }
                 }
-                
+                //if (DamageByBeams)
+                //{
+
+                //    Beam beam = hits[_hits].GetComponent<Beam>();
+                //    if (beam != null)
+                //    {
+
+                //        TakeDamage(1);
+
+                //    }
+                //}
+
             }
         }
     }

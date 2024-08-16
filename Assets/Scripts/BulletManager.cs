@@ -187,8 +187,8 @@ public class BulletManager : MonoBehaviour
             
             if (x < -320) active = false;
             if (x > 320) active = false;
-            if (y-progressY < -180) active = false;
-            if (y-progressY > 180) active = false;
+            if (y-progressY < -260) active = false;
+            if (y-progressY > 260) active = false;
 
             bullets[index] = new BulletData(x,y,dX,dY,angle,dAngle,type,active,hooming);
 

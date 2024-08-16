@@ -39,6 +39,7 @@ public class Craft : MonoBehaviour
     public GameObject[] optionMarkers3= new GameObject[4];
     public GameObject[] optionMarkers4= new GameObject[4];
 
+    public float screenSize = 146;
     public GameObject bombPrefeb = null;
 
     public Beam beam=null;
@@ -53,7 +54,10 @@ public class Craft : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         Debug.Assert(spriteRenderer);
 
-        layerMask = ~LayerMask.GetMask("PlayerBullets") & ~LayerMask.GetMask("PlayerBombs")&~LayerMask.GetMask("Player");
+        layerMask = ~LayerMask.GetMask("PlayerBullets") &
+                    ~LayerMask.GetMask("PlayerBombs")&
+                    ~LayerMask.GetMask("Player")&
+                    ~LayerMask.GetMask("GroundEnemy");
         craftData.beamCharge = (char)100;
     }
     private void FixedUpdate()
@@ -95,15 +99,19 @@ public class Craft : MonoBehaviour
             
             if (noOfHits > 0)
             {
-                Debug.Log(noOfHits + " hasar aldi");
+               
                 Hit();
                
             }
             //movement
             craftData.positionX += InputManager.instance.playerState[0].movement.x*config.speed;
             craftData.positionY += InputManager.instance.playerState[0].movement.y*config.speed;
-            if (craftData.positionX < -146) craftData.positionX = -146;
-            if (craftData.positionX > 146) craftData.positionX = 146;
+            if (craftData.positionX < -screenSize) craftData.positionX = -screenSize;
+            if (craftData.positionX > screenSize) craftData.positionX = screenSize;
+            
+            if (craftData.positionY < -180) craftData.positionY = -180;
+            if (craftData.positionY > 180) craftData.positionY = 180;
+
             newPositon.x=(int)craftData.positionX;
             if (!GameManager.Instance.progressWindow)
                 GameManager.Instance.progressWindow = GameObject.FindObjectOfType<LevelProgress>();

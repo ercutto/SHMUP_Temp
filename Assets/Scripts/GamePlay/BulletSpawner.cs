@@ -28,38 +28,77 @@ public class BulletSpawner : MonoBehaviour
     public bool fireAtTarget=false;
     public GameObject target = null;
 
+    //ekleme 
+    public bool hedefeAtes=false;
+
     public bool hooming = false;
+    public bool isPlayer = false;
 
     public void Shoot(int size)
     {
         if (size < 0) return;
 
+        if (!isPlayer)
+        {
+            float x =transform.position.x;
+            if (GameManager.Instance && GameManager.Instance.progressWindow)
+                x-=GameManager.Instance.progressWindow.data.positionX;
+            if(x<-110||x>110)
+                return;
+            
+            float y =transform.position.y;
+            if (GameManager.Instance && GameManager.Instance.progressWindow)
+                y -= GameManager.Instance.progressWindow.data.positionY;
+            if(y<-100||y>180)
+                return;
+        }
         Vector2 primaryDirection = transform.up;
        
-            if (fireAtPlayer || fireAtTarget)
+        if (fireAtPlayer || fireAtTarget)
+        {
+            Vector2 targetPosition = Vector2.zero;
+            
+            if (fireAtPlayer && target != null)
             {
-                Vector2 targetPosition = Vector2.zero;
-                if (fireAtPlayer&&target != null)
-                    targetPosition = GameManager.Instance.playerOneCraft.transform.position;
-                else if (fireAtTarget && target != null)
-                    targetPosition = target.transform.position;
-
-                primaryDirection = targetPosition - (Vector2)transform.position;
-                primaryDirection.Normalize();
+                    
+                targetPosition = GameManager.Instance.playerOneCraft.transform.position;
+                
             }
+            else if (fireAtTarget && target != null)
+            {
+               
+                targetPosition = target.transform.position;
+            }
+          
+
+            primaryDirection = targetPosition - (Vector2)transform.position;
+            primaryDirection.Normalize();
+        }
         
 
         if (firing||timer == 0)
         {
-            float angle =startAngle;
-            for (int a = 0; a < radialNumber; a++)
+            float angle = startAngle;
+            if (hedefeAtes)
             {
-                Quaternion myRotatioton = Quaternion.AngleAxis(angle, Vector3.forward);
-                Vector2 velocity =myRotatioton* primaryDirection * speed;
+                angle = transform.rotation.eulerAngles.z;
+                Quaternion myRotatioton = Quaternion.AngleAxis(angle, transform.forward);
+                Vector2 velocity = myRotatioton * primaryDirection * speed;
 
                 BulletManager.BulletType bulletToShoot = bulletType + size;
-                GameManager.Instance.bulletManager.SpawnBullet(bulletToShoot, transform.position.x, transform.position.y, velocity.x, velocity.y, angle,dAngle,hooming);
-                angle =angle +((endAngle-startAngle)/(radialNumber-1));
+                GameManager.Instance.bulletManager.SpawnBullet(bulletToShoot, transform.position.x, transform.position.y, velocity.x, velocity.y, angle, dAngle, hooming);
+            }
+            else
+            {
+                for (int a = 0; a < radialNumber; a++)
+                {
+                    Quaternion myRotatioton = Quaternion.AngleAxis(angle, Vector3.forward);
+                    Vector2 velocity = myRotatioton * primaryDirection * speed;
+
+                    BulletManager.BulletType bulletToShoot = bulletType + size;
+                    GameManager.Instance.bulletManager.SpawnBullet(bulletToShoot, transform.position.x, transform.position.y, velocity.x, velocity.y, angle, dAngle, hooming);
+                    angle = angle + ((endAngle - startAngle) / (radialNumber - 1));
+                }
             }
             if(muzzleFlash != null)
                 muzzleFlash.SetActive(true);

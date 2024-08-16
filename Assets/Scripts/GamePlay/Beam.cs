@@ -62,8 +62,8 @@ public class Beam : MonoBehaviour
 
         int maxColliders = 20;
         Collider[] hits= new Collider[maxColliders];
-        float middleY=(craft.transform.position.y+180)*0.5f;
-        Vector2 halfsize = new Vector2(beamWidth * 0.5f, (180 - craft.transform.position.y) * 0.5f);
+        float middleY=(craft.transform.position.y+ topY) *0.5f;
+        Vector2 halfsize = new Vector2(beamWidth * 0.5f, (topY - craft.transform.position.y) * 0.5f);
         Vector3 center = new Vector3(craft.transform.position.x, middleY, 0);
         int noOfHits = Physics.OverlapBoxNonAlloc(center, halfsize, hits, Quaternion.identity, layerMask);
         float lowest = topY;
@@ -74,21 +74,25 @@ public class Beam : MonoBehaviour
             //find lowest hit
             for(int _hits = 0; _hits < noOfHits; _hits++)
             {
-                RaycastHit hitInfo;
-                Ray ray = new Ray(craft.transform.position, Vector3.up);
-                float height = 180 - craft.transform.position.y;
-                if (hits[_hits].Raycast(ray, out hitInfo, height))
+                Shootable shootable = hits[_hits].GetComponent<Shootable>();
+                if (shootable && shootable.DamageByBeams)
                 {
-                    
-                    if (hitInfo.point.y < lowest)
+                    RaycastHit hitInfo;
+                    Ray ray = new Ray(craft.transform.position, Vector3.up);
+                    float height = topY - craft.transform.position.y;    
+                    if (hits[_hits].Raycast(ray, out hitInfo, height))
                     {
-                        lowest = hitInfo.point.y;
-                        lowestShootable = hits[_hits].GetComponent<Shootable>();
-                        lowestCollider = hits[_hits].GetComponent<Collider>();
 
-                        
+                        if (hitInfo.point.y < lowest)
+                        {
+                            lowest = hitInfo.point.y;
+                            lowestShootable = hits[_hits].GetComponent<Shootable>();
+                            lowestCollider = hits[_hits];
+
+
+                        }
+
                     }
-
                 }
             }
 

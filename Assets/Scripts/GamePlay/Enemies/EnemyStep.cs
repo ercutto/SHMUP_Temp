@@ -24,7 +24,9 @@ public class EnemyStep
     [SerializeField]
     public Vector2 direction;
     [SerializeField]
-    [Range(0, 20)]
+    public Spline spline;
+    [SerializeField]
+    [Range(0.1f, 20.0f)]
     public float movementSpeed = 4f;
     [SerializeField]
     public float framesToWait = 30;
@@ -32,16 +34,31 @@ public class EnemyStep
     public List<String> activateStates =new List<String>();
     public List<String> deActivateStates =new List<String>();
 
+    public EnemyStep(MovementType inMovement)
+    {
+        movement = inMovement;
+        direction =Vector2.zero;
+        if (inMovement == MovementType.spline)
+        {
+            spline = new Spline();
+        }
+
+    }
+
     public float TimeToComplate()
     {
-        if(movement == MovementType.direction)
+        if (movement == MovementType.direction)
         {
             float timeToTravel = direction.magnitude / movementSpeed;
             return timeToTravel;
         }
-        else if(movement == MovementType.none)
+        else if (movement == MovementType.none)
         {
             return framesToWait;
+        }
+        else if (movement == MovementType.spline)
+        {
+            return spline.Length()/movementSpeed;
         }
 
         Debug.LogError("TimeToComplete unprocces movement type, returning 1 ");
@@ -60,24 +77,38 @@ public class EnemyStep
         {
             return startPosition;
         }
+        else if (movement == MovementType.spline)
+        {
+            result += (spline.LastPoint() - spline.StartPoint());
+        }
 
-            Debug.LogError("EndPosition unprocces movement type, returning start ");
+        Debug.LogError("EndPosition unprocces movement type, returning start ");
         return result;
     }
 
     public Vector3 CalculetePosition(Vector2 startPos,float steptime)
     {
+        float normalisedTime=steptime/TimeToComplate();
+        if(normalisedTime < 0 )
+            normalisedTime = 0;
+
         if (movement == MovementType.direction)
         {
-            float timeToTravel=direction.magnitude / movementSpeed;
-            float ration = steptime / timeToTravel;
+            float timeToTravel = direction.magnitude / movementSpeed;
+            float ration = 0;
+            if (timeToTravel != 0)
+                ration = steptime / timeToTravel;
 
-            Vector2 place =startPos +(direction * ration);
+            Vector2 place = startPos + (direction * ration);
             return place;
         }
         else if (movement == MovementType.none)
         {
             return startPos;
+        }
+        else if (movement == MovementType.spline)
+        {
+            return spline.Getpositon(normalisedTime)+startPos;
         }
 
             Debug.LogError("CalculetePosition unprocces movement type, returning startPosition ");
