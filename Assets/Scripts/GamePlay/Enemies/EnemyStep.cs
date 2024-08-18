@@ -19,6 +19,30 @@ public class EnemyStep
 
         NOOFMOVEMENTTYPES
     }
+    public enum RotationType
+    {
+        INVALID,
+        none,
+        setAngle,
+        lookAhead,
+        spining,
+        facePlayer,
+
+        NOOFROTATIONS
+    }
+    [SerializeField]
+    public RotationType rotate= RotationType.lookAhead;
+
+    [SerializeField]
+    public float endAngle = 0;
+
+    [SerializeField]
+    [Range(0.01f, 4f)]
+    public float angleSpeed = 0;
+
+    [SerializeField]
+    public float noOFSpins = 0;
+
     [SerializeField]
     public MovementType movement;
     [SerializeField]
@@ -60,6 +84,10 @@ public class EnemyStep
         {
             return spline.Length()/movementSpeed;
         }
+        else if (movement == MovementType.homing)
+        {
+            return framesToWait;
+        }
 
         Debug.LogError("TimeToComplete unprocces movement type, returning 1 ");
         return 1;
@@ -81,12 +109,25 @@ public class EnemyStep
         {
             result += (spline.LastPoint() - spline.StartPoint());
         }
+        else if (movement == MovementType.homing)
+        {
+           if(GameManager.Instance && GameManager.Instance.playerOneCraft)
+            {
+                return GameManager.Instance.playerOneCraft.transform.position;
+            }
+            else
+            {
+                return startPosition;
+            }
+        }
 
         Debug.LogError("EndPosition unprocces movement type, returning start ");
         return result;
     }
 
-    public Vector3 CalculetePosition(Vector2 startPos,float steptime)
+  
+
+    public Vector3 CalculetePosition(Vector2 startPos,float steptime,Vector2 oldPosition,Quaternion oldAngle)
     {
         float normalisedTime=steptime/TimeToComplate();
         if(normalisedTime < 0 )
@@ -110,8 +151,16 @@ public class EnemyStep
         {
             return spline.Getpositon(normalisedTime)+startPos;
         }
+        else if (movement == MovementType.homing)//hoomingIn
+        {
+            Vector2 dir = (oldAngle * Vector2.down);
+            Vector2 mov=(dir*movementSpeed);
+            Vector2 pos=oldPosition+ mov;
+            return pos;
 
-            Debug.LogError("CalculetePosition unprocces movement type, returning startPosition ");
+        }
+
+        Debug.LogError("CalculetePosition unprocces movement type, returning startPosition ");
         return startPos;
     }
     public void FireActivateStates(Enemy enemy)
@@ -135,5 +184,57 @@ public class EnemyStep
 
             
         }
+    }
+    public float EndRotation() //TODO This not finished
+    {
+        return endAngle;
+    }
+    public Quaternion CalculateRotation(float startRotation,Vector3 currentPosition,Vector3 oldPosition, float time)
+    {
+        float normalisedTime = time / TimeToComplate();
+        if(normalisedTime < 0)
+            normalisedTime = 0;
+
+        if (rotate == RotationType.setAngle)
+        {
+            Quaternion result =Quaternion.Euler(0,0,endAngle);
+            return result;
+        }
+        else if(rotate == RotationType.spining)
+        {
+            float start = endAngle - (noOFSpins * 360);
+            float angle= Mathf.Lerp(start,endAngle,normalisedTime);
+            Quaternion result=Quaternion.Euler(0,0,angle);
+            return result;
+        }
+        else if (rotate == RotationType.facePlayer)
+        {
+            float angle = 0;
+            Transform target = null;
+            if(GameManager.Instance&& GameManager.Instance.playerOneCraft)
+            {
+                target=GameManager.Instance.playerOneCraft.transform;
+            }
+
+            if (target != null)
+            {
+                Vector2 currentDir =(currentPosition-oldPosition).normalized;
+                Vector2 targetDir=(target.transform.position - currentPosition).normalized;
+                Vector2 newDir=Vector2.Lerp(currentDir,targetDir,angleSpeed);
+                angle =Vector2.SignedAngle(Vector2.down,newDir);
+            }
+
+            return Quaternion.Euler(0,0,angle);
+        }
+        else if (rotate == RotationType.lookAhead)
+        {
+            Vector2 dir=(currentPosition - oldPosition).normalized;
+            float angle=Vector2.SignedAngle(Vector2.down,dir);
+            return Quaternion.Euler(0,0,angle);
+        }
+       
+
+
+        return Quaternion.Euler(0,0,0);
     }
 }

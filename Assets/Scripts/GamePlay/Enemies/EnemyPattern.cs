@@ -19,6 +19,15 @@ public class EnemyPattern : MonoBehaviour
     public bool spawnOnNormal = true;
     public bool spawnOnHard = false;
     public bool spawnOnInsane = false;
+
+    [HideInInspector]
+    public Vector3 lastPosition=Vector3.zero;
+    [HideInInspector]
+    public Vector3 currentPosition=Vector3.zero;
+    [HideInInspector]
+    public Quaternion lastAngle = Quaternion.identity;
+
+
 #if UNITY_EDITOR
     [MenuItem("GameObject/SHMUP/EnemyPattern", false, 10)]
     static void CreateEnenmyPatternObject(MenuCommand menuCommand)
@@ -54,6 +63,9 @@ public class EnemyPattern : MonoBehaviour
         {
             spawnedEnemy = Instantiate(enemyPrefab, transform.position, transform.rotation).GetComponent<Enemy>();
             spawnedEnemy.SetPattern(this);
+
+            lastPosition=spawnedEnemy.transform.position;
+            currentPosition = lastPosition;
         }
     }
     public void Calculate(Transform enemyTransform , float progressTimer)
@@ -94,16 +106,27 @@ public class EnemyPattern : MonoBehaviour
 
         if(currentStateIndex<0) return spawnedEnemy.transform.position;
 
+        lastPosition=currentPosition;
+
         EnemyStep step = steps[currentStateIndex];
         float stepTime = progressTimer - StartTime(currentStateIndex);
         Vector3 startPos = EndPosition(currentStateIndex - 1);
 
-        return step.CalculetePosition(startPos, stepTime);
+        currentPosition= step.CalculetePosition(startPos, stepTime,lastPosition,lastAngle);
+
+        return currentPosition;
 
     }
     public Quaternion CalculateRotation(float progressTimer)
     {
-        return Quaternion.identity;
+        currentStateIndex = WhichStep(progressTimer);
+        float startRotation = 0;
+        if (currentStateIndex > 0)
+            startRotation = steps[currentStateIndex - 1].EndRotation();
+        float stepTime=progressTimer - StartTime(currentStateIndex);
+        lastAngle = steps[currentStateIndex].CalculateRotation(startRotation,currentPosition,lastPosition,stepTime);
+
+        return lastAngle;
     }
 
     int WhichStep(float timer)
@@ -168,6 +191,15 @@ public class EnemyPattern : MonoBehaviour
                 step.spline.CalculatePoints(step.movementSpeed);
             }
         }
+    }
+    public float TotalTime()
+    {
+        float result =0;
+        foreach(EnemyStep step in steps)
+        {
+            result += step.TimeToComplate();
+        }
+        return result;
     }
 }
 

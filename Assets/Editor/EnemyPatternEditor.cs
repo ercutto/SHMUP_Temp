@@ -1,18 +1,70 @@
 
-using System;
 using UnityEditor;
 using UnityEngine;
 [CustomEditor(typeof(EnemyPattern))]
 public class EnemyPatternEditor : Editor
 {
+    Mesh previewMesh = null;
+
+    float editorDeltaTime = 0;
+    float timer = 0;
+    double lastTimeSinceStartUp = 0;
+    private void OnEnable()
+    {
+        if (previewMesh == null)
+        {
+            previewMesh = new Mesh();
+            Vector3[] verts = new Vector3[4];
+            Vector2[] uvs = new Vector2[4];
+            int[] tris = new int[6];
+            const float halfSize = 8f;
+            verts[0] = new Vector3(-halfSize, halfSize);
+            verts[1] = new Vector3(halfSize, halfSize);
+            verts[2] = new Vector3(-halfSize, -halfSize);
+            verts[3] = new Vector3(halfSize, -halfSize);
+
+            uvs[0] = new Vector2(0, 1);
+            uvs[1] = new Vector2(1, 1);
+            uvs[2] = new Vector2(0, 0);
+            uvs[3] = new Vector2(1, 0);
+
+            tris[0] = 0;
+            tris[1] = 1;
+            tris[2] = 2;
+            tris[3] = 2;
+            tris[4] = 1;
+            tris[5] = 3;
+
+            previewMesh.vertices=verts;
+            previewMesh.uv = uvs;
+            previewMesh.triangles=tris;
+        }
+    }
     private void OnSceneGUI()
     {
+        UpdateEditorTime();
         EnemyPattern pattern = (EnemyPattern)target;
         if(pattern)
         {
             UpdatePreview(pattern);
             ProccessInput(pattern);
+
+            //Force Scene to repaint
+            if(Event.current.type == EventType.Repaint)
+            {
+                SceneView.RepaintAll();
+            }
         }
+       
+    }
+    void UpdateEditorTime()
+    {
+        if (lastTimeSinceStartUp == 0)
+        {
+            lastTimeSinceStartUp = EditorApplication.timeSinceStartup;
+        }
+        editorDeltaTime = (float)(EditorApplication.timeSinceStartup - lastTimeSinceStartUp) * 60f;
+        lastTimeSinceStartUp = EditorApplication.timeSinceStartup;
     }
     void UpdatePreview(EnemyPattern pattern)
     {
@@ -33,7 +85,38 @@ public class EnemyPatternEditor : Editor
                         break;
 
                     }
+                    case EnemyStep.MovementType.homing:
+                    {
+                        if (GameManager.Instance && GameManager.Instance.playerOneCraft)
+                        {
+                            Handles.DrawDottedLine(endOfLastStep, GameManager.Instance.playerOneCraft.transform.position, 1);
+                            endOfLastStep = GameManager.Instance.playerOneCraft.transform.position;
+                        }
+                        break;
+                    }
             };
+        }
+        //Draw animated Preview
+        timer += editorDeltaTime;
+        if (timer >= pattern.TotalTime())
+            timer = 0;
+
+        SpriteRenderer renderer=pattern.enemyPrefab.GetComponentInChildren<SpriteRenderer>();
+        if (renderer)
+        {
+            Texture texture=renderer.sprite.texture;
+            Material mat = renderer.sharedMaterial;
+
+            Vector3 pos = pattern.CalculatePosition(timer);
+            Matrix4x4 transMat = Matrix4x4.Translate(pos);
+
+            Quaternion rot= pattern.CalculateRotation(timer);
+            Matrix4x4 rotMat=Matrix4x4.Rotate(rot);  
+
+            Matrix4x4 matrix=transMat*rotMat;
+
+            mat.SetPass(0);
+            Graphics.DrawMeshNow(previewMesh, matrix);
         }
     }
     void ProccessInput(EnemyPattern pattern)
