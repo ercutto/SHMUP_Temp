@@ -48,7 +48,7 @@ MonoBehaviour:
   sequence:
     emmitTimes: 000000000200000004000000
     totalFrames: 10
-  rate: 100
+  rate: 200
   speed: 1
   timer: 0
   muzzleFlash: {fileID: 0}
@@ -163,6 +163,8 @@ MonoBehaviour:
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
+  spawnCyclicPickUp: 1
+  spawnSpecificPickUp: []
 --- !u!212 &421923918644820374
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class AnimatedNumber : MonoBehaviour
     }
 
     // Update is called once per frame
-    void UpdateNumber(int newNumberToDisplay)
+    public void UpdateNumber(int newNumberToDisplay)
     {
         numberToDisplay = newNumberToDisplay;
         string numbers=numberToDisplay.ToString();

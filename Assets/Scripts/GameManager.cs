@@ -12,11 +12,19 @@ public class GameManager : MonoBehaviour
 
     public BulletManager bulletManager=null;
 
-    public Craft playerOneCraft = null;
+    //public Craft playerOneCraft = null;
+    public Craft[] playerCrafts = new Craft[2];
 
     public LevelProgress progressWindow = null;
 
+    public PlayerData[] playerDatas = null;
+
     public Session gameSession =new Session();
+
+    public PickUp[] cylicDrops=new PickUp[15];
+    public PickUp[] Medals=new PickUp[10];
+    private int currentDropIndex = 0;
+    public int currentMedalIndex = 0;
     //Craft playerTwoCraft = null;
     void Start()
     {
@@ -26,6 +34,10 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        playerDatas = new PlayerData[2];
+        playerDatas[0] = new PlayerData();
+        playerDatas[1] = new PlayerData();
 
         Instance = this;    
         DontDestroyOnLoad(gameObject);
@@ -40,23 +52,23 @@ public class GameManager : MonoBehaviour
         Debug.Assert(craftType < craftPrefab.Length);
         Debug.Log("Spawning player " + playerIndex);
 
-        
-        playerOneCraft= Instantiate(craftPrefab[craftType]).GetComponent<Craft>();
-        playerOneCraft.playerIndex=playerIndex;
+
+        playerCrafts[playerIndex]= Instantiate(craftPrefab[craftType]).GetComponent<Craft>();
+        playerCrafts[playerIndex].playerIndex=playerIndex;
     }
     public void Update()
     {
         if(Input.GetKeyDown(KeyCode.Alpha0)){
-            if (!playerOneCraft) SpawnPlayer(0, 0);
+            if (!playerCrafts[0]) SpawnPlayer(0, 0);
         }
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            if (playerOneCraft &&(int)playerOneCraft.craftData.ShotPower < CraftConfiguration.MAX_SHOT_POWER-1)
-                playerOneCraft.craftData.ShotPower++;
+            if (playerCrafts[0] && (int)playerCrafts[0].craftData.ShotPower < CraftConfiguration.MAX_SHOT_POWER-1)
+                playerCrafts[0].craftData.ShotPower++;
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S))
         {
            if(bulletManager)
             {
@@ -67,9 +79,9 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.RightBracket))
         {
-            if (playerOneCraft)
+            if (playerCrafts[0])
             {
-                playerOneCraft.IncreaseBeamStrength();
+                playerCrafts[0].IncreaseBeamStrength();
             }
         }
 
@@ -81,14 +93,44 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.O))
         {
-            if (playerOneCraft )
-                playerOneCraft.AddOption();
+            if (playerCrafts[0] )
+                playerCrafts[0].AddOption();
         }
+       
 
 
     }
     public void StartGame()
     {
         SceneManager.LoadScene("Stage01");
+    }
+    public void PickUpFallOffScreen(PickUp pickUp)
+    {
+        if (pickUp.config.type == PickUp.PickupType.Medal)
+        {
+            currentMedalIndex = 0;
+        }
+    }
+    public PickUp GetNextDrop()
+    {
+        PickUp result = cylicDrops[currentDropIndex];
+
+        if (result.config.type == PickUp.PickupType.Medal)
+        {
+            result =Medals[currentMedalIndex];
+            currentMedalIndex++;
+            if (currentMedalIndex > 9)
+            {
+                currentDropIndex = 0;
+            }
+        }
+
+        currentDropIndex++;
+        if (currentDropIndex > 14)
+        {
+            currentDropIndex = 0;
+        }
+
+        return result;
     }
 }

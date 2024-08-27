@@ -52,9 +52,9 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _EffectColor: {r: 1, g: 1, b: 1, a: 0}
-    - _HighlightColor: {r: 1, g: 0.9926471, b: 0, a: 0}
-    - _PatchColor: {r: 0.0172056, g: 1, b: 0, a: 0}
+    - _EffectColor: {r: 0.11185053, g: 0.014017418, b: 0.990566, a: 0}
+    - _HighlightColor: {r: 0, g: 0, b: 0, a: 0}
+    - _PatchColor: {r: 0.109803915, g: 0.80641377, b: 0.9137255, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1463827277740468312
 MonoBehaviour:

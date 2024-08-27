@@ -18,7 +18,7 @@ public class FontMaker : EditorWindow
     {
         textureObject = EditorGUILayout.ObjectField("Sprite Source", textureObject, typeof(Texture2D), false);//false sceneobject omadigini gösteriyor
         GUILayout.Space(10);
-        fontObject= EditorGUILayout.ObjectField("FontDestination",fontObject, typeof(Font), false);
+        fontObject= EditorGUILayout.ObjectField("Font Destination",fontObject, typeof(Font), false);
         GUILayout.Space(10);
         GUILayout.BeginHorizontal();
         GUILayout.Label("Characters",GUILayout.Width(147));
@@ -45,16 +45,16 @@ public class FontMaker : EditorWindow
                     float charHeight=sprite.rect.height;
                     float charX= sprite.rect.x;
                     float charY= sprite.rect.y;
-                    int charAdvace =(int) charWidth + 1;
+                    int charAdvace =(int)charWidth + 1;
 
                     CharacterInfo charInfo = new CharacterInfo();
                     charInfo.index = letters[i];
 
                     charInfo.uvBottomLeft=new Vector2((charX/width)           , (charY/height));
-                    charInfo.uvBottomRight=new Vector2((charX+charWidth)/width, (charY/height));
+                    charInfo.uvBottomRight=new Vector2(((charX+charWidth)/width), (charY/height));
 
-                    charInfo.uvTopLeft = new Vector2((charX / width), (charY +charHeight)/ height);
-                    charInfo.uvTopRight = new Vector2((charX + charWidth) / width, (charY + charHeight) / height);
+                    charInfo.uvTopLeft = new Vector2((charX / width), ((charY +charHeight)/ height));
+                    charInfo.uvTopRight = new Vector2(((charX + charWidth) / width), ((charY + charHeight) / height));
 
                     charInfo.minX = 0;
                     charInfo.maxX = (int)charWidth;

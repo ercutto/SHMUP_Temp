@@ -52,7 +52,51 @@ MonoBehaviour:
   craftPrefab:
   - {fileID: 4473339645908611704, guid: 5c737d7381584dd4fa7004d0f58d5b19, type: 3}
   bulletManager: {fileID: 0}
-  playerOneCraft: {fileID: 0}
+  playerCrafts:
+  - {fileID: 0}
+  - {fileID: 0}
+  progressWindow: {fileID: 0}
+  playerDatas: []
+  gameSession:
+    hardness: 1
+    stage: 1
+    practise: 0
+    arenaPractise: 0
+    stagePractise: 0
+    infiniteLives: 0
+    infiniteContinues: 0
+    infiniteBombs: 0
+    invincible: 0
+    halfspeed: 0
+    doubleSpeedPractise: 0
+  cylicDrops:
+  - {fileID: 8031180856776641490, guid: 76d502a2ab588ad48919b73c13c777cc, type: 3}
+  - {fileID: 6656353513100279769, guid: b54f1ceb15eb56144bd84cd57ed7d14c, type: 3}
+  - {fileID: 8031180856776641490, guid: 76d502a2ab588ad48919b73c13c777cc, type: 3}
+  - {fileID: 1971277247894637619, guid: 44bd64d9d9fa5ef48bbccd845b4c8231, type: 3}
+  - {fileID: 8031180856776641490, guid: 76d502a2ab588ad48919b73c13c777cc, type: 3}
+  - {fileID: 6656353513100279769, guid: b54f1ceb15eb56144bd84cd57ed7d14c, type: 3}
+  - {fileID: 8031180856776641490, guid: 76d502a2ab588ad48919b73c13c777cc, type: 3}
+  - {fileID: 6656353513100279769, guid: b54f1ceb15eb56144bd84cd57ed7d14c, type: 3}
+  - {fileID: 8031180856776641490, guid: 76d502a2ab588ad48919b73c13c777cc, type: 3}
+  - {fileID: 1971277247894637619, guid: 44bd64d9d9fa5ef48bbccd845b4c8231, type: 3}
+  - {fileID: 8031180856776641490, guid: 76d502a2ab588ad48919b73c13c777cc, type: 3}
+  - {fileID: 6656353513100279769, guid: b54f1ceb15eb56144bd84cd57ed7d14c, type: 3}
+  - {fileID: 8031180856776641490, guid: 76d502a2ab588ad48919b73c13c777cc, type: 3}
+  - {fileID: 6656353513100279769, guid: b54f1ceb15eb56144bd84cd57ed7d14c, type: 3}
+  - {fileID: 2892486826787465816, guid: bf9d8b5c9d42d96448635a164ecd55ad, type: 3}
+  Medals:
+  - {fileID: 6656353513100279769, guid: b54f1ceb15eb56144bd84cd57ed7d14c, type: 3}
+  - {fileID: 4385374346592830775, guid: c5d3745b8beb8fa43858fa2cb297d56f, type: 3}
+  - {fileID: 405941749574952896, guid: c9ea4eeee1a584e498e02c5fb6b68f1b, type: 3}
+  - {fileID: 2999543667572234028, guid: 577ad310b37f6f8499b4795861109db8, type: 3}
+  - {fileID: 6087342634638732775, guid: 9de954ce706550543bab2aae34f09361, type: 3}
+  - {fileID: 3472561407267141314, guid: f756769b39d7c7e4ab67668b70d5fcb7, type: 3}
+  - {fileID: 103537950861371912, guid: a7de335ae27110d4d8acb7e115985ff3, type: 3}
+  - {fileID: 8993200969532066275, guid: 7ac63000ca7967d479342715e2b2340a, type: 3}
+  - {fileID: 1639221154326061050, guid: b7b5a0cc8ed9ed44a9d46d50c6dfc778, type: 3}
+  - {fileID: 7300444720143039174, guid: b5425e9fff7a0664087889a31e536e74, type: 3}
+  currentMedalIndex: 0
 --- !u!114 &2034960511212166451
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -43,13 +43,13 @@ public class BulletSpawner : MonoBehaviour
             float x =transform.position.x;
             if (GameManager.Instance && GameManager.Instance.progressWindow)
                 x-=GameManager.Instance.progressWindow.data.positionX;
-            if(x<-110||x>110)
+            if(x<-140||x>140)
                 return;
             
             float y =transform.position.y;
             if (GameManager.Instance && GameManager.Instance.progressWindow)
                 y -= GameManager.Instance.progressWindow.data.positionY;
-            if(y<-100||y>180)
+            if(y<-175||y>175)
                 return;
         }
         Vector2 primaryDirection = transform.up;
@@ -61,7 +61,7 @@ public class BulletSpawner : MonoBehaviour
             if (fireAtPlayer && target != null)
             {
                     
-                targetPosition = GameManager.Instance.playerOneCraft.transform.position;
+                targetPosition = GameManager.Instance.playerCrafts[0].transform.position;
                 
             }
             else if (fireAtTarget && target != null)

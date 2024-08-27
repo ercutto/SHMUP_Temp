@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
         float y =transform.position.y;
         if(GameManager.Instance && GameManager.Instance.progressWindow)
             y-=GameManager.Instance.progressWindow.data.positionY;
-        if (y < -350)
+        if (y < -180)
             OutOfBounds();
 
     }

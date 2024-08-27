@@ -123,8 +123,8 @@ public class BulletManager : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (GameManager.Instance && GameManager.Instance.playerOneCraft)
-            jobProcessor.player1Position = GameManager.Instance.playerOneCraft.transform.position;
+        if (GameManager.Instance && GameManager.Instance.playerCrafts[0])
+            jobProcessor.player1Position = GameManager.Instance.playerCrafts[0].transform.position;
         else
             jobProcessor.player1Position = new Vector2(-9999, -9999);
 
@@ -185,10 +185,10 @@ public class BulletManager : MonoBehaviour
             x = x + dX;
             y = y + dY;
             
-            if (x < -320) active = false;
-            if (x > 320) active = false;
-            if (y-progressY < -260) active = false;
-            if (y-progressY > 260) active = false;
+            if (x < -110) active = false;
+            if (x > 110) active = false;
+            if (y-progressY < -180) active = false;
+            if (y-progressY > 180) active = false;
 
             bullets[index] = new BulletData(x,y,dX,dY,angle,dAngle,type,active,hooming);
 

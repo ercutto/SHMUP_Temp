@@ -222,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5026393635467789252}
   - component: {fileID: 351954141322756614}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MuzzelFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ MonoBehaviour:
   sequence:
     emmitTimes: 
     totalFrames: 0
-  rate: 1
+  rate: 5
   speed: 10
   timer: 0
   muzzleFlash: {fileID: 0}
@@ -607,7 +607,7 @@ MonoBehaviour:
   sequence:
     emmitTimes: 
     totalFrames: 0
-  rate: 1
+  rate: 5
   speed: 10
   timer: 0
   muzzleFlash: {fileID: 0}
@@ -1183,7 +1183,7 @@ MonoBehaviour:
   sequence:
     emmitTimes: 
     totalFrames: 0
-  rate: 1
+  rate: 3
   speed: 10
   timer: 0
   muzzleFlash: {fileID: 990173436831385520}
@@ -1344,7 +1344,7 @@ MonoBehaviour:
   sequence:
     emmitTimes: 
     totalFrames: 0
-  rate: 1
+  rate: 3
   speed: 10
   timer: 0
   muzzleFlash: {fileID: 5102043615203684344}
@@ -1623,6 +1623,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44392defe4c87f246bd3bc9a001a5477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  craftData:
+    positionX: 0
+    positionY: 0
+    ShotPower: 0
+    noOfEnableOptions: 0
+    optionsLayout: 0
+    beamFiring: 0
+    beamPower: 0
+    beamCharge: 100
+    beamTimer: 0
+    smallBombs: 3
+    largeBombs: 3
   aftFlame1: {fileID: 6533612730378922290}
   aftFlame2: {fileID: 7690831937677015760}
   leftFlame1: {fileID: 8332103145658407271}
@@ -1662,7 +1674,7 @@ MonoBehaviour:
   - {fileID: 3546531432911715065}
   - {fileID: 5141706531294137017}
   - {fileID: 1691785496192040870}
-  screenSize: 170
+  screenSize: 110
   bombPrefeb: {fileID: 5291437734680056022, guid: d00dfc142c8be1a49a66f6eed2fe7010, type: 3}
   beam: {fileID: 4510467499539498804}
 --- !u!95 &8137849255037182369
@@ -2264,7 +2276,7 @@ MonoBehaviour:
   sequence:
     emmitTimes: 
     totalFrames: 0
-  rate: 1
+  rate: 3
   speed: 10
   timer: 0
   muzzleFlash: {fileID: 970638287954419113}
@@ -2457,7 +2469,7 @@ MonoBehaviour:
   sequence:
     emmitTimes: 
     totalFrames: 0
-  rate: 1
+  rate: 5
   speed: 10
   timer: 0
   muzzleFlash: {fileID: 0}
@@ -2521,7 +2533,7 @@ MonoBehaviour:
   sequence:
     emmitTimes: 
     totalFrames: 0
-  rate: 1
+  rate: 3
   speed: 10
   timer: 0
   muzzleFlash: {fileID: 6612074268713192837}
@@ -2758,7 +2770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4421725896090298442}
   - component: {fileID: 4566868055442927232}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MuzzelFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3102,7 +3114,7 @@ MonoBehaviour:
   sequence:
     emmitTimes: 
     totalFrames: 0
-  rate: 1
+  rate: 3
   speed: 10
   timer: 0
   muzzleFlash: {fileID: 5370111089464227762}
@@ -4044,7 +4056,7 @@ MonoBehaviour:
   sequence:
     emmitTimes: 
     totalFrames: 0
-  rate: 1
+  rate: 5
   speed: 10
   timer: 0
   muzzleFlash: {fileID: 0}

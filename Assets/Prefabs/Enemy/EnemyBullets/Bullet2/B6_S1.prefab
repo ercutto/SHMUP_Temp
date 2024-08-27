@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1617580178, guid: a244119eb6ca76b4d9895051d5c02f7c, type: 3}
+  m_Sprite: {fileID: -1157853460, guid: a244119eb6ca76b4d9895051d5c02f7c, type: 3}
   m_Color: {r: 0, g: 0.8187747, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4, y: 12}
+  m_Size: {x: 8, y: 17}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -120,7 +120,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 8, y: 17, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 8.5, z: 0}
 --- !u!114 &-670857662463923138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,7 +133,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6dbba22743e15f40b53957f1eed144f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
-  radiusOrHeigth: 8
-  hight: 17
-  box: 1
+  health: 10
+  radiusOrHeigth: 10
+  hight: 10
+  box: 0
+  DamageByBullets: 1
+  DamageByBeams: 1
+  DamageByBombs: 1
+  spawnCyclicPickUp: 0
+  spawnSpecificPickUp: []
