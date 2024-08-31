@@ -7924,12 +7924,12 @@ MonoBehaviour:
   stayOnLast: 1
   enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
   startActive: 0
-  spawnOnEasy: 1
-  spawnOnNormal: 1
+  spawnOnEasy: 0
+  spawnOnNormal: 0
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: -86, y: 1828, z: 0}
+  currentPosition: {x: -86, y: 1828, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &41396252
 PrefabInstance:
@@ -8258,8 +8258,8 @@ MonoBehaviour:
   spawnOnNormal: 1
   spawnOnHard: 0
   spawnOnInsane: 0
-  lastPosition: {x: -37.62122, y: 279.17532, z: 0}
-  currentPosition: {x: -37.582157, y: 279.14185, z: 0}
+  lastPosition: {x: -93.3, y: 359.8974, z: 0}
+  currentPosition: {x: -93.3, y: 359.83777, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &105716305
 PrefabInstance:
@@ -8430,12 +8430,12 @@ MonoBehaviour:
   stayOnLast: 1
   enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
   startActive: 0
-  spawnOnEasy: 1
-  spawnOnNormal: 1
+  spawnOnEasy: 0
+  spawnOnNormal: 0
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: -52, y: 102, z: 0}
+  currentPosition: {x: -52, y: 102, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &134815183
 Transform:
@@ -8751,8 +8751,8 @@ MonoBehaviour:
   spawnOnNormal: 1
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: -1.199997, y: 1477.7, z: 0}
+  currentPosition: {x: -1.199997, y: 1477.7, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &259529279
 GameObject:
@@ -8876,8 +8876,8 @@ MonoBehaviour:
   spawnOnNormal: 1
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: -80.1, y: 1068.4, z: 0}
+  currentPosition: {x: -80.1, y: 1068.4, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &276640876
 GameObject:
@@ -8894,7 +8894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &276640877
 Transform:
   m_ObjectHideFlags: 0
@@ -9214,7 +9214,7 @@ GameObject:
   m_Layer: 0
   m_Name: Turret path 3
   m_TagString: Untagged
-  m_Icon: {fileID: 2800000, guid: 2d2528b55be8a2b4baadda1a1ce86964, type: 3}
+  m_Icon: {fileID: 2800000, guid: 361757393ba43804b92759ed37e5c485, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9317,14 +9317,14 @@ MonoBehaviour:
     - Shooting
     deActivateStates: []
   stayOnLast: 1
-  enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
+  enemyPrefab: {fileID: 8753545354389616279, guid: e7cccf8375b76b54ab21d64079461889, type: 3}
   startActive: 0
   spawnOnEasy: 1
   spawnOnNormal: 1
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: -78.2, y: 497, z: 0}
+  currentPosition: {x: -78.2, y: 497, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &385372995
 GameObject:
@@ -9550,14 +9550,14 @@ MonoBehaviour:
     - Shooting
     deActivateStates: []
   stayOnLast: 1
-  enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
+  enemyPrefab: {fileID: 8753545354389616279, guid: e7d92b91a016ce4418127d4b6569674e, type: 3}
   startActive: 0
   spawnOnEasy: 1
   spawnOnNormal: 1
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 61, y: 3248.7, z: 0}
+  currentPosition: {x: 61, y: 3248.7, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &397300105
 GameObject:
@@ -9852,9 +9852,9 @@ MonoBehaviour:
   spawnOnNormal: 1
   spawnOnHard: 0
   spawnOnInsane: 0
-  lastPosition: {x: 51.699997, y: 1786.7306, z: 0}
-  currentPosition: {x: 51.699997, y: 1786.6632, z: 0}
-  lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  lastPosition: {x: -109.85889, y: 1817.3, z: 0}
+  currentPosition: {x: -109.91588, y: 1817.3, z: 0}
+  lastAngle: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
 --- !u!4 &446585970 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5578973364492854308, guid: 1043eb6cb8c13b048a267a2e6a152913, type: 3}
@@ -54232,37 +54232,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &577532444
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 577532445}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &577532445
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 577532444}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 135, y: -100, z: 7.176182}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &601704691
 GameObject:
   m_ObjectHideFlags: 0
@@ -54382,12 +54351,12 @@ MonoBehaviour:
   stayOnLast: 1
   enemyPrefab: {fileID: 7978735839294584867, guid: 125e17ff06f242c4aaba5fb3412c6e74, type: 3}
   startActive: 0
-  spawnOnEasy: 1
-  spawnOnNormal: 1
-  spawnOnHard: 0
+  spawnOnEasy: 0
+  spawnOnNormal: 0
+  spawnOnHard: 1
   spawnOnInsane: 0
-  lastPosition: {x: -126.44211, y: -7682.7275, z: 0}
-  currentPosition: {x: -126.44211, y: -7683.2275, z: 0}
+  lastPosition: {x: -218.74733, y: -5444.844, z: 0}
+  currentPosition: {x: -218.74733, y: -5445.344, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &619740816
 GameObject:
@@ -54404,7 +54373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &619740817
 Transform:
   m_ObjectHideFlags: 0
@@ -55104,9 +55073,9 @@ MonoBehaviour:
   spawnOnNormal: 1
   spawnOnHard: 0
   spawnOnInsane: 0
-  lastPosition: {x: -57.931915, y: 1748.8527, z: 0}
-  currentPosition: {x: -58.031967, y: 1748.7957, z: 0}
-  lastAngle: {x: 0, y: 0, z: -0.59205955, w: -0.8058942}
+  lastPosition: {x: 82.97547, y: 1829.4727, z: 0}
+  currentPosition: {x: 82.920204, y: 1829.4094, z: 0}
+  lastAngle: {x: 0, y: 0, z: -0.79302347, w: -0.60919106}
 --- !u!1 &766790717
 GameObject:
   m_ObjectHideFlags: 0
@@ -55225,12 +55194,12 @@ MonoBehaviour:
   stayOnLast: 1
   enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
   startActive: 0
-  spawnOnEasy: 1
-  spawnOnNormal: 1
+  spawnOnEasy: 0
+  spawnOnNormal: 0
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: -69.8, y: 2842.3, z: 0}
+  currentPosition: {x: -69.8, y: 2842.3, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &768789898
 PrefabInstance:
@@ -55242,7 +55211,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1291286959626788634, guid: 1043eb6cb8c13b048a267a2e6a152913, type: 3}
       propertyPath: spawnCyclicPickUp
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1291286959626788634, guid: 1043eb6cb8c13b048a267a2e6a152913, type: 3}
       propertyPath: spawnSpecificPickUp.Array.size
@@ -55506,12 +55475,12 @@ MonoBehaviour:
   stayOnLast: 1
   enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
   startActive: 0
-  spawnOnEasy: 1
-  spawnOnNormal: 1
+  spawnOnEasy: 0
+  spawnOnNormal: 0
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 96, y: 3082, z: 0}
+  currentPosition: {x: 96, y: 3082, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &831429726
 GameObject:
@@ -55635,8 +55604,8 @@ MonoBehaviour:
   spawnOnNormal: 1
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 131, y: 655, z: 0}
+  currentPosition: {x: 131, y: 655, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &839731011
 GameObject:
@@ -56233,8 +56202,8 @@ MonoBehaviour:
   spawnOnNormal: 1
   spawnOnHard: 0
   spawnOnInsane: 0
-  lastPosition: {x: -22.156368, y: -6491.041, z: 0}
-  currentPosition: {x: -22.156368, y: -6491.541, z: 0}
+  lastPosition: {x: -22.156368, y: -19372.541, z: 0}
+  currentPosition: {x: -22.156368, y: -19373.041, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &848395828
 GameObject:
@@ -56463,12 +56432,12 @@ MonoBehaviour:
   stayOnLast: 1
   enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
   startActive: 0
-  spawnOnEasy: 1
-  spawnOnNormal: 1
+  spawnOnEasy: 0
+  spawnOnNormal: 0
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 85, y: 1518, z: 0}
+  currentPosition: {x: 85, y: 1518, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &943834962
 GameObject:
@@ -56588,12 +56557,12 @@ MonoBehaviour:
   stayOnLast: 1
   enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
   startActive: 0
-  spawnOnEasy: 1
-  spawnOnNormal: 1
+  spawnOnEasy: 0
+  spawnOnNormal: 0
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: -113, y: 2954, z: 0}
+  currentPosition: {x: -113, y: 2954, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &970786102
 GameObject:
@@ -56713,12 +56682,12 @@ MonoBehaviour:
   stayOnLast: 1
   enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
   startActive: 0
-  spawnOnEasy: 1
-  spawnOnNormal: 1
+  spawnOnEasy: 0
+  spawnOnNormal: 0
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: -29, y: 1801.6, z: 0}
+  currentPosition: {x: -29, y: 1801.6, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &977378626
 GameObject:
@@ -57356,9 +57325,9 @@ MonoBehaviour:
   spawnOnNormal: 1
   spawnOnHard: 0
   spawnOnInsane: 0
-  lastPosition: {x: 101.935455, y: 1582.9661, z: 0}
-  currentPosition: {x: 101.97364, y: 1582.8884, z: 0}
-  lastAngle: {x: 0, y: 0, z: -0.8742337, w: 0.48550528}
+  lastPosition: {x: 97.67328, y: 1768.3049, z: 0}
+  currentPosition: {x: 97.72183, y: 1768.2312, z: 0}
+  lastAngle: {x: 0, y: 0, z: 0.64208066, w: 0.7666371}
 --- !u!1 &1019137317
 GameObject:
   m_ObjectHideFlags: 0
@@ -57493,7 +57462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1037506256
 Transform:
   m_ObjectHideFlags: 0
@@ -57710,7 +57679,7 @@ GameObject:
   m_Layer: 0
   m_Name: Turret path 2
   m_TagString: Untagged
-  m_Icon: {fileID: 2800000, guid: 2d2528b55be8a2b4baadda1a1ce86964, type: 3}
+  m_Icon: {fileID: 2800000, guid: 8d1b1b616b6416242b99f0c4a048da4a, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -57798,14 +57767,14 @@ MonoBehaviour:
     - Shooting
     deActivateStates: []
   stayOnLast: 1
-  enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
+  enemyPrefab: {fileID: 8753545354389616279, guid: e7d92b91a016ce4418127d4b6569674e, type: 3}
   startActive: 0
   spawnOnEasy: 1
   spawnOnNormal: 1
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 142, y: 320, z: 0}
+  currentPosition: {x: 142, y: 320, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1080439502
 Transform:
@@ -58119,8 +58088,8 @@ MonoBehaviour:
   spawnOnNormal: 1
   spawnOnHard: 0
   spawnOnInsane: 0
-  lastPosition: {x: -11.398467, y: -82709.97, z: 0}
-  currentPosition: {x: -11.398467, y: -82711.72, z: 0}
+  lastPosition: {x: -11.398467, y: -148506.47, z: 0}
+  currentPosition: {x: -11.398467, y: -148508.22, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1161101929
 GameObject:
@@ -58135,7 +58104,7 @@ GameObject:
   m_Layer: 0
   m_Name: EnemyPattern (4)
   m_TagString: Untagged
-  m_Icon: {fileID: 2800000, guid: dd2d856ed44505a4288b7f5f50c7cebe, type: 3}
+  m_Icon: {fileID: 2800000, guid: efba84bc9493a1b40bfc0b16f73a080b, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -58167,12 +58136,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   steps:
-  - rotate: 5
+  - rotate: 3
     endAngle: 0
     angleSpeed: 0.69
     noOFSpins: 0
-    movement: 5
-    direction: {x: -50, y: -80}
+    movement: 2
+    direction: {x: 0, y: -150}
     spline:
       controlPoints:
       - {x: 0, y: 0}
@@ -58239,14 +58208,14 @@ MonoBehaviour:
     deActivateStates:
     - Shooting
   stayOnLast: 1
-  enemyPrefab: {fileID: 7978735839294584867, guid: 125e17ff06f242c4aaba5fb3412c6e74, type: 3}
+  enemyPrefab: {fileID: 7978735839294584867, guid: 6959f577b5e5d8b4cb5d0904951333b5, type: 3}
   startActive: 0
   spawnOnEasy: 1
   spawnOnNormal: 1
   spawnOnHard: 0
   spawnOnInsane: 0
-  lastPosition: {x: -52.67106, y: -1807.1737, z: 0}
-  currentPosition: {x: -52.67106, y: -1807.6737, z: 0}
+  lastPosition: {x: -46, y: 837.912, z: 0}
+  currentPosition: {x: -46, y: 837.86285, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &1168506303
 PrefabInstance:
@@ -58525,14 +58494,14 @@ MonoBehaviour:
     - Shooting
     deActivateStates: []
   stayOnLast: 1
-  enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
+  enemyPrefab: {fileID: 8753545354389616279, guid: e7cccf8375b76b54ab21d64079461889, type: 3}
   startActive: 0
   spawnOnEasy: 1
   spawnOnNormal: 1
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 56, y: 3190, z: 0}
+  currentPosition: {x: 56, y: 3190, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1231777441
 GameObject:
@@ -58697,12 +58666,12 @@ MonoBehaviour:
   stayOnLast: 1
   enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
   startActive: 0
-  spawnOnEasy: 1
-  spawnOnNormal: 1
+  spawnOnEasy: 0
+  spawnOnNormal: 0
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: -137.2, y: 1001.7, z: 0}
+  currentPosition: {x: -137.2, y: 1001.7, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1260935930
 GameObject:
@@ -58811,8 +58780,8 @@ MonoBehaviour:
   spawnOnNormal: 1
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: -80, y: 106, z: 0}
+  currentPosition: {x: -80, y: 106, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1260935932
 Transform:
@@ -59700,8 +59669,8 @@ MonoBehaviour:
   spawnOnNormal: 1
   spawnOnHard: 0
   spawnOnInsane: 0
-  lastPosition: {x: 66.02177, y: 373.41656, z: 0}
-  currentPosition: {x: 66.020935, y: 373.33536, z: 0}
+  lastPosition: {x: -37.557, y: 203.73846, z: 0}
+  currentPosition: {x: -37.637413, y: 203.69685, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1300870225
 GameObject:
@@ -59819,14 +59788,14 @@ MonoBehaviour:
     - Shooting
     deActivateStates: []
   stayOnLast: 1
-  enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
+  enemyPrefab: {fileID: 8753545354389616279, guid: e7d92b91a016ce4418127d4b6569674e, type: 3}
   startActive: 0
   spawnOnEasy: 1
   spawnOnNormal: 1
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: -33, y: 2926, z: 0}
+  currentPosition: {x: -33, y: 2926, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1377611668
 GameObject:
@@ -60065,8 +60034,8 @@ MonoBehaviour:
   spawnOnNormal: 1
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: -166, y: 943, z: 0}
+  currentPosition: {x: -166, y: 943, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &1402664079
 PrefabInstance:
@@ -60256,8 +60225,8 @@ MonoBehaviour:
   spawnOnNormal: 1
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 113, y: 680, z: 0}
+  currentPosition: {x: 113, y: 680, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1428394172
 GameObject:
@@ -60367,7 +60336,7 @@ GameObject:
   m_Layer: 0
   m_Name: Turret path 2
   m_TagString: Untagged
-  m_Icon: {fileID: 2800000, guid: 2d2528b55be8a2b4baadda1a1ce86964, type: 3}
+  m_Icon: {fileID: 2800000, guid: 8d1b1b616b6416242b99f0c4a048da4a, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -60455,14 +60424,14 @@ MonoBehaviour:
     - Shooting
     deActivateStates: []
   stayOnLast: 1
-  enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
+  enemyPrefab: {fileID: 8753545354389616279, guid: e7d92b91a016ce4418127d4b6569674e, type: 3}
   startActive: 0
   spawnOnEasy: 1
   spawnOnNormal: 1
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 129, y: 261, z: 0}
+  currentPosition: {x: 129, y: 261, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1428743462
 Transform:
@@ -61048,14 +61017,14 @@ MonoBehaviour:
     - Shooting
     deActivateStates: []
   stayOnLast: 1
-  enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
+  enemyPrefab: {fileID: 8753545354389616279, guid: e7cccf8375b76b54ab21d64079461889, type: 3}
   startActive: 0
   spawnOnEasy: 1
   spawnOnNormal: 1
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 22, y: 2089, z: 0}
+  currentPosition: {x: 22, y: 2089, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1604019266
 GameObject:
@@ -61192,7 +61161,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605198255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 51.699997, y: 2851.3, z: 0}
+  m_LocalPosition: {x: 21, y: 2851.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -61284,14 +61253,14 @@ MonoBehaviour:
     deActivateStates:
     - Shooting
   stayOnLast: 1
-  enemyPrefab: {fileID: 7978735839294584867, guid: 125e17ff06f242c4aaba5fb3412c6e74, type: 3}
+  enemyPrefab: {fileID: 7978735839294584867, guid: 5eb3d27ec71425d49b07ab8dca36be83, type: 3}
   startActive: 0
   spawnOnEasy: 1
   spawnOnNormal: 1
   spawnOnHard: 0
   spawnOnInsane: 0
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 21, y: 2812.0251, z: 0}
+  currentPosition: {x: 21, y: 2811.9631, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1607268343
 GameObject:
@@ -61415,8 +61384,8 @@ MonoBehaviour:
   spawnOnNormal: 1
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: -109.8, y: 2867.3, z: 0}
+  currentPosition: {x: -109.8, y: 2867.3, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1634947019
 GameObject:
@@ -61536,12 +61505,12 @@ MonoBehaviour:
   stayOnLast: 1
   enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
   startActive: 0
-  spawnOnEasy: 1
-  spawnOnNormal: 1
+  spawnOnEasy: 0
+  spawnOnNormal: 0
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: -115.2, y: 1761.2999, z: 0}
+  currentPosition: {x: -115.2, y: 1761.2999, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1652608970
 GameObject:
@@ -61665,8 +61634,8 @@ MonoBehaviour:
   spawnOnNormal: 1
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: -12, y: 1419, z: 0}
+  currentPosition: {x: -12, y: 1419, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1668400128
 GameObject:
@@ -61790,8 +61759,8 @@ MonoBehaviour:
   spawnOnNormal: 1
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: -126, y: 1702.6, z: 0}
+  currentPosition: {x: -126, y: 1702.6, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1717284002
 GameObject:
@@ -61911,12 +61880,12 @@ MonoBehaviour:
   stayOnLast: 1
   enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
   startActive: 0
-  spawnOnEasy: 1
-  spawnOnNormal: 1
+  spawnOnEasy: 0
+  spawnOnNormal: 0
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 62, y: 2064, z: 0}
+  currentPosition: {x: 62, y: 2064, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1727051524
 GameObject:
@@ -62036,13 +62005,44 @@ MonoBehaviour:
   stayOnLast: 1
   enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
   startActive: 0
-  spawnOnEasy: 1
-  spawnOnNormal: 1
+  spawnOnEasy: 0
+  spawnOnNormal: 0
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 32.800003, y: 2147.7, z: 0}
+  currentPosition: {x: 32.800003, y: 2147.7, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+--- !u!1 &1730295132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1730295133}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1730295133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730295132}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 61, y: 3385, z: -14.207675}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1731513891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62157,21 +62157,21 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: -0.016706562
-      outSlope: -0.016706562
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.90203494
-      value: 0.9849301
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      time: 0.89558715
+      value: 1
+      inSlope: -0.07913705
+      outSlope: -10.147474
+      tangentMode: 1
       weightedMode: 0
-      inWeight: 0.04469878
-      outWeight: 0.60556185
+      inWeight: 0.046043593
+      outWeight: 0.1248177
     - serializedVersion: 3
       time: 1
       value: 0.003479004
@@ -62185,7 +62185,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   midGroudTileGrid: {fileID: 1231777441}
-  midgroundRate: 0.5
+  midgroundRate: 0.75
 --- !u!4 &1743861926
 Transform:
   m_ObjectHideFlags: 0
@@ -62322,12 +62322,12 @@ MonoBehaviour:
   stayOnLast: 1
   enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
   startActive: 0
-  spawnOnEasy: 1
-  spawnOnNormal: 1
+  spawnOnEasy: 0
+  spawnOnNormal: 0
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 76.2, y: 680, z: 0}
+  currentPosition: {x: 76.2, y: 680, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1759590109
 GameObject:
@@ -62344,7 +62344,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1759590110
 Transform:
   m_ObjectHideFlags: 0
@@ -62488,14 +62488,14 @@ MonoBehaviour:
     - Shooting
     deActivateStates: []
   stayOnLast: 1
-  enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
+  enemyPrefab: {fileID: 8753545354389616279, guid: e7d92b91a016ce4418127d4b6569674e, type: 3}
   startActive: 0
   spawnOnEasy: 1
   spawnOnNormal: 1
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 119, y: 2064, z: 0}
+  currentPosition: {x: 119, y: 2064, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &1810396100
 PrefabInstance:
@@ -62632,7 +62632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8829479774815954640, guid: e225163970ee33a408cae0a87ce3e58f, type: 3}
       propertyPath: spawnCyclicPickUp
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8829479774815954640, guid: e225163970ee33a408cae0a87ce3e58f, type: 3}
       propertyPath: spawnSpecificPickUp.Array.size
@@ -62815,12 +62815,12 @@ MonoBehaviour:
   stayOnLast: 1
   enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
   startActive: 0
-  spawnOnEasy: 1
-  spawnOnNormal: 1
+  spawnOnEasy: 0
+  spawnOnNormal: 0
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 52.800003, y: 3108, z: 0}
+  currentPosition: {x: 52.800003, y: 3108, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1900030296
 Transform:
@@ -62964,8 +62964,8 @@ MonoBehaviour:
   spawnOnNormal: 1
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: -19, y: 1131.7, z: 0}
+  currentPosition: {x: -19, y: 1131.7, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &1955441046
 GameObject:
@@ -63193,14 +63193,14 @@ MonoBehaviour:
     - Shooting
     deActivateStates: []
   stayOnLast: 1
-  enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
+  enemyPrefab: {fileID: 8753545354389616279, guid: e7cccf8375b76b54ab21d64079461889, type: 3}
   startActive: 0
   spawnOnEasy: 1
   spawnOnNormal: 1
   spawnOnHard: 1
   spawnOnInsane: 1
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 28, y: 1544.4, z: 0}
+  currentPosition: {x: 28, y: 1544.4, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!4 &1967743400 stripped
 Transform:
@@ -63232,7 +63232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2025600830}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 79, y: 2797, z: 0}
+  m_LocalPosition: {x: 64.8, y: 2797, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -63324,14 +63324,14 @@ MonoBehaviour:
     deActivateStates:
     - Shooting
   stayOnLast: 1
-  enemyPrefab: {fileID: 7978735839294584867, guid: 125e17ff06f242c4aaba5fb3412c6e74, type: 3}
+  enemyPrefab: {fileID: 7978735839294584867, guid: 716969fde35c8034b99596132bc09980, type: 3}
   startActive: 0
   spawnOnEasy: 1
   spawnOnNormal: 1
   spawnOnHard: 0
   spawnOnInsane: 0
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 64.8, y: 2797, z: 0}
+  currentPosition: {x: 64.8, y: 2797, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1001 &2031880393
 PrefabInstance:
@@ -63419,7 +63419,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105376289}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 99, y: 2853, z: 0}
+  m_LocalPosition: {x: 105.6, y: 2853, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -63439,12 +63439,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   steps:
-  - rotate: 0
+  - rotate: 3
     endAngle: 0
     angleSpeed: 0
     noOFSpins: 0
     movement: 2
-    direction: {x: 0, y: -80}
+    direction: {x: 0, y: -60}
     spline:
       controlPoints:
       - {x: 0, y: 0}
@@ -63506,17 +63506,77 @@ MonoBehaviour:
       - {x: 20, y: -40}
     movementSpeed: 0.5
     framesToWait: 0
+    activateStates: []
+    deActivateStates: []
+  - rotate: 3
+    endAngle: 0
+    angleSpeed: 0
+    noOFSpins: 0
+    movement: 1
+    direction: {x: 0, y: 0}
+    spline:
+      controlPoints:
+      - {x: 0, y: 0}
+      - {x: 0, y: -1}
+      - {x: 20, y: -20}
+      - {x: 20, y: -40}
+      isClosed: 0
+      linearPoints:
+      - {x: 0, y: 0}
+      - {x: 2.497331, y: -3.1154203}
+      - {x: 5.0453706, y: -6.198707}
+      - {x: 7.4893823, y: -9.36481}
+      - {x: 9.818587, y: -12.616243}
+      - {x: 11.992279, y: -15.973332}
+      - {x: 13.990375, y: -19.437473}
+      - {x: 15.789265, y: -23.008718}
+      - {x: 17.349642, y: -26.690403}
+      - {x: 18.598883, y: -30.48847}
+      - {x: 19.46804, y: -34.3899}
+      - {x: 19.911959, y: -38.36032}
+    movementSpeed: 4
+    framesToWait: 200
     activateStates:
     - Shooting
     deActivateStates:
     - Shooting
+  - rotate: 3
+    endAngle: 0
+    angleSpeed: 0
+    noOFSpins: 0
+    movement: 2
+    direction: {x: -100, y: -50}
+    spline:
+      controlPoints:
+      - {x: 0, y: 0}
+      - {x: 0, y: -1}
+      - {x: 20, y: -20}
+      - {x: 20, y: -40}
+      isClosed: 0
+      linearPoints:
+      - {x: 0, y: 0}
+      - {x: 2.497331, y: -3.1154203}
+      - {x: 5.0453706, y: -6.198707}
+      - {x: 7.4893823, y: -9.36481}
+      - {x: 9.818587, y: -12.616243}
+      - {x: 11.992279, y: -15.973332}
+      - {x: 13.990375, y: -19.437473}
+      - {x: 15.789265, y: -23.008718}
+      - {x: 17.349642, y: -26.690403}
+      - {x: 18.598883, y: -30.48847}
+      - {x: 19.46804, y: -34.3899}
+      - {x: 19.911959, y: -38.36032}
+    movementSpeed: 4
+    framesToWait: 30
+    activateStates: []
+    deActivateStates: []
   stayOnLast: 1
-  enemyPrefab: {fileID: 7978735839294584867, guid: 125e17ff06f242c4aaba5fb3412c6e74, type: 3}
+  enemyPrefab: {fileID: 7978735839294584867, guid: 2b78bdb7556313b4681fb005d441346f, type: 3}
   startActive: 0
   spawnOnEasy: 1
   spawnOnNormal: 1
-  spawnOnHard: 0
+  spawnOnHard: 1
   spawnOnInsane: 0
-  lastPosition: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastPosition: {x: 105.6, y: 2795.168, z: 0}
+  currentPosition: {x: 105.6, y: 2795.1118, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}

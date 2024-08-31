@@ -8,6 +8,7 @@ public class Beam : MonoBehaviour
     public float beamWidth = 20f;
     public Craft craft = null;
     private int layerMask;
+    public byte playerIndex = 2;
     public GameObject beamFlash;
     public GameObject[] beamHits=new GameObject[5];
     const int MINIMUMCHARGE = 10;
@@ -134,7 +135,7 @@ public class Beam : MonoBehaviour
                         pos.y += Random.Range(-3f, 3f);
                         beamHits[i].transform.position = pos;
                         beamHits[i].SetActive(true);
-                        lowestShootable.TakeDamage(craft.craftData.beamPower+1);
+                        lowestShootable.TakeDamage(craft.craftData.beamPower+1,playerIndex);
                     }
                     else
                     {

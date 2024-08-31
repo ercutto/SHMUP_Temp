@@ -39,7 +39,7 @@ Material:
     m_Floats:
     - _QueueControl: 0
     m_Colors:
-    - _Overbrigth: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 0}
+    - _Overbrigth: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5306274264086701770
 MonoBehaviour:

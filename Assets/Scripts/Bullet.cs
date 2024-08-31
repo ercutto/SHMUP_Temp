@@ -6,6 +6,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
    public int index;// index in to bullet pool
+   public int playerIndex;
 }
 [Serializable]
 public struct BulletData

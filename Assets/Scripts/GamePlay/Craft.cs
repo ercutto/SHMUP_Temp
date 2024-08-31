@@ -31,6 +31,8 @@ public class Craft : MonoBehaviour
     const int INVUNERABLELENGTH = 120;
     public CraftConfiguration config;
 
+    public static int MAXIMUMBEAMCHARGE = 64;
+
     SpriteRenderer spriteRenderer = null;
     int layerMask=0;
     int pickUpLayer = 0;
@@ -69,6 +71,17 @@ public class Craft : MonoBehaviour
 
         if (InputManager.instance && alive)
         {
+            //chain Drop
+            if (GameManager.Instance.playerDatas[playerIndex].chainTimer > 0)
+            {
+                GameManager.Instance.playerDatas[playerIndex].chainTimer--;
+                if (GameManager.Instance.playerDatas[playerIndex].chainTimer == 0)
+                {
+                    GameManager.Instance.playerDatas[playerIndex].chain = 0;
+                }
+            }
+
+            //invunerable flashing
             if (invunerable)
             {
                 if (invunerableTimer % 12 < 6)
@@ -129,8 +142,10 @@ public class Craft : MonoBehaviour
                             PickingUp(hit.GetComponent<PickUp>());
                         }
                         else//bullet Graze
+                        if(craftData.beamCharge<MAXIMUMBEAMCHARGE)
                         {
                             craftData.beamCharge++;
+                            craftData.beamTimer++;
                         }
 
                     }
@@ -161,9 +176,10 @@ public class Craft : MonoBehaviour
             //shooting
             if (InputManager.instance.playerState[playerIndex].shoot)
             {
-                
+               
                 ShotConfiguration shotConfiguration = config.shotLevel[craftData.ShotPower];
                 
+
                 for (int spawner = 0; spawner < 5; spawner++)
                 {
                     Debug.Log("spawner: "+spawner);
@@ -276,13 +292,16 @@ public class Craft : MonoBehaviour
             craftData.smallBombs--;
             Vector3 pos = transform.position;
             pos.y += 100;
-            Instantiate(bombPrefeb, pos, Quaternion.identity);
+            Bomb bomb= Instantiate(bombPrefeb, pos, Quaternion.identity).GetComponent<Bomb>();
+            if(bomb)
+                bomb.playerIndex=(byte)playerIndex;
         }
     }
     public void PowerUp(byte powerLevel)
     {
+        
         craftData.ShotPower += powerLevel;
-        if (powerLevel > 8) powerLevel = 8;
+        if (craftData.ShotPower>9) craftData.ShotPower = 9;
     }
     public void OneUp()
     {
@@ -310,6 +329,7 @@ public class Craft : MonoBehaviour
     public void IncreaseScore(int value)
     {
         GameManager.Instance.playerDatas[playerIndex].score += value;
+        GameManager.Instance.playerDatas[playerIndex].stageScore += value;
     }
     public void Explode()
     {

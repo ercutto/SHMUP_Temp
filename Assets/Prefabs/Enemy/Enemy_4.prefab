@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fbd2c4ff6292fe44a6ec45c23f7bf6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletType: 39
+  bulletType: 35
   sequence:
     emmitTimes: 000000000200000004000000
     totalFrames: 10
@@ -62,7 +62,7 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 1
-  isPlayer: 0
+  playerIndex: 2
 --- !u!1 &1811722043559669774
 GameObject:
   m_ObjectHideFlags: 0

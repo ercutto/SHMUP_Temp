@@ -107,12 +107,13 @@ public class BulletManager : MonoBehaviour
         }
         return -1;
     }
-    public Bullet SpawnBullet(BulletType type,float x, float y,float dX,float dY,float angle,float dAngle,bool hooming)
+    public Bullet SpawnBullet(BulletType type,float x, float y,float dX,float dY,float angle,float dAngle,bool hooming,byte playerIndex)
     {
         int bulletIndex=NextFreeBulletIndex(type);
         if (bulletIndex > -1)
         {
             Bullet result = bullets[bulletIndex];
+            result.playerIndex = playerIndex;
             result.gameObject.SetActive(true);
             bulletData[bulletIndex] = new BulletData(x,y,dX,dY,angle,dAngle,(int)type,true,hooming);
             bullets[bulletIndex].gameObject.transform.position=new Vector3(x,y,0);
@@ -185,8 +186,8 @@ public class BulletManager : MonoBehaviour
             x = x + dX;
             y = y + dY;
             
-            if (x < -110) active = false;
-            if (x > 110) active = false;
+            if (x < -150) active = false;
+            if (x > 150) active = false;
             if (y-progressY < -180) active = false;
             if (y-progressY > 180) active = false;
 

@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
+  playerIndex: 0
 --- !u!65 &3505867798796770197
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -133,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6dbba22743e15f40b53957f1eed144f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 1
   radiusOrHeigth: 10
   hight: 10
   box: 0

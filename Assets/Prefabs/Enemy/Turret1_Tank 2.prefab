@@ -226,7 +226,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b3595f3ee6f6b1f4e9e6665b8cec008b, type: 2}
+  - {fileID: 2100000, guid: 05b437f093d4f1b48b6b5c5900a3b69c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -247,7 +247,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 2df74b4eef06804408f708dad724552d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 361757393ba43804b92759ed37e5c485, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -289,7 +289,7 @@ MonoBehaviour:
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
-  spawnCyclicPickUp: 0
+  spawnCyclicPickUp: 1
   spawnSpecificPickUp: []
 --- !u!65 &6496152850087524641
 BoxCollider:
@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 8201011237820654441}
   - component: {fileID: 8753545354389616279}
   m_Layer: 11
-  m_Name: Turret1_Norm
+  m_Name: Turret1_Tank 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -416,7 +416,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b3595f3ee6f6b1f4e9e6665b8cec008b, type: 2}
+  - {fileID: 2100000, guid: 65a10cb3f2d88cf4db57050b0baf0aa2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

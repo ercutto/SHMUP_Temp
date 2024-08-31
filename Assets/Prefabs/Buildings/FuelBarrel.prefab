@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8666939495140050326
 SpriteRenderer:
@@ -102,9 +102,12 @@ MonoBehaviour:
   radiusOrHeigth: 10
   hight: 10
   box: 0
-  DamageByBullets: 0
+  DamageByBullets: 1
   DamageByBeams: 0
-  DamageByBombs: 1
+  DamageByBombs: 0
+  spawnCyclicPickUp: 0
+  spawnSpecificPickUp:
+  - {fileID: 746616260687845034, guid: 1faea1660e22b4c41854f3f22a706994, type: 3}
 --- !u!135 &1715117618358689929
 SphereCollider:
   m_ObjectHideFlags: 0

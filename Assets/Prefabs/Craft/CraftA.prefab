@@ -63,7 +63,7 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
-  isPlayer: 1
+  playerIndex: 2
 --- !u!1 &934210384823399550
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
-  isPlayer: 1
+  playerIndex: 2
 --- !u!1 &970638287954419113
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,7 +426,7 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
-  isPlayer: 0
+  playerIndex: 0
 --- !u!1 &1200829996836913564
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +490,7 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
-  isPlayer: 1
+  playerIndex: 2
 --- !u!1 &1219220731463155314
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +621,7 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
-  isPlayer: 0
+  playerIndex: 0
 --- !u!1 &1479866379566264629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,7 +1197,7 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
-  isPlayer: 1
+  playerIndex: 0
 --- !u!1 &3487488284238214269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,7 +1358,7 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
-  isPlayer: 1
+  playerIndex: 0
 --- !u!1 &4102454011168741551
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,7 +1599,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 1755158310, guid: 0b5fd0bbfacf80c438e1c98b20edc709, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1674,7 +1674,7 @@ MonoBehaviour:
   - {fileID: 3546531432911715065}
   - {fileID: 5141706531294137017}
   - {fileID: 1691785496192040870}
-  screenSize: 110
+  screenSize: 140
   bombPrefeb: {fileID: 5291437734680056022, guid: d00dfc142c8be1a49a66f6eed2fe7010, type: 3}
   beam: {fileID: 4510467499539498804}
 --- !u!95 &8137849255037182369
@@ -2290,7 +2290,7 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
-  isPlayer: 1
+  playerIndex: 0
 --- !u!1 &6361272745918106317
 GameObject:
   m_ObjectHideFlags: 0
@@ -2483,7 +2483,7 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
-  isPlayer: 0
+  playerIndex: 0
 --- !u!1 &6463020728886008019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2547,7 +2547,7 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
-  isPlayer: 1
+  playerIndex: 0
 --- !u!1 &6511526953879660791
 GameObject:
   m_ObjectHideFlags: 0
@@ -3128,7 +3128,7 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
-  isPlayer: 1
+  playerIndex: 0
 --- !u!1 &7577443928681750022
 GameObject:
   m_ObjectHideFlags: 0
@@ -3420,6 +3420,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 2321253890557525768}
   beamWidth: 20
   craft: {fileID: 3123210103532429661}
+  playerIndex: 0
   beamFlash: {fileID: 6511526953879660791}
   beamHits:
   - {fileID: 4746792743054963738}
@@ -3709,7 +3710,7 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
-  isPlayer: 1
+  playerIndex: 2
 --- !u!1 &8298989442182023774
 GameObject:
   m_ObjectHideFlags: 0
@@ -4070,7 +4071,7 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
-  isPlayer: 0
+  playerIndex: 0
 --- !u!1 &8765733897370967998
 GameObject:
   m_ObjectHideFlags: 0

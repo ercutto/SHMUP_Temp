@@ -32,13 +32,13 @@ public class BulletSpawner : MonoBehaviour
     public bool hedefeAtes=false;
 
     public bool hooming = false;
-    public bool isPlayer = false;
-
+    //public bool isPlayer = false;
+    public byte playerIndex = 2;// > 1 is enemy
     public void Shoot(int size)
     {
         if (size < 0) return;
 
-        if (!isPlayer)
+        if (playerIndex>1)//its not a player
         {
             float x =transform.position.x;
             if (GameManager.Instance && GameManager.Instance.progressWindow)
@@ -86,7 +86,7 @@ public class BulletSpawner : MonoBehaviour
                 Vector2 velocity = myRotatioton * primaryDirection * speed;
 
                 BulletManager.BulletType bulletToShoot = bulletType + size;
-                GameManager.Instance.bulletManager.SpawnBullet(bulletToShoot, transform.position.x, transform.position.y, velocity.x, velocity.y, angle, dAngle, hooming);
+                GameManager.Instance.bulletManager.SpawnBullet(bulletToShoot, transform.position.x, transform.position.y, velocity.x, velocity.y, angle, dAngle, hooming,playerIndex);
             }
             else
             {
@@ -96,7 +96,7 @@ public class BulletSpawner : MonoBehaviour
                     Vector2 velocity = myRotatioton * primaryDirection * speed;
 
                     BulletManager.BulletType bulletToShoot = bulletType + size;
-                    GameManager.Instance.bulletManager.SpawnBullet(bulletToShoot, transform.position.x, transform.position.y, velocity.x, velocity.y, angle, dAngle, hooming);
+                    GameManager.Instance.bulletManager.SpawnBullet(bulletToShoot, transform.position.x, transform.position.y, velocity.x, velocity.y, angle, dAngle, hooming,playerIndex);
                     angle = angle + ((endAngle - startAngle) / (radialNumber - 1));
                 }
             }
