@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 4744290776004296149}
   - component: {fileID: 7542945720600645854}
   - component: {fileID: 5299434779569744852}
-  - component: {fileID: 6496152850087524641}
+  - component: {fileID: 6680364217431826364}
   m_Layer: 11
   m_Name: TurretBase
   m_TagString: Untagged
@@ -285,19 +285,22 @@ MonoBehaviour:
   health: 4
   radiusOrHeigth: 10
   hight: 10
-  box: 0
+  box: 1
+  polygon: 0
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
   spawnCyclicPickUp: 1
   spawnSpecificPickUp: []
---- !u!65 &6496152850087524641
-BoxCollider:
+--- !u!61 &6680364217431826364
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4665043287505516083}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -306,12 +309,34 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 22, y: 23, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 44, y: 29}
+    newSize: {x: 22, y: 23}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 44, y: 29}
+  m_EdgeRadius: 0
 --- !u!1 &5164929770499456011
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 
 public class EnemyBeam : MonoBehaviour
@@ -54,16 +55,17 @@ public class EnemyBeam : MonoBehaviour
         if (!charging)
         {
             int maxColliders = 20;
-            Collider[] hits = new Collider[maxColliders];
+            Collider2D[] hits = new Collider2D[maxColliders];
             Vector2 center = Vector2.Lerp(transform.position, endPoint.transform.position, 0.5f);
             Vector2 halfsize = new Vector2(beamWidth * 0.5f, (endPoint.transform.position - transform.position).magnitude * 0.5f);
 
-            int noOfHits = Physics.OverlapBoxNonAlloc(center, halfsize, hits, transform.rotation, layerMask);
+            int noOfHits = Physics2D.OverlapBoxNonAlloc(center, halfsize, transform.eulerAngles.z, hits, layerMask);
             for (int i = 0; i < noOfHits; i++)
             {
                 Craft craft = hits[i].GetComponent<Craft>();
                 if (craft)
                 {
+                    //endPoint.transform.position=craft.transform.position;
                     craft.Hit();
                 }
             }
@@ -73,7 +75,7 @@ public class EnemyBeam : MonoBehaviour
         }
         else
         {
-
+            
             lineRenderer.startWidth = 1;
             lineRenderer.endWidth = 1;
             chargeTimer--;
@@ -87,9 +89,11 @@ public class EnemyBeam : MonoBehaviour
                     beamFlash.SetActive(true);
                 }
             }
-            lineRenderer.SetPosition(0, transform.position);
-
-            lineRenderer.SetPosition(1, endPoint.transform.position);
+           
         }
+
+        lineRenderer.SetPosition(0, transform.position);
+
+        lineRenderer.SetPosition(1, endPoint.transform.position);
     }
 }

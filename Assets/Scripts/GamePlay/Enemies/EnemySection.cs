@@ -10,7 +10,10 @@ public class EnemySection : MonoBehaviour
         foreach (EnemyState state in states)
         {
             if (state.stateName == name)
+            {
+                Debug.Log("EnabledState:" + state.stateName);
                 state.Enable();
+            }
         }
     }
     public void DisableState(string name)
@@ -18,7 +21,29 @@ public class EnemySection : MonoBehaviour
         foreach (EnemyState state in states)
         {
             if (state.stateName == name)
+            {
+                Debug.Log("DisabledState:" + state.stateName);
                 state.Disable();
+            }
+        }
+    }
+
+    public void UpdateStateTimer()
+    {
+        foreach (EnemyState state in states)
+        {
+            if (state.active)
+                state.IncrimentTime();
+          
+        }
+
+    }
+    public void TimeOutMessage()
+    {
+        Enemy enemy=transform.parent.GetComponent<Enemy>();
+        if (enemy)
+        {
+            enemy.TimeOutDistruct();
         }
     }
 }

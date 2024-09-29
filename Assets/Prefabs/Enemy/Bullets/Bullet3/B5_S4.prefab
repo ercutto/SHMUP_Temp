@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4167764237884777037}
   - component: {fileID: 5007248990348301613}
   - component: {fileID: 7426957234259115727}
-  - component: {fileID: -7783396469183810299}
   - component: {fileID: -4367477138161481121}
+  - component: {fileID: -9174701669486727735}
   m_Layer: 8
   m_Name: B5_S4
   m_TagString: Untagged
@@ -100,27 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
---- !u!65 &-7783396469183810299
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2427375083730127194}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 6.2023077, y: 38.586567, z: 0.2}
-  m_Center: {x: -0.08282423, y: 18.92533, z: 0}
+  playerIndex: 0
 --- !u!114 &-4367477138161481121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,8 +117,56 @@ MonoBehaviour:
   radiusOrHeigth: 10
   hight: 10
   box: 1
+  polygon: 0
+  remainDestroyed: 0
+  damageHealth: 5
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
   spawnCyclicPickUp: 0
   spawnSpecificPickUp: []
+--- !u!61 &-9174701669486727735
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2427375083730127194}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 19}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 6, y: 38}
+    newSize: {x: 6, y: 38}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6, y: 38}
+  m_EdgeRadius: 0

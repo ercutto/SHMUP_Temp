@@ -32,6 +32,7 @@ public class BulletSpawner : MonoBehaviour
     public bool hedefeAtes=false;
 
     public bool hooming = false;
+    public bool ShootOutOfScreen = false;
     //public bool isPlayer = false;
     public byte playerIndex = 2;// > 1 is enemy
     public void Shoot(int size)
@@ -43,14 +44,23 @@ public class BulletSpawner : MonoBehaviour
             float x =transform.position.x;
             if (GameManager.Instance && GameManager.Instance.progressWindow)
                 x-=GameManager.Instance.progressWindow.data.positionX;
-            if(x<-140||x>140)
-                return;
+            if (!ShootOutOfScreen)
+            {
+                if (x < -140 || x > 140)
+                    return;
+
+            }
+            
             
             float y =transform.position.y;
             if (GameManager.Instance && GameManager.Instance.progressWindow)
                 y -= GameManager.Instance.progressWindow.data.positionY;
-            if(y<-175||y>175)
-                return;
+            if (ShootOutOfScreen)
+            {
+                if (y < -175 || y > 175)
+                    return;
+            }
+            
         }
         Vector2 primaryDirection = transform.up;
        

@@ -8,6 +8,13 @@ public class Shootable : MonoBehaviour
     public float radiusOrHeigth = 10;
     public float hight = 10;
     public bool box = false;
+    public bool polygon = false;
+
+    public bool remainDestroyed = false;
+    private bool destroyed = false;
+    public int damageHealth = 5;//at what health is damage sprite displayed
+
+    private Collider2D polyCollider;
     private int layerMask = 0;
 
     private Vector2 halfExtend;
@@ -23,19 +30,35 @@ public class Shootable : MonoBehaviour
     {
         layerMask = ~LayerMask.GetMask("Enemy") & ~LayerMask.GetMask("EnemyBullets")
             & ~LayerMask.GetMask("GroundEnemy");
-        halfExtend = new Vector3(radiusOrHeigth / 2, hight / 2, 0);
+        if (polygon)
+        {
+            polyCollider = GetComponent<Collider2D>();
+            Debug.Assert(polyCollider);
+        }
+        else
+            halfExtend = new Vector3(radiusOrHeigth / 2, hight / 2, 0);
     }
 
     private void FixedUpdate()
     {
+        if (destroyed) return;
+
         int maxColliders = 10;
-        Collider[] hits=new Collider[maxColliders];
+        Collider2D[] hits=new Collider2D[maxColliders];
 
         int noOfHits = 0;
         if(box)
-            noOfHits = Physics.OverlapBoxNonAlloc(transform.position, halfExtend, hits,transform.rotation, layerMask);
+            noOfHits = Physics2D.OverlapBoxNonAlloc(transform.position, halfExtend,0, hits,/*transform.rotation,*/ layerMask);
+        else if (polygon)
+        {
+            ContactFilter2D contactFilter = new ContactFilter2D();
+            contactFilter.useTriggers=false;
+            contactFilter.SetLayerMask(layerMask);
+            contactFilter.useLayerMask = true;
+            noOfHits = Physics2D.OverlapCollider(polyCollider, contactFilter, hits);
+        }
         else
-            noOfHits = Physics.OverlapSphereNonAlloc(transform.position, radiusOrHeigth, hits, layerMask);
+            noOfHits = Physics2D.OverlapCircleNonAlloc(transform.position, radiusOrHeigth, hits, layerMask);
 
         if(noOfHits > 0)
         {
@@ -79,9 +102,25 @@ public class Shootable : MonoBehaviour
     }
     public void TakeDamage(int amount,byte fromPlayer)
     {
+        if(destroyed) return;
+
         health -= amount;
+
+        EnemyPart part=GetComponent<EnemyPart>();
+        if (part)
+        {
+            if (health <= damageHealth)
+                part.Damaged(true);
+            else
+                part.Damaged(false);
+        }
+
         if(health <= 0)
         {
+            destroyed = true;
+            if(part)
+                part.Destroyed();
+
             if(fromPlayer < 2)
             {
                 GameManager.Instance.playerDatas[fromPlayer].chain++;
@@ -112,8 +151,11 @@ public class Shootable : MonoBehaviour
                     Debug.LogError("Failed to spawn pickup!");
                 }
             }
-
-            Destroy(gameObject);
+            if (remainDestroyed)
+                destroyed = true;
+            else
+                gameObject.SetActive(false);
+            
         }
     }
 }

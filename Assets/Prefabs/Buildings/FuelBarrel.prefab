@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5578973364492854308}
   - component: {fileID: 8666939495140050326}
   - component: {fileID: 1291286959626788634}
-  - component: {fileID: 1715117618358689929}
+  - component: {fileID: -9008899892671193203}
   m_Layer: 11
   m_Name: FuelBarrel
   m_TagString: Untagged
@@ -102,19 +102,24 @@ MonoBehaviour:
   radiusOrHeigth: 10
   hight: 10
   box: 0
+  polygon: 0
+  remainDestroyed: 0
+  damageHealth: 5
   DamageByBullets: 1
   DamageByBeams: 0
   DamageByBombs: 0
   spawnCyclicPickUp: 0
   spawnSpecificPickUp:
   - {fileID: 746616260687845034, guid: 1faea1660e22b4c41854f3f22a706994, type: 3}
---- !u!135 &1715117618358689929
-SphereCollider:
+--- !u!58 &-9008899892671193203
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4943131909188568256}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -123,9 +128,21 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 11.787115
-  m_Center: {x: -2.487113, y: 2.0391903, z: 0}
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 14.5

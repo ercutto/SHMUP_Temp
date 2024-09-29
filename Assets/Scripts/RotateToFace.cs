@@ -8,11 +8,13 @@ public class RotateToFace : MonoBehaviour
     public bool faceTarget = false;
     public GameObject target = null;
     private bool active = false;
+    public bool isBoss = false;
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (active)
+        
+        if (active||isBoss)
         {
            
             if (facePlayer || faceTarget)

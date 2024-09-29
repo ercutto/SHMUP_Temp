@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4429593086047900763}
   - component: {fileID: 4021141422555997703}
   - component: {fileID: 8829479774815954640}
-  - component: {fileID: 4765312040941760905}
+  - component: {fileID: 3747537105428059960}
   m_Layer: 11
   m_Name: LargeTank
   m_TagString: Untagged
@@ -102,19 +102,24 @@ MonoBehaviour:
   radiusOrHeigth: 10
   hight: 10
   box: 0
+  polygon: 0
+  remainDestroyed: 0
+  damageHealth: 5
   DamageByBullets: 0
   DamageByBeams: 0
   DamageByBombs: 1
   spawnCyclicPickUp: 0
   spawnSpecificPickUp:
   - {fileID: 6313882423004027404, guid: f1fa3016c07f0a7429c25833cf5637e9, type: 3}
---- !u!135 &4765312040941760905
-SphereCollider:
+--- !u!58 &3747537105428059960
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021699262732151504}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -123,9 +128,21 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 24.062603
-  m_Center: {x: -5.2050495, y: 4.081421, z: 0}
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 27

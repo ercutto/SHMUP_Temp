@@ -62,7 +62,8 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 1
-  isPlayer: 0
+  ShootOutOfScreen: 0
+  playerIndex: 2
 --- !u!1 &1811722043559669774
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3912500861756722121}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: endPoint
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -106,7 +107,7 @@ GameObject:
   - component: {fileID: 1958306946136062828}
   - component: {fileID: 5811348294071596172}
   - component: {fileID: 421923918644820374}
-  - component: {fileID: 4541866609006508746}
+  - component: {fileID: 8200368149522372895}
   m_Layer: 7
   m_Name: Main_Part
   m_TagString: Untagged
@@ -144,6 +145,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32d7f20335cd20498cc084b398d9ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyed: 0
+  damaged: 0
+  usingDamageSprite: 0
+  damageVersion: {fileID: 0}
+  destroyedVersion: {fileID: 0}
+  triggerDestroyed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5811348294071596172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,10 +168,15 @@ MonoBehaviour:
   health: 10
   radiusOrHeigth: 10
   hight: 10
-  box: 0
+  box: 1
+  polygon: 0
+  remainDestroyed: 0
+  damageHealth: 5
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
+  spawnCyclicPickUp: 0
+  spawnSpecificPickUp: []
 --- !u!212 &421923918644820374
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -215,13 +229,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &4541866609006508746
-BoxCollider:
+--- !u!61 &8200368149522372895
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2186486304743470749}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -230,12 +246,34 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 28, y: 28, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 27, y: 28}
+    newSize: {x: 0.27, y: 0.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 27, y: 28}
+  m_EdgeRadius: 0
 --- !u!1 &4622689671597401185
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +285,7 @@ GameObject:
   - component: {fileID: 7058513676716799908}
   - component: {fileID: 7967276444420874025}
   - component: {fileID: 9169129221688385510}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,6 +478,10 @@ MonoBehaviour:
     positionX: 0
     positionY: 0
     patternUID: 0
+  rules: []
+  isBoss: 0
+  timeOut: 3600
+  timeOutParameterName: 
 --- !u!1 &8608729769368474474
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,19 +529,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   states:
   - stateName: Nothing
+    active: 0
     eventOnStart:
       m_PersistentCalls:
         m_Calls: []
     eventOnEnd:
       m_PersistentCalls:
         m_Calls: []
-    evenOnTime:
+    eventOnTime:
       m_PersistentCalls:
         m_Calls: []
     useTimer: 0
     timer: 0
     currentTime: 0
   - stateName: Shooting
+    active: 0
     eventOnStart:
       m_PersistentCalls:
         m_Calls:
@@ -530,26 +574,28 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    evenOnTime:
+    eventOnTime:
       m_PersistentCalls:
         m_Calls: []
     useTimer: 0
     timer: 0
     currentTime: 0
   - stateName: Nothing
+    active: 0
     eventOnStart:
       m_PersistentCalls:
         m_Calls: []
     eventOnEnd:
       m_PersistentCalls:
         m_Calls: []
-    evenOnTime:
+    eventOnTime:
       m_PersistentCalls:
         m_Calls: []
     useTimer: 0
     timer: 0
     currentTime: 0
   - stateName: Shooting
+    active: 0
     eventOnStart:
       m_PersistentCalls:
         m_Calls:
@@ -580,7 +626,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    evenOnTime:
+    eventOnTime:
       m_PersistentCalls:
         m_Calls: []
     useTimer: 0
@@ -657,6 +703,10 @@ PrefabInstance:
     - target: {fileID: 7571138067026514613, guid: b6523794c498f5043aa553a220892bc1, type: 3}
       propertyPath: m_Name
       value: BeamFlash
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571138067026514613, guid: b6523794c498f5043aa553a220892bc1, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
