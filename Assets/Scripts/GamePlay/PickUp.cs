@@ -57,7 +57,8 @@ public class PickUp : MonoBehaviour
         {
             case PickupType.Coin:
                 {
-                    GameManager.Instance.playerCrafts[playerIndex].IncreaseScore(config.coinValue);
+                    ScoreManager.instance.PickupCollected(playerIndex, config.coinValue);
+                    //GameManager.Instance.playerCrafts[playerIndex].IncreaseScore(config.coinValue);
                     break;
 
                 }
@@ -68,32 +69,33 @@ public class PickUp : MonoBehaviour
                 }
             case PickupType.PowerUp:
                 {
-                    GameManager.Instance.playerCrafts[playerIndex].PowerUp((byte)config.powerLevel);
+                    GameManager.Instance.playerCrafts[playerIndex].PowerUp((byte)config.powerLevel,config.surplusValue);
                     break;
                 }
             case PickupType.Lives:
                 {
-                    GameManager.Instance.playerCrafts[playerIndex].OneUp();
+                    GameManager.Instance.playerCrafts[playerIndex].OneUp(config.surplusValue);
                     break;
                 }
             case PickupType.Secret:
                 {
-                    GameManager.Instance.playerCrafts[playerIndex].IncreaseScore(config.coinValue);
+                    ScoreManager.instance.PickupCollected(playerIndex, config.coinValue);
+                    //GameManager.Instance.playerCrafts[playerIndex].IncreaseScore(config.coinValue);
                     break;
                 }
             case PickupType.BeamUp:
                 {
-                    GameManager.Instance.playerCrafts[playerIndex].IncreaseBeamStrength();
+                    GameManager.Instance.playerCrafts[playerIndex].IncreaseBeamStrength(config.surplusValue);
                     break;
                 }
             case PickupType.Options:
                 {
-                    GameManager.Instance.playerCrafts[playerIndex].AddOption();
+                    GameManager.Instance.playerCrafts[playerIndex].AddOption(config.surplusValue);
                     break;
                 }
             case PickupType.Bomb:
                 {
-                    GameManager.Instance.playerCrafts[playerIndex].AddBomb(config.bombPower);
+                    GameManager.Instance.playerCrafts[playerIndex].AddBomb(config.bombPower,config.surplusValue);
                     break;
                 }
             case PickupType.Medal:

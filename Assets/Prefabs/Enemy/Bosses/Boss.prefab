@@ -207,6 +207,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroyedByPlayer: 2
 --- !u!58 &6226597782140578568
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -261,6 +262,8 @@ MonoBehaviour:
   polygon: 0
   remainDestroyed: 0
   damageHealth: 10
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
@@ -474,6 +477,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroyedByPlayer: 2
 --- !u!114 &2901986840721240707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,6 +497,8 @@ MonoBehaviour:
   polygon: 0
   remainDestroyed: 0
   damageHealth: 15
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
@@ -653,6 +659,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroyedByPlayer: 2
 --- !u!60 &1713908869955454822
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -721,6 +728,8 @@ MonoBehaviour:
   polygon: 1
   remainDestroyed: 1
   damageHealth: 5
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
@@ -968,6 +977,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroyedByPlayer: 2
 --- !u!60 &1984670757525353396
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1036,6 +1046,8 @@ MonoBehaviour:
   polygon: 1
   remainDestroyed: 1
   damageHealth: 10
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
@@ -1186,6 +1198,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroyedByPlayer: 2
 --- !u!114 &5426571687261313421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1205,6 +1218,8 @@ MonoBehaviour:
   polygon: 1
   remainDestroyed: 1
   damageHealth: 10
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
@@ -1366,6 +1381,7 @@ MonoBehaviour:
   triggerDestroyed:
     m_PersistentCalls:
       m_Calls: []
+  destroyedByPlayer: 2
 --- !u!114 &5307501147129737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1630,6 +1646,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroyedByPlayer: 2
 --- !u!60 &2618749589845691132
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1698,6 +1715,8 @@ MonoBehaviour:
   polygon: 1
   remainDestroyed: 1
   damageHealth: 100
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
@@ -1887,6 +1906,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroyedByPlayer: 2
 --- !u!114 &8503444754951588287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1906,6 +1926,8 @@ MonoBehaviour:
   polygon: 1
   remainDestroyed: 1
   damageHealth: 5
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
@@ -2512,32 +2534,6 @@ MonoBehaviour:
     useTimer: 1
     timer: 120
     currentTime: 0
-  - stateName: GoingNuts
-    active: 0
-    eventOnStart:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 504786993137297290}
-          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-          m_MethodName: SetTrigger
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: GoneNuts
-            m_BoolArgument: 0
-          m_CallState: 2
-    eventOnEnd:
-      m_PersistentCalls:
-        m_Calls: []
-    eventOnTime:
-      m_PersistentCalls:
-        m_Calls: []
-    useTimer: 0
-    timer: 0
-    currentTime: 0
   - stateName: Dying
     active: 0
     eventOnStart:
@@ -2636,7 +2632,7 @@ MonoBehaviour:
         - m_Target: {fileID: 7371944836383662740}
           m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
           m_MethodName: Destroyed
-          m_Mode: 1
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2647,6 +2643,32 @@ MonoBehaviour:
           m_CallState: 2
     useTimer: 1
     timer: 120
+    currentTime: 0
+  - stateName: GoingNuts
+    active: 0
+    eventOnStart:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 504786993137297290}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: GoneNuts
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventOnEnd:
+      m_PersistentCalls:
+        m_Calls: []
+    eventOnTime:
+      m_PersistentCalls:
+        m_Calls: []
+    useTimer: 0
+    timer: 0
     currentTime: 0
 --- !u!95 &504786993137297290
 Animator:
@@ -2789,6 +2811,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroyedByPlayer: 2
 --- !u!60 &2001831715986086944
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2857,6 +2880,8 @@ MonoBehaviour:
   polygon: 1
   remainDestroyed: 1
   damageHealth: 5
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
@@ -2982,6 +3007,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroyedByPlayer: 2
 --- !u!60 &4309592530984510423
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3051,6 +3077,8 @@ MonoBehaviour:
   polygon: 1
   remainDestroyed: 1
   damageHealth: 100
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
@@ -3201,6 +3229,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroyedByPlayer: 2
 --- !u!114 &1422354951481457617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3220,6 +3249,8 @@ MonoBehaviour:
   polygon: 1
   remainDestroyed: 1
   damageHealth: 20
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
@@ -3394,6 +3425,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroyedByPlayer: 2
 --- !u!60 &3217022091423365527
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3462,6 +3494,8 @@ MonoBehaviour:
   polygon: 1
   remainDestroyed: 1
   damageHealth: 5
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
@@ -3611,6 +3645,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroyedByPlayer: 2
 --- !u!114 &5777105126668232432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3630,6 +3665,8 @@ MonoBehaviour:
   polygon: 0
   remainDestroyed: 0
   damageHealth: 15
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
@@ -3811,6 +3848,8 @@ MonoBehaviour:
   polygon: 0
   remainDestroyed: 1
   damageHealth: 150
+  hitScore: 10
+  destroyScore: 10000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
@@ -3848,6 +3887,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroyedByPlayer: 2
 --- !u!1 &5754288413671084746
 GameObject:
   m_ObjectHideFlags: 0
@@ -3955,6 +3995,7 @@ MonoBehaviour:
   triggerDestroyed:
     m_PersistentCalls:
       m_Calls: []
+  destroyedByPlayer: 2
 --- !u!114 &7231040150728375520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4417,6 +4458,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroyedByPlayer: 2
 --- !u!114 &2407346255871158830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4436,6 +4478,8 @@ MonoBehaviour:
   polygon: 0
   remainDestroyed: 0
   damageHealth: 10
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
@@ -4807,6 +4851,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroyedByPlayer: 2
 --- !u!1 &7805869432771518335
 GameObject:
   m_ObjectHideFlags: 0
@@ -4952,6 +4997,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroyedByPlayer: 2
 --- !u!60 &6322297858043773036
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5020,6 +5066,8 @@ MonoBehaviour:
   polygon: 1
   remainDestroyed: 1
   damageHealth: 10
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
@@ -5170,6 +5218,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroyedByPlayer: 2
 --- !u!60 &924147294318101484
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5238,6 +5287,8 @@ MonoBehaviour:
   polygon: 1
   remainDestroyed: 1
   damageHealth: 10
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1

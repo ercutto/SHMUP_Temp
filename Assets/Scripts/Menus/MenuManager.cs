@@ -31,6 +31,8 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("OptionsMenu", LoadSceneMode.Additive);
         SceneManager.LoadScene("YesNoMenu", LoadSceneMode.Additive);
         SceneManager.LoadScene("ControllerMenu", LoadSceneMode.Additive);
+        //Debug Scene
+        SceneManager.LoadScene("DebugHUDScene", LoadSceneMode.Additive);
 
     }
     public void SwitchToMainMenuMenus()
@@ -54,7 +56,8 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("YesNoMenu", LoadSceneMode.Additive);
         SceneManager.LoadScene("TitleSceneMenu", LoadSceneMode.Additive);
         SceneManager.LoadScene("ControllerMenu", LoadSceneMode.Additive);
-
+        //Debug Scene
+        SceneManager.LoadScene("DebugHUDScene", LoadSceneMode.Additive);
 
     }
 }

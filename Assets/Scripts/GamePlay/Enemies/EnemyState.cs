@@ -46,7 +46,7 @@ public class EnemyState
             currentTime++;
             if (currentTime >= timer)
             {
-                Debug.Log(currentTime);
+               
                 eventOnTime.Invoke();
                 currentTime = 0;
             }

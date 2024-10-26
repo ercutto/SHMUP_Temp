@@ -15,9 +15,13 @@ public class EnemyPart : MonoBehaviour
 
     public UnityEvent triggerDestroyed;
 
-    public void Destroyed()
+    public int destroyedByPlayer = 2;
+
+    public void Destroyed(int playerIndex)
     {
         if(destroyed)return;
+
+        destroyedByPlayer = playerIndex;
 
         triggerDestroyed.Invoke();
 

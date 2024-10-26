@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: SmallCoins
   m_EditorClassIdentifier: 
   type: 2
-  powerLevel: 1
-  bombPower: 1
-  medalvalue: 100
+  powerLevel: 0
+  bombPower: 0
+  medalvalue: 0
   fallSpeed: 0
-  coinValue: 2
-  medalLevel: 1
+  coinValue: 100
+  medalLevel: 0
   surplusValue: 100

@@ -123,67 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &33089741
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 107449843253924332, guid: f1fa3016c07f0a7429c25833cf5637e9, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 107449843253924332, guid: f1fa3016c07f0a7429c25833cf5637e9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 107449843253924332, guid: f1fa3016c07f0a7429c25833cf5637e9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 65.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 107449843253924332, guid: f1fa3016c07f0a7429c25833cf5637e9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 107449843253924332, guid: f1fa3016c07f0a7429c25833cf5637e9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 107449843253924332, guid: f1fa3016c07f0a7429c25833cf5637e9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 107449843253924332, guid: f1fa3016c07f0a7429c25833cf5637e9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 107449843253924332, guid: f1fa3016c07f0a7429c25833cf5637e9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 107449843253924332, guid: f1fa3016c07f0a7429c25833cf5637e9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 107449843253924332, guid: f1fa3016c07f0a7429c25833cf5637e9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 107449843253924332, guid: f1fa3016c07f0a7429c25833cf5637e9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1968655667352854465, guid: f1fa3016c07f0a7429c25833cf5637e9, type: 3}
-      propertyPath: m_Name
-      value: midCoin
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f1fa3016c07f0a7429c25833cf5637e9, type: 3}
 --- !u!1 &35156865
 GameObject:
   m_ObjectHideFlags: 0
@@ -7931,6 +7870,7 @@ MonoBehaviour:
   lastPosition: {x: -86, y: 1828, z: 0}
   currentPosition: {x: -86, y: 1828, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1001 &41396252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8060,6 +8000,11 @@ MonoBehaviour:
   - {fileID: 2105376291}
   - {fileID: 1605198257}
   delays: []
+  waveBonus: 0
+  spawnCyclicPicup: 0
+  spawnSpecificPickup:
+  - {fileID: 8698385817329608809, guid: 3a40adb64d2d80746bdc55c843f3c0af, type: 3}
+  numberOfEnemies: 0
 --- !u!61 &63922636
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8261,6 +8206,7 @@ MonoBehaviour:
   lastPosition: {x: -93.3, y: 359.8974, z: 0}
   currentPosition: {x: -93.3, y: 359.83777, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1001 &105716305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8430,13 +8376,14 @@ MonoBehaviour:
   stayOnLast: 1
   enemyPrefab: {fileID: 8753545354389616279, guid: 8b7b1363af259fa448c0ba483dd2bb02, type: 3}
   startActive: 0
-  spawnOnEasy: 0
-  spawnOnNormal: 0
+  spawnOnEasy: 1
+  spawnOnNormal: 1
   spawnOnHard: 1
   spawnOnInsane: 1
   lastPosition: {x: -52, y: 102, z: 0}
   currentPosition: {x: -52, y: 102, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!4 &134815183
 Transform:
   m_ObjectHideFlags: 0
@@ -8622,7 +8569,7 @@ Transform:
   m_Children:
   - {fileID: 35156866}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &216986935 stripped
 Transform:
@@ -8754,6 +8701,7 @@ MonoBehaviour:
   lastPosition: {x: -1.199997, y: 1477.7, z: 0}
   currentPosition: {x: -1.199997, y: 1477.7, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &259529279
 GameObject:
   m_ObjectHideFlags: 0
@@ -8879,6 +8827,7 @@ MonoBehaviour:
   lastPosition: {x: -80.1, y: 1068.4, z: 0}
   currentPosition: {x: -80.1, y: 1068.4, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &276640876
 GameObject:
   m_ObjectHideFlags: 0
@@ -8894,7 +8843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &276640877
 Transform:
   m_ObjectHideFlags: 0
@@ -8927,7 +8876,7 @@ Transform:
   - {fileID: 1578316000}
   - {fileID: 479121483}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &276878772
 GameObject:
@@ -9009,6 +8958,10 @@ MonoBehaviour:
   - {fileID: 1080439501}
   - {fileID: 1428743461}
   delays: []
+  waveBonus: 0
+  spawnCyclicPicup: 0
+  spawnSpecificPickup: []
+  numberOfEnemies: 0
 --- !u!4 &276878775
 Transform:
   m_ObjectHideFlags: 0
@@ -9087,6 +9040,11 @@ MonoBehaviour:
   - {fileID: 752579216}
   - {fileID: 416270371}
   delays: []
+  waveBonus: 10000
+  spawnCyclicPicup: 0
+  spawnSpecificPickup:
+  - {fileID: 2171410706924830331, guid: 6a314e170e5064046a31d3dd4f2d9bb0, type: 3}
+  numberOfEnemies: 0
 --- !u!61 &321932813
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9326,6 +9284,7 @@ MonoBehaviour:
   lastPosition: {x: -78.2, y: 497, z: 0}
   currentPosition: {x: -78.2, y: 497, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &385372995
 GameObject:
   m_ObjectHideFlags: 0
@@ -9406,6 +9365,11 @@ MonoBehaviour:
   - {fileID: 1260935931}
   - {fileID: 134815182}
   delays: []
+  waveBonus: 10000
+  spawnCyclicPicup: 1
+  spawnSpecificPickup:
+  - {fileID: 2171410706924830331, guid: 6a314e170e5064046a31d3dd4f2d9bb0, type: 3}
+  numberOfEnemies: 0
 --- !u!4 &385372998
 Transform:
   m_ObjectHideFlags: 0
@@ -9559,6 +9523,7 @@ MonoBehaviour:
   lastPosition: {x: 61, y: 3248.7, z: 0}
   currentPosition: {x: 61, y: 3248.7, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &397300105
 GameObject:
   m_ObjectHideFlags: 0
@@ -9669,6 +9634,10 @@ MonoBehaviour:
   - {fileID: 259529281}
   - {fileID: 1922024137}
   delays: []
+  waveBonus: 0
+  spawnCyclicPicup: 0
+  spawnSpecificPickup: []
+  numberOfEnemies: 0
 --- !u!1 &416270369
 GameObject:
   m_ObjectHideFlags: 0
@@ -9855,6 +9824,7 @@ MonoBehaviour:
   lastPosition: {x: -109.85889, y: 1817.3, z: 0}
   currentPosition: {x: -109.91588, y: 1817.3, z: 0}
   lastAngle: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
+  owningWave: {fileID: 0}
 --- !u!4 &446585970 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5578973364492854308, guid: 1043eb6cb8c13b048a267a2e6a152913, type: 3}
@@ -54358,6 +54328,7 @@ MonoBehaviour:
   lastPosition: {x: -218.74733, y: -5444.844, z: 0}
   currentPosition: {x: -218.74733, y: -5445.344, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &619740816
 GameObject:
   m_ObjectHideFlags: 0
@@ -54373,7 +54344,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &619740817
 Transform:
   m_ObjectHideFlags: 0
@@ -54396,7 +54367,7 @@ Transform:
   - {fileID: 1955441047}
   - {fileID: 1284662543}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &727295487
 PrefabInstance:
@@ -54408,7 +54379,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8ce0b3f259ed9c44da9731d55982c0fc, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8ce0b3f259ed9c44da9731d55982c0fc, type: 3}
       propertyPath: m_LocalScale.x
@@ -55076,6 +55047,7 @@ MonoBehaviour:
   lastPosition: {x: 82.97547, y: 1829.4727, z: 0}
   currentPosition: {x: 82.920204, y: 1829.4094, z: 0}
   lastAngle: {x: 0, y: 0, z: -0.79302347, w: -0.60919106}
+  owningWave: {fileID: 0}
 --- !u!1 &766790717
 GameObject:
   m_ObjectHideFlags: 0
@@ -55201,6 +55173,7 @@ MonoBehaviour:
   lastPosition: {x: -69.8, y: 2842.3, z: 0}
   currentPosition: {x: -69.8, y: 2842.3, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1001 &768789898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55482,6 +55455,7 @@ MonoBehaviour:
   lastPosition: {x: 96, y: 3082, z: 0}
   currentPosition: {x: 96, y: 3082, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &831429726
 GameObject:
   m_ObjectHideFlags: 0
@@ -55607,6 +55581,7 @@ MonoBehaviour:
   lastPosition: {x: 131, y: 655, z: 0}
   currentPosition: {x: 131, y: 655, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &839731011
 GameObject:
   m_ObjectHideFlags: 0
@@ -56205,6 +56180,7 @@ MonoBehaviour:
   lastPosition: {x: -22.156368, y: -19372.541, z: 0}
   currentPosition: {x: -22.156368, y: -19373.041, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &848395828
 GameObject:
   m_ObjectHideFlags: 0
@@ -56220,7 +56196,7 @@ GameObject:
   m_Icon: {fileID: 2800000, guid: dd2d856ed44505a4288b7f5f50c7cebe, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &848395829
 Transform:
   m_ObjectHideFlags: 0
@@ -56238,7 +56214,7 @@ Transform:
   - {fileID: 321932811}
   - {fileID: 63922634}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &849277321
 PrefabInstance:
@@ -56439,6 +56415,7 @@ MonoBehaviour:
   lastPosition: {x: 85, y: 1518, z: 0}
   currentPosition: {x: 85, y: 1518, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &943834962
 GameObject:
   m_ObjectHideFlags: 0
@@ -56564,6 +56541,7 @@ MonoBehaviour:
   lastPosition: {x: -113, y: 2954, z: 0}
   currentPosition: {x: -113, y: 2954, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &970786102
 GameObject:
   m_ObjectHideFlags: 0
@@ -56689,6 +56667,7 @@ MonoBehaviour:
   lastPosition: {x: -29, y: 1801.6, z: 0}
   currentPosition: {x: -29, y: 1801.6, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &977378626
 GameObject:
   m_ObjectHideFlags: 0
@@ -57328,6 +57307,7 @@ MonoBehaviour:
   lastPosition: {x: 97.67328, y: 1768.3049, z: 0}
   currentPosition: {x: 97.72183, y: 1768.2312, z: 0}
   lastAngle: {x: 0, y: 0, z: 0.64208066, w: 0.7666371}
+  owningWave: {fileID: 0}
 --- !u!1 &1019137317
 GameObject:
   m_ObjectHideFlags: 0
@@ -57462,7 +57442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1037506256
 Transform:
   m_ObjectHideFlags: 0
@@ -57508,7 +57488,7 @@ Transform:
   - {fileID: 818197644}
   - {fileID: 1900030296}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1055267326
 GameObject:
@@ -57666,6 +57646,10 @@ MonoBehaviour:
   - {fileID: 39358485}
   - {fileID: 970786104}
   delays: []
+  waveBonus: 0
+  spawnCyclicPicup: 0
+  spawnSpecificPickup: []
+  numberOfEnemies: 0
 --- !u!1 &1080439500
 GameObject:
   m_ObjectHideFlags: 0
@@ -57776,6 +57760,7 @@ MonoBehaviour:
   lastPosition: {x: 142, y: 320, z: 0}
   currentPosition: {x: 142, y: 320, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!4 &1080439502
 Transform:
   m_ObjectHideFlags: 0
@@ -57831,6 +57816,7 @@ MonoBehaviour:
   lastPosition: {x: -11.398467, y: -170675.47, z: 0}
   currentPosition: {x: -11.398467, y: -170677.22, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!4 &1089520297
 Transform:
   m_ObjectHideFlags: 0
@@ -57839,12 +57825,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089520295}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.4, y: 351.5, z: 0}
+  m_LocalPosition: {x: -13.4, y: 3344, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1137622685
 GameObject:
@@ -58146,6 +58132,7 @@ MonoBehaviour:
   lastPosition: {x: -11.398467, y: -148506.47, z: 0}
   currentPosition: {x: -11.398467, y: -148508.22, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &1161101929
 GameObject:
   m_ObjectHideFlags: 0
@@ -58272,6 +58259,7 @@ MonoBehaviour:
   lastPosition: {x: -46, y: 837.912, z: 0}
   currentPosition: {x: -46, y: 837.86285, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1001 &1168506303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58388,6 +58376,11 @@ MonoBehaviour:
   - {fileID: 1161101931}
   - {fileID: 601704693}
   delays: []
+  waveBonus: 10000
+  spawnCyclicPicup: 0
+  spawnSpecificPickup:
+  - {fileID: 8698385817329608809, guid: 3a40adb64d2d80746bdc55c843f3c0af, type: 3}
+  numberOfEnemies: 0
 --- !u!61 &1207699104
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -58558,6 +58551,7 @@ MonoBehaviour:
   lastPosition: {x: 56, y: 3190, z: 0}
   currentPosition: {x: 56, y: 3190, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &1231777441
 GameObject:
   m_ObjectHideFlags: 0
@@ -58601,7 +58595,7 @@ Transform:
   m_Children:
   - {fileID: 568588183}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1235878028
 GameObject:
@@ -58636,6 +58630,10 @@ MonoBehaviour:
   patterns:
   - {fileID: 1089520296}
   delays: []
+  waveBonus: 0
+  spawnCyclicPicup: 0
+  spawnSpecificPickup: []
+  numberOfEnemies: 0
 --- !u!61 &1235878030
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -58689,12 +58687,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235878028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -300, y: 135.7, z: 0}
+  m_LocalPosition: {x: -300, y: 3135, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1246825442
 GameObject:
@@ -58821,6 +58819,7 @@ MonoBehaviour:
   lastPosition: {x: -137.2, y: 1001.7, z: 0}
   currentPosition: {x: -137.2, y: 1001.7, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &1260935930
 GameObject:
   m_ObjectHideFlags: 0
@@ -58931,6 +58930,7 @@ MonoBehaviour:
   lastPosition: {x: -80, y: 106, z: 0}
   currentPosition: {x: -80, y: 106, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!4 &1260935932
 Transform:
   m_ObjectHideFlags: 0
@@ -59056,6 +59056,10 @@ MonoBehaviour:
   - {fileID: 818197645}
   - {fileID: 1900030295}
   delays: []
+  waveBonus: 0
+  spawnCyclicPicup: 0
+  spawnSpecificPickup: []
+  numberOfEnemies: 0
 --- !u!1 &1293784973
 GameObject:
   m_ObjectHideFlags: 0
@@ -59820,6 +59824,7 @@ MonoBehaviour:
   lastPosition: {x: -37.557, y: 203.73846, z: 0}
   currentPosition: {x: -37.637413, y: 203.69685, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &1300870225
 GameObject:
   m_ObjectHideFlags: 0
@@ -59945,6 +59950,7 @@ MonoBehaviour:
   lastPosition: {x: -33, y: 2926, z: 0}
   currentPosition: {x: -33, y: 2926, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &1377611668
 GameObject:
   m_ObjectHideFlags: 0
@@ -60055,6 +60061,10 @@ MonoBehaviour:
   - {fileID: 1717284004}
   - {fileID: 1770115085}
   delays: []
+  waveBonus: 0
+  spawnCyclicPicup: 0
+  spawnSpecificPickup: []
+  numberOfEnemies: 0
 --- !u!4 &1378956187 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4429593086047900763, guid: e225163970ee33a408cae0a87ce3e58f, type: 3}
@@ -60185,6 +60195,7 @@ MonoBehaviour:
   lastPosition: {x: -166, y: 943, z: 0}
   currentPosition: {x: -166, y: 943, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1001 &1402664079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60376,6 +60387,7 @@ MonoBehaviour:
   lastPosition: {x: 113, y: 680, z: 0}
   currentPosition: {x: 113, y: 680, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &1428394172
 GameObject:
   m_ObjectHideFlags: 0
@@ -60426,6 +60438,11 @@ MonoBehaviour:
   - {fileID: 1296252270}
   - {fileID: 68184015}
   delays: []
+  waveBonus: 10000
+  spawnCyclicPicup: 1
+  spawnSpecificPickup:
+  - {fileID: 2171410706924830331, guid: 6a314e170e5064046a31d3dd4f2d9bb0, type: 3}
+  numberOfEnemies: 0
 --- !u!61 &1428394175
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60581,6 +60598,7 @@ MonoBehaviour:
   lastPosition: {x: 129, y: 261, z: 0}
   currentPosition: {x: 129, y: 261, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!4 &1428743462
 Transform:
   m_ObjectHideFlags: 0
@@ -60914,6 +60932,10 @@ MonoBehaviour:
   - {fileID: 1959419822}
   - {fileID: 852789743}
   delays: []
+  waveBonus: 0
+  spawnCyclicPicup: 0
+  spawnSpecificPickup: []
+  numberOfEnemies: 0
 --- !u!1001 &1578315999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61174,6 +61196,7 @@ MonoBehaviour:
   lastPosition: {x: 22, y: 2089, z: 0}
   currentPosition: {x: 22, y: 2089, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &1604019266
 GameObject:
   m_ObjectHideFlags: 0
@@ -61284,6 +61307,10 @@ MonoBehaviour:
   - {fileID: 1414111745}
   - {fileID: 831429728}
   delays: []
+  waveBonus: 0
+  spawnCyclicPicup: 0
+  spawnSpecificPickup: []
+  numberOfEnemies: 0
 --- !u!1 &1605198255
 GameObject:
   m_ObjectHideFlags: 0
@@ -61410,6 +61437,7 @@ MonoBehaviour:
   lastPosition: {x: 21, y: 2812.0251, z: 0}
   currentPosition: {x: 21, y: 2811.9631, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &1607268343
 GameObject:
   m_ObjectHideFlags: 0
@@ -61535,6 +61563,7 @@ MonoBehaviour:
   lastPosition: {x: -109.8, y: 2867.3, z: 0}
   currentPosition: {x: -109.8, y: 2867.3, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &1634947019
 GameObject:
   m_ObjectHideFlags: 0
@@ -61660,6 +61689,7 @@ MonoBehaviour:
   lastPosition: {x: -115.2, y: 1761.2999, z: 0}
   currentPosition: {x: -115.2, y: 1761.2999, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &1652608970
 GameObject:
   m_ObjectHideFlags: 0
@@ -61785,6 +61815,7 @@ MonoBehaviour:
   lastPosition: {x: -12, y: 1419, z: 0}
   currentPosition: {x: -12, y: 1419, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &1668400128
 GameObject:
   m_ObjectHideFlags: 0
@@ -61910,6 +61941,7 @@ MonoBehaviour:
   lastPosition: {x: -126, y: 1702.6, z: 0}
   currentPosition: {x: -126, y: 1702.6, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &1717284002
 GameObject:
   m_ObjectHideFlags: 0
@@ -62035,6 +62067,7 @@ MonoBehaviour:
   lastPosition: {x: 62, y: 2064, z: 0}
   currentPosition: {x: 62, y: 2064, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &1727051524
 GameObject:
   m_ObjectHideFlags: 0
@@ -62160,6 +62193,7 @@ MonoBehaviour:
   lastPosition: {x: 32.800003, y: 2147.7, z: 0}
   currentPosition: {x: 32.800003, y: 2147.7, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1001 &1731513891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62267,7 +62301,7 @@ MonoBehaviour:
     progress: 0
     positionX: 0
     positionY: 0
-  levelSize: 351
+  levelSize: 3500
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -62319,7 +62353,7 @@ Transform:
   - {fileID: 1293784976}
   - {fileID: 1019137318}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1747573032
 GameObject:
@@ -62446,6 +62480,7 @@ MonoBehaviour:
   lastPosition: {x: 76.2, y: 680, z: 0}
   currentPosition: {x: 76.2, y: 680, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &1759590109
 GameObject:
   m_ObjectHideFlags: 0
@@ -62461,7 +62496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1759590110
 Transform:
   m_ObjectHideFlags: 0
@@ -62487,7 +62522,7 @@ Transform:
   - {fileID: 2105376290}
   - {fileID: 1605198256}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1770115083
 GameObject:
@@ -62614,6 +62649,7 @@ MonoBehaviour:
   lastPosition: {x: 119, y: 2064, z: 0}
   currentPosition: {x: 119, y: 2064, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1001 &1810396100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62939,6 +62975,7 @@ MonoBehaviour:
   lastPosition: {x: 52.800003, y: 3108, z: 0}
   currentPosition: {x: 52.800003, y: 3108, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!4 &1900030296
 Transform:
   m_ObjectHideFlags: 0
@@ -63084,6 +63121,7 @@ MonoBehaviour:
   lastPosition: {x: -19, y: 1131.7, z: 0}
   currentPosition: {x: -19, y: 1131.7, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1 &1955441046
 GameObject:
   m_ObjectHideFlags: 0
@@ -63194,6 +63232,10 @@ MonoBehaviour:
   - {fileID: 766790719}
   - {fileID: 943834964}
   delays: []
+  waveBonus: 0
+  spawnCyclicPicup: 0
+  spawnSpecificPickup: []
+  numberOfEnemies: 0
 --- !u!1 &1959419820
 GameObject:
   m_ObjectHideFlags: 0
@@ -63319,6 +63361,7 @@ MonoBehaviour:
   lastPosition: {x: 28, y: 1544.4, z: 0}
   currentPosition: {x: 28, y: 1544.4, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!4 &1967743400 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4429593086047900763, guid: e225163970ee33a408cae0a87ce3e58f, type: 3}
@@ -63450,6 +63493,7 @@ MonoBehaviour:
   lastPosition: {x: 64.8, y: 2797, z: 0}
   currentPosition: {x: 64.8, y: 2797, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}
 --- !u!1001 &2031880393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63697,3 +63741,4 @@ MonoBehaviour:
   lastPosition: {x: 105.6, y: 2795.168, z: 0}
   currentPosition: {x: 105.6, y: 2795.1118, z: 0}
   lastAngle: {x: 0, y: 0, z: 0, w: 1}
+  owningWave: {fileID: 0}

@@ -113,13 +113,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6dbba22743e15f40b53957f1eed144f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 2
   radiusOrHeigth: 10
   hight: 10
-  box: 0
+  box: 1
   polygon: 0
   remainDestroyed: 0
-  damageHealth: 5
+  damageHealth: 1
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1

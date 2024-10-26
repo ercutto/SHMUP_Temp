@@ -8,6 +8,22 @@ public class WaveTrigger : MonoBehaviour
 {
     public EnemyPattern[] patterns = null;
     public float[] delays = null;
+    public int waveBonus = 0;
+    public bool spawnCyclicPicup = false;
+    public PickUp[] spawnSpecificPickup;
+
+    public int numberOfEnemies = 0;
+    private void Start()
+    {
+        foreach (EnemyPattern pattern in patterns)
+        {
+            if (pattern != null)
+            {
+                numberOfEnemies++;
+            }
+
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("degdi");
@@ -19,17 +35,21 @@ public class WaveTrigger : MonoBehaviour
     {
         int i = 0;
         foreach (EnemyPattern pattern in patterns) 
-        { 
-            Session.Hardness hardness =GameManager.Instance.gameSession.hardness;
-            if(delays!=null&& i<delays.Length) yield return new WaitForSeconds(delays[i]);
-            if (pattern.spawnOnEasy && hardness == Session.Hardness.Easy)
-                pattern.Spawn(); 
-            if (pattern.spawnOnNormal && hardness == Session.Hardness.Normal)
-                pattern.Spawn();
-            if (pattern.spawnOnHard && hardness == Session.Hardness.Hard)
-                pattern.Spawn();
-            if (pattern.spawnOnInsane && hardness == Session.Hardness.Insane)
-                pattern.Spawn();
+        {
+            if (pattern != null)
+            {
+                pattern.owningWave = this;
+                Session.Hardness hardness = GameManager.Instance.gameSession.hardness;
+                if (delays != null && i < delays.Length) yield return new WaitForSeconds(delays[i]);
+                if (pattern.spawnOnEasy && hardness == Session.Hardness.Easy)
+                    pattern.Spawn();
+                if (pattern.spawnOnNormal && hardness == Session.Hardness.Normal)
+                    pattern.Spawn();
+                if (pattern.spawnOnHard && hardness == Session.Hardness.Hard)
+                    pattern.Spawn();
+                if (pattern.spawnOnInsane && hardness == Session.Hardness.Insane)
+                    pattern.Spawn();
+            }
             i++;
         }
         yield return null;
@@ -44,4 +64,31 @@ public class WaveTrigger : MonoBehaviour
 
     }
 #endif
+    public void EnemyDestroyed(Vector3 pos,int playerIndex)
+    {
+        numberOfEnemies--;
+        if (numberOfEnemies == 0)//no enemyLeft
+        {
+            ScoreManager.instance.ShootableDestroyed(playerIndex,waveBonus);
+            if (spawnCyclicPicup)
+            {
+                PickUp spawn = GameManager.Instance.GetNextDrop();
+                PickUp p = Instantiate(spawn, pos, Quaternion.identity);
+                if (p)
+                {
+                    p.transform.SetParent(GameManager.Instance.transform);
+                }
+            }
+
+            foreach(PickUp pickUp in spawnSpecificPickup)
+            {
+                PickUp p =Instantiate(pickUp, pos, Quaternion.identity);
+                if (p)
+                {
+                    p.transform.SetParent(GameManager.Instance.transform);
+                }
+            }
+        }
+
+    }
 }

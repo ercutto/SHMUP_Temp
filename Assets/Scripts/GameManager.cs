@@ -56,9 +56,9 @@ public class GameManager : MonoBehaviour
         playerCrafts[playerIndex]= Instantiate(craftPrefab[craftType]).GetComponent<Craft>();
         playerCrafts[playerIndex].playerIndex=playerIndex;
     }
-    public void Update()
+    public void FixedUpdate()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha0)){
+        if(Input.GetKeyDown(KeyCode.Alpha1)){
             if (!playerCrafts[0]) SpawnPlayer(0, 0);
         }
 
@@ -81,11 +81,11 @@ public class GameManager : MonoBehaviour
         {
             if (playerCrafts[0])
             {
-                playerCrafts[0].IncreaseBeamStrength();
+                playerCrafts[0].IncreaseBeamStrength(0);
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             EnemyPattern testPattern = GameObject.FindAnyObjectByType<EnemyPattern>();
             testPattern.Spawn();
@@ -93,11 +93,14 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.O))
         {
-            if (playerCrafts[0] )
-                playerCrafts[0].AddOption();
+            if (playerCrafts[0])
+                playerCrafts[0].AddOption(0);
         }
-       
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            DebugManager.Instance.ToggleHUD();   
+        }
 
     }
     public void StartGame()

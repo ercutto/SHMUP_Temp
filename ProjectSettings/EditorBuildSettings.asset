@@ -77,4 +77,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DisplayScene.unity
     guid: df1c5b6e0f2af5b4d903c5a1864927ba
+  - enabled: 1
+    path: Assets/Scenes/DebugHUDScene.unity
+    guid: 30b4379310a12e04eb0b6514f744ac20
   m_configObjects: {}

@@ -153,6 +153,7 @@ MonoBehaviour:
   triggerDestroyed:
     m_PersistentCalls:
       m_Calls: []
+  destroyedByPlayer: 2
 --- !u!114 &5811348294071596172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,11 +173,14 @@ MonoBehaviour:
   polygon: 0
   remainDestroyed: 0
   damageHealth: 5
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
   spawnCyclicPickUp: 0
-  spawnSpecificPickUp: []
+  spawnSpecificPickUp:
+  - {fileID: 4835743196695854387, guid: b27893052c79c004bbe3bfa9aed21848, type: 3}
 --- !u!212 &421923918644820374
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -478,7 +482,27 @@ MonoBehaviour:
     positionX: 0
     positionY: 0
     patternUID: 0
-  rules: []
+  rules:
+  - triggered: 0
+    noOfPartsRequired: 1
+    partsToCheck:
+    - {fileID: 1958306946136062828}
+    ruleEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1958306946136062828}
+          m_TargetAssemblyTypeName: EnemyPart, Assembly-CSharp
+          m_MethodName: Destroyed
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventDelays: 
   isBoss: 0
   timeOut: 3600
   timeOutParameterName: 

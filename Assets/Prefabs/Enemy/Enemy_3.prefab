@@ -62,6 +62,7 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 1
+  ShootOutOfScreen: 0
   playerIndex: 2
 --- !u!1 &1811722043559669774
 GameObject:
@@ -144,6 +145,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32d7f20335cd20498cc084b398d9ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyed: 0
+  damaged: 0
+  usingDamageSprite: 0
+  damageVersion: {fileID: 0}
+  destroyedVersion: {fileID: 0}
+  triggerDestroyed:
+    m_PersistentCalls:
+      m_Calls: []
+  destroyedByPlayer: 2
 --- !u!114 &5811348294071596172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,6 +171,10 @@ MonoBehaviour:
   hight: 10
   box: 1
   polygon: 0
+  remainDestroyed: 0
+  damageHealth: 5
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
@@ -467,6 +481,30 @@ MonoBehaviour:
     positionX: 0
     positionY: 0
     patternUID: 0
+  rules:
+  - triggered: 0
+    noOfPartsRequired: 1
+    partsToCheck:
+    - {fileID: 1958306946136062828}
+    ruleEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1958306946136062828}
+          m_TargetAssemblyTypeName: EnemyPart, Assembly-CSharp
+          m_MethodName: Destroyed
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventDelays: 
+  isBoss: 0
+  timeOut: 3600
+  timeOutParameterName: 
 --- !u!1 &8608729769368474474
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,19 +552,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   states:
   - stateName: Nothing
+    active: 0
     eventOnStart:
       m_PersistentCalls:
         m_Calls: []
     eventOnEnd:
       m_PersistentCalls:
         m_Calls: []
-    evenOnTime:
+    eventOnTime:
       m_PersistentCalls:
         m_Calls: []
     useTimer: 0
     timer: 0
     currentTime: 0
   - stateName: Shooting
+    active: 0
     eventOnStart:
       m_PersistentCalls:
         m_Calls:
@@ -557,26 +597,28 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    evenOnTime:
+    eventOnTime:
       m_PersistentCalls:
         m_Calls: []
     useTimer: 0
     timer: 0
     currentTime: 0
   - stateName: Nothing
+    active: 0
     eventOnStart:
       m_PersistentCalls:
         m_Calls: []
     eventOnEnd:
       m_PersistentCalls:
         m_Calls: []
-    evenOnTime:
+    eventOnTime:
       m_PersistentCalls:
         m_Calls: []
     useTimer: 0
     timer: 0
     currentTime: 0
   - stateName: Shooting
+    active: 0
     eventOnStart:
       m_PersistentCalls:
         m_Calls:
@@ -607,7 +649,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    evenOnTime:
+    eventOnTime:
       m_PersistentCalls:
         m_Calls: []
     useTimer: 0

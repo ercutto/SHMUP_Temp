@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyPattern : MonoBehaviour
 {
     private int UID;
-    public List<EnemyStep> steps = new List<EnemyStep>();
+    public List<EnemyStep > steps = new List<EnemyStep>();
     public bool stayOnLast = true;
     public Enemy enemyPrefab;
     private Enemy spawnedEnemy;
@@ -27,6 +27,7 @@ public class EnemyPattern : MonoBehaviour
     [HideInInspector]
     public Quaternion lastAngle = Quaternion.identity;
 
+    public WaveTrigger owningWave = null;
 
 #if UNITY_EDITOR
     [MenuItem("GameObject/SHMUP/EnemyPattern", false, 10)]
@@ -62,6 +63,7 @@ public class EnemyPattern : MonoBehaviour
         if (spawnedEnemy == null)
         {
             spawnedEnemy = Instantiate(enemyPrefab, transform.position, transform.rotation).GetComponent<Enemy>();
+            spawnedEnemy.SetWave(owningWave);
             spawnedEnemy.SetPattern(this);
 
             lastPosition=spawnedEnemy.transform.position;

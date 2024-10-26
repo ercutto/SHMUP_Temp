@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Medal 8
   m_EditorClassIdentifier: 
   type: 6
-  powerLevel: 1
-  bombPower: 1
+  powerLevel: 0
+  bombPower: 0
   medalvalue: 1000
   fallSpeed: 0
-  coinValue: 2
+  coinValue: 0
   medalLevel: 1
-  surplusValue: 100
+  surplusValue: 1000

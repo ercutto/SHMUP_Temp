@@ -119,7 +119,9 @@ MonoBehaviour:
   box: 1
   polygon: 0
   remainDestroyed: 0
-  damageHealth: 5
+  damageHealth: 0
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1

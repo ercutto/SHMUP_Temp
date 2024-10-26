@@ -15,8 +15,8 @@ MonoBehaviour:
   type: 5
   powerLevel: 1
   bombPower: 1
-  medalvalue: 100
+  medalvalue: 0
   fallSpeed: 0
-  coinValue: 2
-  medalLevel: 1
-  surplusValue: 100
+  coinValue: 0
+  medalLevel: 0
+  surplusValue: 1000
