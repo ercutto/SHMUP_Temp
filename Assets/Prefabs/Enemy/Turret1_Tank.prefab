@@ -172,6 +172,7 @@ MonoBehaviour:
   hooming: 0
   ShootOutOfScreen: 0
   playerIndex: 2
+  shootSounds: {fileID: 0}
 --- !u!1 &4665043287505516083
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +186,7 @@ GameObject:
   - component: {fileID: 7542945720600645854}
   - component: {fileID: 5299434779569744852}
   - component: {fileID: 6680364217431826364}
+  - component: {fileID: 1148641642101366629}
   m_Layer: 11
   m_Name: TurretBase
   m_TagString: Untagged
@@ -307,6 +309,7 @@ MonoBehaviour:
   DamageByBombs: 1
   spawnCyclicPickUp: 1
   spawnSpecificPickUp: []
+  destroySound: {fileID: 1148641642101366629}
 --- !u!61 &6680364217431826364
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -352,6 +355,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 44, y: 29}
   m_EdgeRadius: 0
+--- !u!114 &1148641642101366629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4665043287505516083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8290f61f256085418898c936b1241e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 5262ea3c04d81b44c8f4273dd42de9f7, type: 3}
 --- !u!1 &5164929770499456011
 GameObject:
   m_ObjectHideFlags: 0

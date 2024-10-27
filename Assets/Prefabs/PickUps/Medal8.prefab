@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4187626608565144127}
   - component: {fileID: 1639221154326061050}
   - component: {fileID: 5171537063343374242}
+  - component: {fileID: -3972314309834750873}
   m_Layer: 12
   m_Name: Medal8
   m_TagString: Untagged
@@ -101,6 +102,7 @@ MonoBehaviour:
   config: {fileID: 11400000, guid: 444f2de892dcccf418e513d99c4bed08, type: 2}
   position: {x: 0, y: 0}
   velocity: {x: 0, y: 0}
+  sounds: {fileID: -6213522610414511778, guid: 3a40adb64d2d80746bdc55c843f3c0af, type: 3}
 --- !u!58 &5171537063343374242
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -136,3 +138,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 6
+--- !u!114 &-3972314309834750873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7042979194020580617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8290f61f256085418898c936b1241e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 4f1023aff6e7d614b98c81933fa5ede8, type: 3}

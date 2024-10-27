@@ -102,6 +102,17 @@ public class GameManager : MonoBehaviour
             DebugManager.Instance.ToggleHUD();   
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            AudioManager.instance.PlayMusic(AudioManager.Tracks.Level01, true, 2);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            AudioManager.instance.PlayMusic(AudioManager.Tracks.Level02, true, 2);
+        }
+
+
     }
     public void StartGame()
     {

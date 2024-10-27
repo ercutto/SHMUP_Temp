@@ -60684,7 +60684,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1440010208}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &1440010211
 Camera:
   m_ObjectHideFlags: 0
@@ -62337,6 +62337,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   midGroudTileGrid: {fileID: 1231777441}
   midgroundRate: 0.75
+  disableMovement: 0
 --- !u!4 &1743861926
 Transform:
   m_ObjectHideFlags: 0

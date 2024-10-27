@@ -30,6 +30,8 @@ public class Shootable : MonoBehaviour
     public bool spawnCyclicPickUp=false;
     public PickUp[] spawnSpecificPickUp;
 
+    public SoundEffects destroySound=null;
+
     private void Start()
     {
         layerMask = ~LayerMask.GetMask("Enemy") & ~LayerMask.GetMask("EnemyBullets")
@@ -130,6 +132,9 @@ public class Shootable : MonoBehaviour
             destroyed = true;
             if(part)
                 part.Destroyed(fromPlayer);
+
+            if(destroySound)
+                destroySound.Play();
 
             if(fromPlayer < 2)
             {

@@ -64,6 +64,7 @@ MonoBehaviour:
   hooming: 0
   ShootOutOfScreen: 0
   playerIndex: 2
+  shootSounds: {fileID: 0}
 --- !u!1 &1811722043559669774
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +109,7 @@ GameObject:
   - component: {fileID: 5811348294071596172}
   - component: {fileID: 421923918644820374}
   - component: {fileID: 2762137589065127514}
+  - component: {fileID: 3841202120730281000}
   m_Layer: 7
   m_Name: Main_Part
   m_TagString: Untagged
@@ -181,6 +183,7 @@ MonoBehaviour:
   DamageByBombs: 1
   spawnCyclicPickUp: 1
   spawnSpecificPickUp: []
+  destroySound: {fileID: 3841202120730281000}
 --- !u!212 &421923918644820374
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -278,6 +281,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 36, y: 33}
   m_EdgeRadius: 0
+--- !u!114 &3841202120730281000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2186486304743470749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8290f61f256085418898c936b1241e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 5262ea3c04d81b44c8f4273dd42de9f7, type: 3}
 --- !u!1 &3924665841217971440
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +359,7 @@ MonoBehaviour:
   hooming: 0
   ShootOutOfScreen: 0
   playerIndex: 2
+  shootSounds: {fileID: 0}
 --- !u!1 &4622689671597401185
 GameObject:
   m_ObjectHideFlags: 0

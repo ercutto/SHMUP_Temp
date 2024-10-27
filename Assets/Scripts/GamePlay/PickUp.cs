@@ -25,6 +25,8 @@ public class PickUp : MonoBehaviour
 
     public Vector2 position;
     public Vector2 velocity;
+
+    public SoundEffects sounds = null;
     public void OnEnable()
     {
         position = transform.position;
@@ -53,6 +55,9 @@ public class PickUp : MonoBehaviour
     }
     public void ProcessPickUp(int playerIndex, CraftData craftData)
     {
+        if(sounds)
+            sounds.Play();
+
         switch (config.type)
         {
             case PickupType.Coin:

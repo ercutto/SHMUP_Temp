@@ -50,6 +50,8 @@ public class Craft : MonoBehaviour
     public GameObject bombPrefeb = null;
 
     public Beam beam=null;
+    public SoundEffects explodingNoice = null;
+    public SoundEffects bombSound = null;
     private  void Start()
     {
        animator = GetComponent<Animator>();
@@ -296,6 +298,8 @@ public class Craft : MonoBehaviour
             craftData.smallBombs--;
             Vector3 pos = transform.position;
             pos.y += 100;
+            if(bombSound)
+                bombSound.Play();
             Bomb bomb= Instantiate(bombPrefeb, pos, Quaternion.identity).GetComponent<Bomb>();
             if(bomb)
                 bomb.playerIndex=(byte)playerIndex;
@@ -360,6 +364,9 @@ public class Craft : MonoBehaviour
     {
         alive = false;
         StartCoroutine(Exploding());
+
+        if(explodingNoice)
+            explodingNoice.Play();
     }
 
     IEnumerator Exploding()

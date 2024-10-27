@@ -12,6 +12,7 @@ public class Beam : MonoBehaviour
     public GameObject beamFlash;
     public GameObject[] beamHits=new GameObject[5];
     const int MINIMUMCHARGE = 10;
+    public AudioSource audioSource = null;
     void Start()
     {
 
@@ -28,10 +29,13 @@ public class Beam : MonoBehaviour
                 craft.craftData.beamFiring = true;
                 craft.craftData.beamTimer = craft.craftData.beamCharge;
                 craft.craftData.beamCharge = 0;
+               
                 UpdateBeam();
 
                 gameObject.SetActive(true);
                 beamFlash.SetActive(true);
+                if (audioSource)
+                    audioSource.Play();
             }
             else
             {
@@ -65,7 +69,9 @@ public class Beam : MonoBehaviour
         }
         if(craft.craftData.beamTimer == 0)//beam finished
         {
-            
+            if (audioSource)
+                audioSource.Stop();
+
             craft.craftData.beamFiring = false;
             HideHits();
             gameObject.SetActive(false);

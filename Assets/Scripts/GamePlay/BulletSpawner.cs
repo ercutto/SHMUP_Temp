@@ -35,6 +35,8 @@ public class BulletSpawner : MonoBehaviour
     public bool ShootOutOfScreen = false;
     //public bool isPlayer = false;
     public byte playerIndex = 2;// > 1 is enemy
+
+    public SoundEffects shootSounds = null;
     public void Shoot(int size)
     {
         if (size < 0) return;
@@ -112,6 +114,9 @@ public class BulletSpawner : MonoBehaviour
             }
             if(muzzleFlash != null)
                 muzzleFlash.SetActive(true);
+
+            if(shootSounds)
+                shootSounds.Play();
         }
     }
     private void FixedUpdate()

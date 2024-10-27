@@ -63,7 +63,9 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
+  ShootOutOfScreen: 0
   playerIndex: 2
+  shootSounds: {fileID: 0}
 --- !u!1 &934210384823399550
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,7 +129,9 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
+  ShootOutOfScreen: 0
   playerIndex: 2
+  shootSounds: {fileID: 0}
 --- !u!1 &970638287954419113
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,7 +430,9 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
+  ShootOutOfScreen: 0
   playerIndex: 0
+  shootSounds: {fileID: 0}
 --- !u!1 &1200829996836913564
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +496,9 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
+  ShootOutOfScreen: 0
   playerIndex: 2
+  shootSounds: {fileID: 0}
 --- !u!1 &1219220731463155314
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +629,9 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
+  ShootOutOfScreen: 0
   playerIndex: 0
+  shootSounds: {fileID: 0}
 --- !u!1 &1479866379566264629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,6 +1154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7776765314309066266}
   - component: {fileID: 1168873791376051120}
+  - component: {fileID: 531477421004623434}
   m_Layer: 6
   m_Name: BUlletSpawnerCenter
   m_TagString: Untagged
@@ -1197,7 +1208,24 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
+  ShootOutOfScreen: 0
   playerIndex: 0
+  shootSounds: {fileID: 531477421004623434}
+--- !u!114 &531477421004623434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2910050811831051494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8290f61f256085418898c936b1241e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: b8248efb3c71efb4e986e02ae6cc5109, type: 3}
+  - {fileID: 8300000, guid: c14b987a576cd944cbe990cafffee52c, type: 3}
 --- !u!1 &3487488284238214269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,7 +1386,9 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
+  ShootOutOfScreen: 0
   playerIndex: 0
+  shootSounds: {fileID: 0}
 --- !u!1 &4102454011168741551
 GameObject:
   m_ObjectHideFlags: 0
@@ -1509,6 +1539,8 @@ GameObject:
   - component: {fileID: 3123210103532429661}
   - component: {fileID: 8137849255037182369}
   - component: {fileID: 7080900393520705620}
+  - component: {fileID: 9218041467848482827}
+  - component: {fileID: 9072629840258785789}
   m_Layer: 6
   m_Name: CraftA
   m_TagString: Untagged
@@ -1677,6 +1709,8 @@ MonoBehaviour:
   screenSize: 140
   bombPrefeb: {fileID: 5291437734680056022, guid: d00dfc142c8be1a49a66f6eed2fe7010, type: 3}
   beam: {fileID: 4510467499539498804}
+  explodingNoice: {fileID: 9218041467848482827}
+  bombSound: {fileID: 9072629840258785789}
 --- !u!95 &8137849255037182369
 Animator:
   serializedVersion: 5
@@ -1743,6 +1777,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.475481, y: 7.4533415}
   m_EdgeRadius: 0
+--- !u!114 &9218041467848482827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4473339645908611704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8290f61f256085418898c936b1241e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 19627a6a73912fc4d85c2f2c378d901e, type: 3}
+--- !u!114 &9072629840258785789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4473339645908611704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8290f61f256085418898c936b1241e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 19627a6a73912fc4d85c2f2c378d901e, type: 3}
 --- !u!1 &4746792743054963738
 GameObject:
   m_ObjectHideFlags: 0
@@ -2314,7 +2376,9 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
+  ShootOutOfScreen: 0
   playerIndex: 0
+  shootSounds: {fileID: 0}
 --- !u!1 &6361272745918106317
 GameObject:
   m_ObjectHideFlags: 0
@@ -2507,7 +2571,9 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
+  ShootOutOfScreen: 0
   playerIndex: 0
+  shootSounds: {fileID: 0}
 --- !u!1 &6463020728886008019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,7 +2637,9 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
+  ShootOutOfScreen: 0
   playerIndex: 0
+  shootSounds: {fileID: 0}
 --- !u!1 &6511526953879660791
 GameObject:
   m_ObjectHideFlags: 0
@@ -3152,7 +3220,9 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
+  ShootOutOfScreen: 0
   playerIndex: 0
+  shootSounds: {fileID: 0}
 --- !u!1 &7577443928681750022
 GameObject:
   m_ObjectHideFlags: 0
@@ -3407,6 +3477,7 @@ GameObject:
   - component: {fileID: 6937860868452658934}
   - component: {fileID: 4510467499539498804}
   - component: {fileID: 2321253890557525768}
+  - component: {fileID: 1731298096622673603}
   m_Layer: 8
   m_Name: Beam
   m_TagString: Untagged
@@ -3452,6 +3523,7 @@ MonoBehaviour:
   - {fileID: 7167688097361804856}
   - {fileID: 4102454011168741551}
   - {fileID: 7577443928681750022}
+  audioSource: {fileID: 1731298096622673603}
 --- !u!120 &2321253890557525768
 LineRenderer:
   serializedVersion: 2
@@ -3556,6 +3628,102 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!82 &1731298096622673603
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7704528140805852590}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 325e39438d86f1047a741d6c11470349, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7751440810649920460
 GameObject:
   m_ObjectHideFlags: 0
@@ -3734,7 +3902,9 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
+  ShootOutOfScreen: 0
   playerIndex: 2
+  shootSounds: {fileID: 0}
 --- !u!1 &8298989442182023774
 GameObject:
   m_ObjectHideFlags: 0
@@ -4095,7 +4265,9 @@ MonoBehaviour:
   target: {fileID: 0}
   hedefeAtes: 0
   hooming: 0
+  ShootOutOfScreen: 0
   playerIndex: 0
+  shootSounds: {fileID: 0}
 --- !u!1 &8765733897370967998
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4021141422555997703}
   - component: {fileID: 8829479774815954640}
   - component: {fileID: 3747537105428059960}
+  - component: {fileID: 1796996348474658897}
   m_Layer: 11
   m_Name: LargeTank
   m_TagString: Untagged
@@ -105,12 +106,15 @@ MonoBehaviour:
   polygon: 0
   remainDestroyed: 0
   damageHealth: 5
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 0
   DamageByBeams: 0
   DamageByBombs: 1
   spawnCyclicPickUp: 0
   spawnSpecificPickUp:
   - {fileID: 6313882423004027404, guid: f1fa3016c07f0a7429c25833cf5637e9, type: 3}
+  destroySound: {fileID: 1796996348474658897}
 --- !u!58 &3747537105428059960
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -146,3 +150,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 27
+--- !u!114 &1796996348474658897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021699262732151504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8290f61f256085418898c936b1241e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 5262ea3c04d81b44c8f4273dd42de9f7, type: 3}
