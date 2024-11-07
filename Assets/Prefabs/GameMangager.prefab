@@ -58,11 +58,34 @@ MonoBehaviour:
   - {fileID: 4473339645908611704, guid: 5c737d7381584dd4fa7004d0f58d5b19, type: 3}
   bulletManager: {fileID: 0}
   playerCrafts:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3123210103532429661, guid: 5c737d7381584dd4fa7004d0f58d5b19, type: 3}
+  - {fileID: 3123210103532429661, guid: 5c737d7381584dd4fa7004d0f58d5b19, type: 3}
   progressWindow: {fileID: 0}
   playerDatas: []
   gameSession:
+    craftDatas:
+    - positionX: 0
+      positionY: 0
+      ShotPower: 0
+      noOfEnableOptions: 0
+      optionsLayout: 0
+      beamFiring: 0
+      beamPower: 0
+      beamCharge: 0
+      beamTimer: 0
+      smallBombs: 0
+      largeBombs: 0
+    - positionX: 0
+      positionY: 0
+      ShotPower: 0
+      noOfEnableOptions: 0
+      optionsLayout: 0
+      beamFiring: 0
+      beamPower: 0
+      beamCharge: 0
+      beamTimer: 0
+      smallBombs: 0
+      largeBombs: 0
     hardness: 1
     stage: 1
     practise: 0
@@ -102,6 +125,7 @@ MonoBehaviour:
   - {fileID: 1639221154326061050, guid: b7b5a0cc8ed9ed44a9d46d50c6dfc778, type: 3}
   - {fileID: 7300444720143039174, guid: b5425e9fff7a0664087889a31e536e74, type: 3}
   currentMedalIndex: 0
+  gameState: 0
 --- !u!114 &2034960511212166451
 MonoBehaviour:
   m_ObjectHideFlags: 0

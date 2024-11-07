@@ -57521,6 +57521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameMode: 2
   gameManagerPrefab: {fileID: 5328556624654870501, guid: 8ffc080027e7060459e539d6da1e9736, type: 3}
+  playMusicTrack: 0
 --- !u!4 &1055267328
 Transform:
   m_ObjectHideFlags: 0

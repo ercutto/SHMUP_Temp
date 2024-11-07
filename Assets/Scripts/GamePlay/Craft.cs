@@ -363,10 +363,13 @@ public class Craft : MonoBehaviour
     public void Explode()
     {
         alive = false;
+        GameManager.Instance.playerDatas[playerIndex].lives--;
         StartCoroutine(Exploding());
 
         if(explodingNoice)
             explodingNoice.Play();
+
+       
     }
 
     IEnumerator Exploding()
@@ -384,6 +387,40 @@ public class Craft : MonoBehaviour
         EffectSystem.instance.CraftExplosion(transform.position);
         Destroy(gameObject);
         GameManager.Instance.playerCrafts[0] = null;
+        if (GameManager.Instance.playerDatas[playerIndex].lives == 0)
+        {
+            GameOverMenu.instance.GameOver();
+        }
+        else
+        {
+            // Eject powerUps and spawn next life
+            CraftData craftData = GameManager.Instance.gameSession.craftDatas[playerIndex];
+            int noOfOptionsToReSapwn = GameManager.Instance.gameSession.craftDatas[playerIndex].noOfEnableOptions - 1;
+            int noOfPowrUpsToReSpawn = craftData.ShotPower - 1;
+            int noOfBeamUpsToReSoawn = craftData.beamPower - 1;
+            GameManager.Instance.ResetState(playerIndex);
+
+            for (int o = 0; o < noOfOptionsToReSapwn; o++)
+            {
+                PickUp pickUp = GameManager.Instance.SpawnPickup(GameManager.Instance.option, transform.position);
+                pickUp.transform.position = new Vector3(UnityEngine.Random.Range(-128, 128), UnityEngine.Random.Range(-128, 128), 0);
+            }
+
+            for (int o = 0; o < noOfPowrUpsToReSpawn; o++)
+            {
+                PickUp pickUp = GameManager.Instance.SpawnPickup(GameManager.Instance.powrup, transform.position);
+                pickUp.transform.position = new Vector3(UnityEngine.Random.Range(-128, 128), UnityEngine.Random.Range(-128, 128), 0);
+            }
+
+            for (int o = 0; o < noOfBeamUpsToReSoawn; o++)
+            {
+                PickUp pickUp = GameManager.Instance.SpawnPickup(GameManager.Instance.beamup, transform.position);
+                pickUp.transform.position = new Vector3(UnityEngine.Random.Range(-128, 128), UnityEngine.Random.Range(-128, 128), 0);
+            }
+
+            GameManager.Instance.DelayedRespawn(playerIndex);
+        }
+
         yield return null;
     }
 

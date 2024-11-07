@@ -73,20 +73,15 @@ public class WaveTrigger : MonoBehaviour
             if (spawnCyclicPicup)
             {
                 PickUp spawn = GameManager.Instance.GetNextDrop();
-                PickUp p = Instantiate(spawn, pos, Quaternion.identity);
-                if (p)
-                {
-                    p.transform.SetParent(GameManager.Instance.transform);
-                }
+                GameManager.Instance.SpawnPickup(spawn, pos);
+
+               
             }
 
             foreach(PickUp pickUp in spawnSpecificPickup)
             {
-                PickUp p =Instantiate(pickUp, pos, Quaternion.identity);
-                if (p)
-                {
-                    p.transform.SetParent(GameManager.Instance.transform);
-                }
+                GameManager.Instance.SpawnPickup(pickUp, pos);
+
             }
         }
 

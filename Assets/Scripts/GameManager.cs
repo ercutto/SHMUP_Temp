@@ -25,7 +25,21 @@ public class GameManager : MonoBehaviour
     public PickUp[] Medals=new PickUp[10];
     private int currentDropIndex = 0;
     public int currentMedalIndex = 0;
+    public PickUp option = null;
+    public PickUp powrup = null;
+    public PickUp beamup = null;
+
     //Craft playerTwoCraft = null;
+
+    public enum GameState
+    {
+        INVALID,
+        InMenus,
+        Playing,
+        Paused
+
+    }
+    public GameState gameState = GameState.INVALID; 
     void Start()
     {
         if(Instance)
@@ -56,7 +70,57 @@ public class GameManager : MonoBehaviour
         playerCrafts[playerIndex]= Instantiate(craftPrefab[craftType]).GetComponent<Craft>();
         playerCrafts[playerIndex].playerIndex=playerIndex;
     }
-    public void FixedUpdate()
+
+    public void SpawnPlayers()
+    {
+        SpawnPlayer(0, 0);
+        if (twoPlayer)
+        {
+            SpawnPlayer(1, 0);
+        }
+    }
+
+    public void DelayedRespawn(int playerIndex)
+    {
+        StartCoroutine(RespawnCoroutine(playerIndex));
+    }
+
+    IEnumerator RespawnCoroutine(int playerIndex)
+    {
+        yield return new WaitForSeconds(1.5f);
+        SpawnPlayer(playerIndex, 0);// get craft type
+        yield return null;
+    }
+    public void ResetState(int playerIndex)
+    {
+        CraftData craftData = gameSession.craftDatas[playerIndex];
+        craftData.positionX = 0;
+        craftData.positionY = 0;
+        craftData.ShotPower = 0;
+        craftData.noOfEnableOptions = 0;
+        craftData.optionsLayout = 0;
+        craftData.beamFiring = false;
+        craftData.beamCharge = 0;
+        craftData.beamPower = 0;
+        craftData.beamTimer = 0;
+        craftData.smallBombs = 3;
+        craftData.largeBombs = 0;
+
+
+    }
+    public void RestoreState(int playerIndex)
+    {
+        int number = gameSession.craftDatas[playerIndex].noOfEnableOptions;
+        gameSession.craftDatas[playerIndex].noOfEnableOptions = 0;
+
+        gameSession.craftDatas[playerIndex].positionX = 0;
+        gameSession.craftDatas[playerIndex].positionY = 0;
+        for (int o = 0; o < number; o++)
+        {
+            playerCrafts[playerIndex].AddOption(0);
+        }
+    }
+    public void Update()
     {
         if(Input.GetKeyDown(KeyCode.Alpha1)){
             if (!playerCrafts[0]) SpawnPlayer(0, 0);
@@ -112,10 +176,15 @@ public class GameManager : MonoBehaviour
             AudioManager.instance.PlayMusic(AudioManager.Tracks.Level02, true, 2);
         }
 
-
+       
     }
     public void StartGame()
     {
+        gameState=GameState.Playing;
+        ResetState(0);
+        ResetState(1);
+        playerDatas[0].score = 0;
+        playerDatas[1].score = 0;
         SceneManager.LoadScene("Stage01");
     }
     public void PickUpFallOffScreen(PickUp pickUp)
@@ -146,5 +215,17 @@ public class GameManager : MonoBehaviour
         }
 
         return result;
+    }
+
+    public PickUp SpawnPickup(PickUp pickUpPrefab, Vector2 pos)
+    {
+       
+        PickUp p = Instantiate(pickUpPrefab, pos, Quaternion.identity);
+        if (p)
+        {
+            p.transform.SetParent(GameManager.Instance.transform);
+        }
+
+        return p;   
     }
 }

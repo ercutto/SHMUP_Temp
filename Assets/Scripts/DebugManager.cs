@@ -36,7 +36,7 @@ public class DebugManager : MonoBehaviour
             {
                 ROOT.SetActive(true);
                 displaying = true;
-                //Time.timeScale = 0;
+                Time.timeScale = 0;
             }
         }
         else // turn off
@@ -51,7 +51,7 @@ public class DebugManager : MonoBehaviour
                 {
                     ROOT.SetActive(false);
                     displaying = false;
-                    //Time.timeScale = 1;
+                    Time.timeScale = 1;
 
                 }
             }

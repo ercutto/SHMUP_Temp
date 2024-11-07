@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -152,24 +153,15 @@ public class Shootable : MonoBehaviour
             if (spawnCyclicPickUp)
             {
                 PickUp spawn = GameManager.Instance.GetNextDrop();
-                PickUp p =Instantiate(spawn,pos,Quaternion.identity);
-                if (p)
-                {
-                    p.transform.SetParent(GameManager.Instance.transform);
-                }
+                GameManager.Instance.SpawnPickup(spawn, pos);
+               
             }
 
-            foreach (PickUp pickup in spawnSpecificPickUp) {
-                PickUp p=Instantiate(pickup,pos,Quaternion.identity);
-                if (p)
-                {
-                    p.transform.SetParent(GameManager.Instance.transform);
-                }
-                else
-                {
-                    Debug.LogError("Failed to spawn pickup!");
-                }
+            foreach (PickUp pickup in spawnSpecificPickUp)
+            {
+                GameManager.Instance.SpawnPickup(pickup, pos);
             }
+
             if (remainDestroyed)
                 destroyed = true;
             else

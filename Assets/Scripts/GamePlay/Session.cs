@@ -11,6 +11,7 @@ public class Session
         Insane
     };
 
+    public CraftData[] craftDatas= new CraftData[2];
     public Hardness hardness =Hardness.Normal;
     public int stage = 1;
     public bool practise = false;

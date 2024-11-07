@@ -21,14 +21,15 @@ public class Beam : MonoBehaviour
 
     public void Fire()
     {
-        if (!craft.craftData.beamFiring)
+        CraftData craftData= GameManager.Instance.gameSession.craftDatas[craft.playerIndex];
+        if (!craftData.beamFiring)
         {
-            if (craft.craftData.beamCharge > craft.craftData.beamTimer)
+            if (craftData.beamCharge > craftData.beamTimer)
             {
-                Debug.Log(craft.craftData.beamCharge);
-                craft.craftData.beamFiring = true;
-                craft.craftData.beamTimer = craft.craftData.beamCharge;
-                craft.craftData.beamCharge = 0;
+                Debug.Log(craftData.beamCharge);
+                craftData.beamFiring = true;
+                craftData.beamTimer = craftData.beamCharge;
+                craftData.beamCharge = 0;
                
                 UpdateBeam();
 
