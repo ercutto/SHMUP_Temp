@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 70
   m_Sprite: {fileID: -1195202087, guid: a244119eb6ca76b4d9895051d5c02f7c, type: 3}
   m_Color: {r: 0.54147387, g: 0.9811321, b: 0.7148906, a: 1}
   m_FlipX: 0
@@ -120,11 +120,16 @@ MonoBehaviour:
   polygon: 0
   remainDestroyed: 0
   damageHealth: 5
+  hitScore: 10
+  destroyScore: 1000
   DamageByBullets: 1
   DamageByBeams: 1
   DamageByBombs: 1
   spawnCyclicPickUp: 0
   spawnSpecificPickUp: []
+  destroySound: {fileID: 0}
+  largeExplosion: 0
+  smallExplosion: 0
 --- !u!61 &7299292429912733890
 BoxCollider2D:
   m_ObjectHideFlags: 0

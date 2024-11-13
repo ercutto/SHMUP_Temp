@@ -10,6 +10,8 @@ public class EffectSystem : MonoBehaviour
 
     public ParticleSystem craftParticlesPrefab = null;
     public ParticleSystem craftDebrisParticlesPrefab = null;
+    public ParticleSystem hitParticlesPrefab = null;
+    public GameObject smallExplosion = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,4 +31,19 @@ public class EffectSystem : MonoBehaviour
         Instantiate(craftDebrisParticlesPrefab,position,Quaternion.identity);
     }
    
+    public void SpawnSparks(Vector3 pos)
+    {
+        Quaternion angle = Quaternion.Euler(0, 0, 45);
+        Instantiate(hitParticlesPrefab,pos,angle);
+    }
+
+    public void SpawnLargeExplosion(Vector3 pos)
+    {
+        Instantiate(smallExplosion,pos,Quaternion.identity);
+    }
+    public void SpawnSmallExplosion(Vector3 pos)
+    {
+        Instantiate(smallExplosion, pos, Quaternion.identity);
+
+    }
 }

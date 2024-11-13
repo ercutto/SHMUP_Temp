@@ -55,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 816304f6f32e2e440a09e324de78a732, type: 2}
+  - {fileID: 2100000, guid: 0b8bea3533f635f4f8f64c7d8ce4abf0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,9 +75,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -3
+  m_SortingOrder: 60
   m_Sprite: {fileID: 21300000, guid: 0e12d15335611044788270bb8c8580f2, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -115,6 +115,8 @@ MonoBehaviour:
   spawnSpecificPickUp:
   - {fileID: 746616260687845034, guid: 1faea1660e22b4c41854f3f22a706994, type: 3}
   destroySound: {fileID: 3033348917896829365}
+  largeExplosion: 0
+  smallExplosion: 1
 --- !u!58 &-9008899892671193203
 CircleCollider2D:
   m_ObjectHideFlags: 0

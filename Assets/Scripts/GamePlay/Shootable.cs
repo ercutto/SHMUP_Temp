@@ -33,6 +33,14 @@ public class Shootable : MonoBehaviour
 
     public SoundEffects destroySound=null;
 
+    private bool flashing = false;
+    private float flashTimer =0;
+
+    private SpriteRenderer spriteRenderer = null;
+
+    public bool largeExplosion = false;
+    public bool smallExplosion = false;
+
     private void Start()
     {
         layerMask = ~LayerMask.GetMask("Enemy") & ~LayerMask.GetMask("EnemyBullets")
@@ -44,11 +52,23 @@ public class Shootable : MonoBehaviour
         }
         else
             halfExtend = new Vector3(radiusOrHeigth / 2, hight / 2, 0);
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
     {
         if (destroyed) return;
+
+        if (flashing)
+        {
+            flashTimer-=Time.deltaTime;
+            if (flashTimer <= 0)
+            {
+                spriteRenderer.material.SetColor("_OverBrightColor",Color.black);
+                flashing = false;
+            }
+        }
 
         int maxColliders = 10;
         Collider2D[] hits=new Collider2D[maxColliders];
@@ -78,6 +98,7 @@ public class Shootable : MonoBehaviour
                     {
                         TakeDamage(1,(byte)b.playerIndex);
                         GameManager.Instance.bulletManager.DeActivateBullet(b.index);
+                        FlashAndSpark(b.transform.position);
                     }
                 }
                 if (DamageByBombs)
@@ -89,7 +110,7 @@ public class Shootable : MonoBehaviour
 
                         TakeDamage(bomb.power,bomb.playerIndex);
 
-
+                        FlashAndSpark(transform.position);
                     }
                 }
                 //if (DamageByBeams)
@@ -107,6 +128,15 @@ public class Shootable : MonoBehaviour
             }
         }
     }
+    private void FlashAndSpark(Vector3 pos)
+    {
+        EffectSystem.instance.SpawnSparks(pos);
+        if (flashing) return;
+        flashing = true;
+        flashTimer = 0.01f;
+        spriteRenderer.material.SetColor("_OverBrightColor", Color.white );
+    }
+
     public void TakeDamage(int amount,byte fromPlayer)
     {
         if(destroyed) return;
@@ -160,6 +190,16 @@ public class Shootable : MonoBehaviour
             foreach (PickUp pickup in spawnSpecificPickUp)
             {
                 GameManager.Instance.SpawnPickup(pickup, pos);
+            }
+
+            if (smallExplosion)
+            {
+                EffectSystem.instance.SpawnSmallExplosion(transform.position);
+            }
+
+            if (largeExplosion)
+            {
+                EffectSystem.instance.SpawnLargeExplosion(transform.position);
             }
 
             if (remainDestroyed)

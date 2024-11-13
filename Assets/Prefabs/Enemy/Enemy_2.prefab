@@ -184,6 +184,8 @@ MonoBehaviour:
   spawnCyclicPickUp: 1
   spawnSpecificPickUp: []
   destroySound: {fileID: 3841202120730281000}
+  largeExplosion: 0
+  smallExplosion: 1
 --- !u!212 &421923918644820374
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -204,7 +206,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d9f21ea1a84a3534b8a3f1181040fc17, type: 2}
+  - {fileID: 2100000, guid: 7e01a7602dcdd2d43aafb9955e41284f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -224,7 +226,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 65
   m_Sprite: {fileID: 21300000, guid: efba84bc9493a1b40bfc0b16f73a080b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

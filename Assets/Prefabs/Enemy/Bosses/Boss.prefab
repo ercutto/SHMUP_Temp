@@ -64,6 +64,7 @@ MonoBehaviour:
   hooming: 0
   ShootOutOfScreen: 1
   playerIndex: 2
+  shootSounds: {fileID: 0}
 --- !u!1 &888511161759060459
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +140,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 58
   m_Sprite: {fileID: 739718913, guid: 7963b8a63b085374f91d8a074a095b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -269,6 +270,9 @@ MonoBehaviour:
   DamageByBombs: 1
   spawnCyclicPickUp: 0
   spawnSpecificPickUp: []
+  destroySound: {fileID: 0}
+  largeExplosion: 0
+  smallExplosion: 0
 --- !u!1 &899018124673036006
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +337,7 @@ MonoBehaviour:
   hooming: 0
   ShootOutOfScreen: 1
   playerIndex: 2
+  shootSounds: {fileID: 0}
 --- !u!1 &1026994925621886794
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,7 +414,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 59
   m_Sprite: {fileID: 1468217035, guid: 7963b8a63b085374f91d8a074a095b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -504,6 +509,9 @@ MonoBehaviour:
   DamageByBombs: 1
   spawnCyclicPickUp: 0
   spawnSpecificPickUp: []
+  destroySound: {fileID: 0}
+  largeExplosion: 0
+  smallExplosion: 0
 --- !u!58 &8940458747114229111
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -615,7 +623,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 52
   m_Sprite: {fileID: 893624131, guid: 7963b8a63b085374f91d8a074a095b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -735,6 +743,9 @@ MonoBehaviour:
   DamageByBombs: 1
   spawnCyclicPickUp: 0
   spawnSpecificPickUp: []
+  destroySound: {fileID: 0}
+  largeExplosion: 0
+  smallExplosion: 0
 --- !u!1 &1428670208966927792
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,7 +920,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 52
   m_Sprite: {fileID: -1107636993, guid: 7963b8a63b085374f91d8a074a095b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1053,6 +1064,9 @@ MonoBehaviour:
   DamageByBombs: 1
   spawnCyclicPickUp: 0
   spawnSpecificPickUp: []
+  destroySound: {fileID: 0}
+  largeExplosion: 0
+  smallExplosion: 0
 --- !u!1 &1460524489364718043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,7 +1144,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 52
   m_Sprite: {fileID: -1107636993, guid: 7963b8a63b085374f91d8a074a095b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1225,6 +1239,9 @@ MonoBehaviour:
   DamageByBombs: 1
   spawnCyclicPickUp: 0
   spawnSpecificPickUp: []
+  destroySound: {fileID: 0}
+  largeExplosion: 0
+  smallExplosion: 0
 --- !u!60 &283855625076665421
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1349,7 +1366,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 59
   m_Sprite: {fileID: -1635385388, guid: 7963b8a63b085374f91d8a074a095b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1462,6 +1479,7 @@ MonoBehaviour:
   hooming: 0
   ShootOutOfScreen: 1
   playerIndex: 2
+  shootSounds: {fileID: 0}
 --- !u!1 &2436362372764871712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1526,6 +1544,7 @@ MonoBehaviour:
   hooming: 1
   ShootOutOfScreen: 1
   playerIndex: 2
+  shootSounds: {fileID: 0}
 --- !u!1 &3132663590521145164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,7 +1621,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 51
   m_Sprite: {fileID: -80088892, guid: 7963b8a63b085374f91d8a074a095b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1722,6 +1741,9 @@ MonoBehaviour:
   DamageByBombs: 1
   spawnCyclicPickUp: 0
   spawnSpecificPickUp: []
+  destroySound: {fileID: 0}
+  largeExplosion: 0
+  smallExplosion: 0
 --- !u!1 &3178771823376989724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,6 +1808,7 @@ MonoBehaviour:
   hooming: 0
   ShootOutOfScreen: 1
   playerIndex: 2
+  shootSounds: {fileID: 0}
 --- !u!1 &3275652537042497930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1862,7 +1885,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 52
   m_Sprite: {fileID: 1919557302, guid: 7963b8a63b085374f91d8a074a095b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1933,6 +1956,9 @@ MonoBehaviour:
   DamageByBombs: 1
   spawnCyclicPickUp: 0
   spawnSpecificPickUp: []
+  destroySound: {fileID: 0}
+  largeExplosion: 0
+  smallExplosion: 0
 --- !u!60 &4366443198991456393
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2767,7 +2793,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 51
   m_Sprite: {fileID: 893624131, guid: 7963b8a63b085374f91d8a074a095b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2887,6 +2913,9 @@ MonoBehaviour:
   DamageByBombs: 1
   spawnCyclicPickUp: 0
   spawnSpecificPickUp: []
+  destroySound: {fileID: 0}
+  largeExplosion: 0
+  smallExplosion: 0
 --- !u!1 &4167111000884909746
 GameObject:
   m_ObjectHideFlags: 0
@@ -2963,7 +2992,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 51
   m_Sprite: {fileID: -80088892, guid: 7963b8a63b085374f91d8a074a095b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3084,6 +3113,9 @@ MonoBehaviour:
   DamageByBombs: 1
   spawnCyclicPickUp: 0
   spawnSpecificPickUp: []
+  destroySound: {fileID: 0}
+  largeExplosion: 0
+  smallExplosion: 0
 --- !u!1 &4661554901832004226
 GameObject:
   m_ObjectHideFlags: 0
@@ -3161,7 +3193,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 58
   m_Sprite: {fileID: 987743354, guid: 7963b8a63b085374f91d8a074a095b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3256,6 +3288,9 @@ MonoBehaviour:
   DamageByBombs: 1
   spawnCyclicPickUp: 0
   spawnSpecificPickUp: []
+  destroySound: {fileID: 0}
+  largeExplosion: 0
+  smallExplosion: 0
 --- !u!60 &188772389131577713
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3381,7 +3416,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 53
   m_Sprite: {fileID: 1919557302, guid: 7963b8a63b085374f91d8a074a095b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3501,6 +3536,9 @@ MonoBehaviour:
   DamageByBombs: 1
   spawnCyclicPickUp: 0
   spawnSpecificPickUp: []
+  destroySound: {fileID: 0}
+  largeExplosion: 0
+  smallExplosion: 0
 --- !u!1 &4777098012334898222
 GameObject:
   m_ObjectHideFlags: 0
@@ -3577,7 +3615,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 59
   m_Sprite: {fileID: 1468217035, guid: 7963b8a63b085374f91d8a074a095b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3672,6 +3710,9 @@ MonoBehaviour:
   DamageByBombs: 1
   spawnCyclicPickUp: 0
   spawnSpecificPickUp: []
+  destroySound: {fileID: 0}
+  largeExplosion: 0
+  smallExplosion: 0
 --- !u!58 &226949104569999088
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3782,7 +3823,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 58
   m_Sprite: {fileID: -1196392427, guid: 7963b8a63b085374f91d8a074a095b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3855,6 +3896,9 @@ MonoBehaviour:
   DamageByBombs: 1
   spawnCyclicPickUp: 0
   spawnSpecificPickUp: []
+  destroySound: {fileID: 0}
+  largeExplosion: 0
+  smallExplosion: 0
 --- !u!114 &2334522476987869074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3963,7 +4007,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 59
   m_Sprite: {fileID: -1635385388, guid: 7963b8a63b085374f91d8a074a095b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4076,6 +4120,7 @@ MonoBehaviour:
   hooming: 0
   ShootOutOfScreen: 1
   playerIndex: 2
+  shootSounds: {fileID: 0}
 --- !u!1 &5932061933508255320
 GameObject:
   m_ObjectHideFlags: 0
@@ -4303,7 +4348,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 59
   m_Sprite: {fileID: 909877734, guid: 7963b8a63b085374f91d8a074a095b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4390,7 +4435,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 58
   m_Sprite: {fileID: 739718913, guid: 7963b8a63b085374f91d8a074a095b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4485,6 +4530,9 @@ MonoBehaviour:
   DamageByBombs: 1
   spawnCyclicPickUp: 0
   spawnSpecificPickUp: []
+  destroySound: {fileID: 0}
+  largeExplosion: 0
+  smallExplosion: 0
 --- !u!58 &3167769843932082527
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4584,6 +4632,7 @@ MonoBehaviour:
   hooming: 0
   ShootOutOfScreen: 1
   playerIndex: 2
+  shootSounds: {fileID: 0}
 --- !u!1 &6973204595302238182
 GameObject:
   m_ObjectHideFlags: 0
@@ -4648,6 +4697,7 @@ MonoBehaviour:
   hooming: 1
   ShootOutOfScreen: 1
   playerIndex: 2
+  shootSounds: {fileID: 0}
 --- !u!1 &7264224252596547212
 GameObject:
   m_ObjectHideFlags: 0
@@ -4807,7 +4857,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 57
   m_Sprite: {fileID: -1746927598, guid: 7963b8a63b085374f91d8a074a095b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4929,7 +4979,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 51
   m_Sprite: {fileID: 431485615, guid: 7963b8a63b085374f91d8a074a095b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5073,6 +5123,9 @@ MonoBehaviour:
   DamageByBombs: 1
   spawnCyclicPickUp: 0
   spawnSpecificPickUp: []
+  destroySound: {fileID: 0}
+  largeExplosion: 0
+  smallExplosion: 0
 --- !u!1 &7983934127138948579
 GameObject:
   m_ObjectHideFlags: 0
@@ -5150,7 +5203,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 52
   m_Sprite: {fileID: 431485615, guid: 7963b8a63b085374f91d8a074a095b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5294,6 +5347,9 @@ MonoBehaviour:
   DamageByBombs: 1
   spawnCyclicPickUp: 0
   spawnSpecificPickUp: []
+  destroySound: {fileID: 0}
+  largeExplosion: 0
+  smallExplosion: 0
 --- !u!1 &8923807862531492511
 GameObject:
   m_ObjectHideFlags: 0

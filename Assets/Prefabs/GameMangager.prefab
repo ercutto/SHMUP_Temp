@@ -125,6 +125,9 @@ MonoBehaviour:
   - {fileID: 1639221154326061050, guid: b7b5a0cc8ed9ed44a9d46d50c6dfc778, type: 3}
   - {fileID: 7300444720143039174, guid: b5425e9fff7a0664087889a31e536e74, type: 3}
   currentMedalIndex: 0
+  option: {fileID: 0}
+  powrup: {fileID: 0}
+  beamup: {fileID: 0}
   gameState: 0
 --- !u!114 &2034960511212166451
 MonoBehaviour:
@@ -168,6 +171,8 @@ MonoBehaviour:
   craftExplotionPrefab: {fileID: 8641640222487113334, guid: e59fcbc856110e7449af118458aa2126, type: 3}
   craftParticlesPrefab: {fileID: 4555299157992842795, guid: ab60b2a07bc83ed4c9957b3ed58c1c25, type: 3}
   craftDebrisParticlesPrefab: {fileID: 4555299157992842795, guid: b11a69fb82e152d458471b63288ed285, type: 3}
+  hitParticlesPrefab: {fileID: 3950464341949104872, guid: f68cb8cc97a01b941983309a6e37a893, type: 3}
+  smallExplosion: {fileID: 5049600975285893449, guid: 6e530436b6fb5f845915311bebe4d0e8, type: 3}
 --- !u!114 &2286166511040603444
 MonoBehaviour:
   m_ObjectHideFlags: 0

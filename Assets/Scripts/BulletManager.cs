@@ -114,10 +114,10 @@ public class BulletManager : MonoBehaviour
         {
             Bullet result = bullets[bulletIndex];
             result.playerIndex = playerIndex;
-            result.gameObject.SetActive(true);
+            
             bulletData[bulletIndex] = new BulletData(x,y,dX,dY,angle,dAngle,(int)type,true,hooming);
             bullets[bulletIndex].gameObject.transform.position=new Vector3(x,y,0);
-
+            result.gameObject.SetActive(true);
             SpriteRenderer renderer =bullets[bulletIndex].gameObject.GetComponent<SpriteRenderer>();
             if (renderer)
             {
