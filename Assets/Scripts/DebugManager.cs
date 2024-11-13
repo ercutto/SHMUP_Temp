@@ -56,6 +56,10 @@ public class DebugManager : MonoBehaviour
                 }
             }
         }
+
+       
+    
+
     }
 
     public void ToggleIOnvincibility() {
@@ -63,7 +67,15 @@ public class DebugManager : MonoBehaviour
         if (invincibleToggle)
         {
             GameManager.Instance.gameSession.invincible = invincibleToggle.isOn;
+           
         }
+    }
+
+    public void ContinuePlay()
+    {
+        ROOT.SetActive(false);
+        displaying = false;
+        Time.timeScale = 1;
     }
 
    

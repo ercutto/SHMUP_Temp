@@ -36,7 +36,7 @@ public class GameInitialiser : MonoBehaviour
       
        
     }
-    private void Update()
+    private void FixedUpdate()
     {
        if(!menuLoaded)
         {

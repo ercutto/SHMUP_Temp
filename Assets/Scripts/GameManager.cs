@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
             playerCrafts[playerIndex].AddOption(0);
         }
     }
-    public void Update()
+    public void FixedUpdate()
     {
         if(Input.GetKeyDown(KeyCode.Alpha1)){
             if (!playerCrafts[0]) SpawnPlayer(0, 0);
@@ -161,7 +161,7 @@ public class GameManager : MonoBehaviour
                 playerCrafts[0].AddOption(0);
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             DebugManager.Instance.ToggleHUD();   
         }
