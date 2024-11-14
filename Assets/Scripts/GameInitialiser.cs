@@ -58,12 +58,15 @@ public class GameInitialiser : MonoBehaviour
             case GameMode.Menus:
                 Debug.Log("Menu");
                 MenuManager.instance.SwitchToMainMenuMenus();
+                GameManager.Instance.gameState=GameManager.GameState.InMenus;
                 break;
         
 
             case GameMode.Gameplay:
                 Debug.Log("Game");
                 MenuManager.instance.SwitchToGameplayMenus();
+                GameManager.Instance.gameState = GameManager.GameState.Playing;
+
                 break;
         };
 

@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-7467011989416337597
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 1ad4d1e929284154cb8e8cf087a317da
+  m_EffectName: Attenuation
+  m_MixLevel: b1aa3e9f7241d744a92d107be3f4895f
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-6184021826575983113
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -51,8 +65,12 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: 1af615f35e3cf3a4086425657a622f2b
     name: EffectsVolume
+  - guid: c36b9debf2519fb42877a223d3127a76
+    name: MasterVolume
   - guid: 3fd57c58312037e44928e3bc5020d5b7
     name: MenuVolume
+  - guid: faf5283840c081945b849c2ef6df321c
+    name: MusicVolume
   - guid: dfbd5af2f1098c24091ce67288b7d019
     name: Music1Volume
   - guid: d4b97c7d3f4d54d47b45d565ddaffe3c
@@ -64,6 +82,7 @@ AudioMixerController:
     - f7f69ce9cf73a7f4e9b8daa2f0e884be
     - 3362543cb0ef4ff42ae108938fef9726
     - 430b0db7f44aa1048bb1f377c8515326
+    - b7f7604b65b707947814478ffdedeb36
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -77,8 +96,7 @@ AudioMixerGroupController:
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: ce0f828e0236e914cbfe505517ebbb1e
   m_Children:
-  - {fileID: 3564777818851937716}
-  - {fileID: 3475642541416095786}
+  - {fileID: 2062188673018938143}
   - {fileID: 8756750294996930413}
   - {fileID: -35106807147492399}
   m_Volume: c36b9debf2519fb42877a223d3127a76
@@ -145,6 +163,27 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &2062188673018938143
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Music
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: b7f7604b65b707947814478ffdedeb36
+  m_Children:
+  - {fileID: 3475642541416095786}
+  - {fileID: 3564777818851937716}
+  m_Volume: faf5283840c081945b849c2ef6df321c
+  m_Pitch: 9d2eb8d273e235e4d88b99c43f7385fc
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -7467011989416337597}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &3475642541416095786
 AudioMixerGroupController:
   m_ObjectHideFlags: 0

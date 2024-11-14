@@ -122,7 +122,12 @@ public class GameManager : MonoBehaviour
     }
     public void FixedUpdate()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1)){
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePause();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1)){
             if (!playerCrafts[0]) SpawnPlayer(0, 0);
         }
 
@@ -161,7 +166,7 @@ public class GameManager : MonoBehaviour
                 playerCrafts[0].AddOption(0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.BackQuote))
         {
             DebugManager.Instance.ToggleHUD();   
         }
@@ -177,6 +182,28 @@ public class GameManager : MonoBehaviour
         }
 
        
+    }
+    public void TogglePause()
+    {
+        if (gameState == GameState.Playing)
+        {
+            gameState = GameState.Paused;
+            AudioManager.instance.PauseMusic();
+            PauseMenu.instance.TurnOn(null);
+            if (DebugManager.Instance.displaying)
+            {
+                DebugManager.Instance.ToggleHUD();
+            }
+            Time.timeScale = 0;
+        }
+        else//vurretnly paused,so unpause
+        {
+            gameState = GameState.Playing;
+            AudioManager.instance.ResumeMusic();
+            PauseMenu.instance.TurnOff(false);
+            Time.timeScale = 1;
+
+        }
     }
     public void StartGame()
     {

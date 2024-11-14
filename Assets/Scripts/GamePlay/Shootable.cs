@@ -74,12 +74,14 @@ public class Shootable : MonoBehaviour
         Collider2D[] hits=new Collider2D[maxColliders];
 
         int noOfHits = 0;
-        if(box)
-            noOfHits = Physics2D.OverlapBoxNonAlloc(transform.position, halfExtend,0, hits,/*transform.rotation,*/ layerMask);
+        if (box)
+        {   float angle=transform.eulerAngles.z;
+            noOfHits = Physics2D.OverlapBoxNonAlloc(transform.position, halfExtend, angle, hits, layerMask);
+        }
         else if (polygon)
         {
             ContactFilter2D contactFilter = new ContactFilter2D();
-            contactFilter.useTriggers=false;
+            contactFilter.useTriggers = false;
             contactFilter.SetLayerMask(layerMask);
             contactFilter.useLayerMask = true;
             noOfHits = Physics2D.OverlapCollider(polyCollider, contactFilter, hits);

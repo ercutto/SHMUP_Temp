@@ -33,6 +33,14 @@ public class AudioManager : MonoBehaviour
             return;
         }
         instance = this;
+
+        //Restore References
+        float volume = PlayerPrefs.GetFloat("MasterVolume");
+        mixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20);
+        volume = PlayerPrefs.GetFloat("EffectsVolume");
+        mixer.SetFloat("EffectsVolume", Mathf.Log10(volume) * 20);
+        volume = PlayerPrefs.GetFloat("MusicVolume");
+        mixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
     }
 
     public void PlayMusic(Tracks track,bool fade,float fadeDuration)
@@ -136,5 +144,18 @@ public class AudioManager : MonoBehaviour
     public void PlaySounEffects(AudioClip clip)
     {
         sfxSource.PlayOneShot(clip);
+    }
+
+    public void PauseMusic()
+    {
+        musicSource1.Pause();
+        musicSource2.Pause();
+    }
+    public void ResumeMusic()
+    {
+        musicSource1.UnPause();
+        musicSource2.UnPause();
+
+
     }
 }

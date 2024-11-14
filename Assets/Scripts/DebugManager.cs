@@ -7,7 +7,7 @@ public class DebugManager : MonoBehaviour
 {
     public static DebugManager Instance = null;
 
-    private bool displaying = false;
+    public bool displaying = false;
 
     public GameObject ROOT = null;
 

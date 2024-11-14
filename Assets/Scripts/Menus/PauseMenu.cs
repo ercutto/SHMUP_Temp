@@ -16,4 +16,28 @@ public class PauseMenu : Menu
 
         instance = this;
     }
+
+    public void OnResumeButton()
+    {
+        GameManager.Instance.TogglePause();
+        //TurnOff(false);
+        //Time.timeScale = 1;
+    }
+    public void OnLoadButton()
+    {
+
+    }
+    public void OnSaveButton()
+    {
+
+    }
+    public void OnOptionsButton()
+    {
+
+    }
+    public void OnMainMenuButton()
+    {
+
+    }
+
 }
