@@ -30,8 +30,8 @@ public class GameOverMenu : Menu
             ScoreManager.instance.SaveScore();
         }
 
-
-            SceneManager.LoadScene("MainMenusScene");
+        
+        SceneManager.LoadScene("MainMenusScene");
     }
     public void GameOver()
     {

@@ -9,6 +9,8 @@ public class GameInitialiser : MonoBehaviour
         Menus,
         Gameplay
     }
+    public int stageNumber = 0;
+
     [Header("Game mode To Play")]
     public GameMode gameMode;
     [Space]
@@ -66,6 +68,7 @@ public class GameInitialiser : MonoBehaviour
                 Debug.Log("Game");
                 MenuManager.instance.SwitchToGameplayMenus();
                 GameManager.Instance.gameState = GameManager.GameState.Playing;
+                GameManager.Instance.gameSession.stage=stageNumber;
 
                 break;
         };
@@ -76,7 +79,8 @@ public class GameInitialiser : MonoBehaviour
         }
 
         if (gameMode == GameMode.Gameplay)
-        { 
+        {
+            SaveManager.instance.SaveGame(0);//0= autosave at beginning stage
             GameManager.Instance.SpawnPlayers();
         }
 

@@ -30,6 +30,8 @@ public class LevelProgress : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        CraftData craftdata = GameManager.Instance.gameSession.craftDatas[0];
+
         if (data.progress < levelSize)
         {
             if (player1Craft == null)
@@ -39,7 +41,8 @@ public class LevelProgress : MonoBehaviour
                 float ratio = (float)data.progress / (float)levelSize;
                 float movement = speedCurve.Evaluate(ratio);
                 data.progress++;
-                UpdateProgressWindow(player1Craft.craftData.positionX, movement);
+                //UpdateProgressWindow(player1Craft.craftData.positionX, movement);
+                UpdateProgressWindow(craftdata.positionX,movement);
             }
 
         }

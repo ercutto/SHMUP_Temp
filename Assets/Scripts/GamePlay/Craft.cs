@@ -1,11 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class Craft : MonoBehaviour
 {
-    public CraftData craftData=new CraftData();
+   
     Vector3 newPositon = new Vector3();
     [Header("Engines Effects ")]
     public GameObject aftFlame1;
@@ -72,7 +73,7 @@ public class Craft : MonoBehaviour
     }
     private void FixedUpdate()
     {
-
+        CraftData craftData = GameManager.Instance.gameSession.craftDatas[playerIndex];
 
         if (InputManager.instance && alive)
         {
@@ -227,6 +228,7 @@ public class Craft : MonoBehaviour
     }
     public void PickingUp(PickUp pickUp)
     {
+        CraftData craftData = GameManager.Instance.gameSession.craftDatas[playerIndex];
         if (pickUp)
         {
             pickUp.ProcessPickUp(playerIndex, craftData);
@@ -294,6 +296,7 @@ public class Craft : MonoBehaviour
     }
     void FireBomb()
     {
+        CraftData craftData = GameManager.Instance.gameSession.craftDatas[playerIndex];
         if (craftData.smallBombs>0) {
             craftData.smallBombs--;
             Vector3 pos = transform.position;
@@ -307,7 +310,7 @@ public class Craft : MonoBehaviour
     }
     public void PowerUp(byte powerLevel,int surplusValue)
     {
-        
+        CraftData craftData = GameManager.Instance.gameSession.craftDatas[playerIndex];
         craftData.ShotPower += powerLevel;
         if (craftData.ShotPower > 9)
         {
@@ -326,6 +329,7 @@ public class Craft : MonoBehaviour
     }
     public void AddBomb(int power,int surplusValue)
     {
+        CraftData craftData = GameManager.Instance.gameSession.craftDatas[playerIndex];
         if (power == 1)
         {
             craftData.smallBombs++;
@@ -387,38 +391,40 @@ public class Craft : MonoBehaviour
         EffectSystem.instance.CraftExplosion(transform.position);
         Destroy(gameObject);
         GameManager.Instance.playerCrafts[0] = null;
-        if (GameManager.Instance.playerDatas[playerIndex].lives == 0)
+        if (GameManager.Instance.playerDatas[playerIndex].lives <= 0)
         {
             GameOverMenu.instance.GameOver();
+            yield return null;
         }
         else
         {
-            // Eject powerUps and spawn next life
-            CraftData craftData = GameManager.Instance.gameSession.craftDatas[playerIndex];
-            int noOfOptionsToReSapwn = GameManager.Instance.gameSession.craftDatas[playerIndex].noOfEnableOptions - 1;
-            int noOfPowrUpsToReSpawn = craftData.ShotPower - 1;
-            int noOfBeamUpsToReSoawn = craftData.beamPower - 1;
-            GameManager.Instance.ResetState(playerIndex);
+            //// Eject powerUps and spawn next life
+            //CraftData craftData = GameManager.Instance.gameSession.craftDatas[playerIndex];
+            //int noOfOptionsToReSapwn = craftData.noOfEnableOptions - 1;
+            //int noOfPowrUpsToReSpawn = craftData.ShotPower - 1;
+            //int noOfBeamUpsToReSoawn = craftData.beamPower - 1;
+            //GameManager.Instance.ResetState(playerIndex);
 
-            for (int o = 0; o < noOfOptionsToReSapwn; o++)
-            {
-                PickUp pickUp = GameManager.Instance.SpawnPickup(GameManager.Instance.option, transform.position);
-                pickUp.transform.position = new Vector3(UnityEngine.Random.Range(-128, 128), UnityEngine.Random.Range(-128, 128), 0);
-            }
+            //for (int o = 0; o < noOfOptionsToReSapwn; o++)
+            //{
+            //    PickUp pickUp = GameManager.Instance.SpawnPickup(GameManager.Instance.option, transform.position);
+            //    pickUp.transform.position = new Vector3(UnityEngine.Random.Range(-128, 128), UnityEngine.Random.Range(-128, 128), 0);
+            //}
 
-            for (int o = 0; o < noOfPowrUpsToReSpawn; o++)
-            {
-                PickUp pickUp = GameManager.Instance.SpawnPickup(GameManager.Instance.powrup, transform.position);
-                pickUp.transform.position = new Vector3(UnityEngine.Random.Range(-128, 128), UnityEngine.Random.Range(-128, 128), 0);
-            }
+            //for (int o = 0; o < noOfPowrUpsToReSpawn; o++)
+            //{
+            //    PickUp pickUp = GameManager.Instance.SpawnPickup(GameManager.Instance.powrup, transform.position);
+            //    pickUp.transform.position = new Vector3(UnityEngine.Random.Range(-128, 128), UnityEngine.Random.Range(-128, 128), 0);
+            //}
 
-            for (int o = 0; o < noOfBeamUpsToReSoawn; o++)
-            {
-                PickUp pickUp = GameManager.Instance.SpawnPickup(GameManager.Instance.beamup, transform.position);
-                pickUp.transform.position = new Vector3(UnityEngine.Random.Range(-128, 128), UnityEngine.Random.Range(-128, 128), 0);
-            }
+            //for (int o = 0; o < noOfBeamUpsToReSoawn; o++)
+            //{
+            //    PickUp pickUp = GameManager.Instance.SpawnPickup(GameManager.Instance.beamup, transform.position);
+            //    pickUp.transform.position = new Vector3(UnityEngine.Random.Range(-128, 128), UnityEngine.Random.Range(-128, 128), 0);
+            //}
 
             GameManager.Instance.DelayedRespawn(playerIndex);
+            yield return null;
         }
 
         yield return null;
@@ -431,6 +437,7 @@ public class Craft : MonoBehaviour
     }
     public void AddOption(int surplusValue)
     {
+        CraftData craftData = GameManager.Instance.gameSession.craftDatas[playerIndex];
         if (craftData.noOfEnableOptions < 4)
         {
             options[craftData.noOfEnableOptions].gameObject.SetActive(true);
@@ -474,6 +481,8 @@ public class Craft : MonoBehaviour
 
     public void IncreaseBeamStrength(int surplusValue)
     {
+        CraftData craftData = GameManager.Instance.gameSession.craftDatas[playerIndex];
+
         if (craftData.beamPower < 5)
         {
             craftData.beamPower++;
@@ -486,6 +495,8 @@ public class Craft : MonoBehaviour
     }
     void UpdateBeam()
     {
+        CraftData craftData = GameManager.Instance.gameSession.craftDatas[playerIndex];
+
         beam.beamWidth = (craftData.beamPower + 2) * 8f;
     }
    
@@ -507,4 +518,34 @@ public class CraftData
     public byte beamTimer;//current charge how much beam left
     public byte smallBombs;
     public byte largeBombs;
+
+    public void Save(BinaryWriter writer)
+    {
+        writer.Write(ShotPower);
+        writer.Write(noOfEnableOptions);
+        writer.Write(optionsLayout);
+
+        writer.Write(beamPower);
+        writer.Write(beamCharge);
+
+        writer.Write(smallBombs);
+        writer.Write(largeBombs);
+    }
+    public void Load(BinaryReader reader)
+    {  
+        ShotPower = reader.ReadByte();
+
+        noOfEnableOptions = reader.ReadByte();
+
+        optionsLayout = reader.ReadByte();
+
+        beamPower = reader.ReadByte();
+        beamCharge = reader.ReadByte();
+
+        smallBombs = reader.ReadByte();
+        largeBombs = reader.ReadByte();
+     
+     
+
+    }
 }

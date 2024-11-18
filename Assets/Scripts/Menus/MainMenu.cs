@@ -18,6 +18,7 @@ public class MainMenu : Menu
     }
     public void OnPlayButton()
     {
+        
         TurnOff(false);
         PlayMenu.instance.TurnOn(this);
     }
@@ -56,5 +57,14 @@ public class MainMenu : Menu
         TurnOff(false);
         YesNoMenu.instance.TurnOn(this);
 
+    }
+
+    public void OnLoadButton()
+    {
+        if (SaveManager.instance.LoadExist(1))
+        {
+            TurnOff(false);
+            SaveManager.instance.LoadGame(1);
+        }
     }
 }

@@ -30,7 +30,7 @@ public class Beam : MonoBehaviour
                 craftData.beamFiring = true;
                 craftData.beamTimer = craftData.beamCharge;
                 craftData.beamCharge = 0;
-               
+                
                 UpdateBeam();
 
                 gameObject.SetActive(true);
@@ -46,8 +46,8 @@ public class Beam : MonoBehaviour
     }
     private void FixedUpdate()
     {
-       
-        if (craft.craftData.beamFiring)
+        CraftData craftData = GameManager.Instance.gameSession.craftDatas[craft.playerIndex];
+        if (craftData.beamFiring)
         {
             
             UpdateBeam();
@@ -62,18 +62,19 @@ public class Beam : MonoBehaviour
     }
     void UpdateBeam()
     {
+        CraftData craftData = GameManager.Instance.gameSession.craftDatas[craft.playerIndex];
 
-        if (craft.craftData.beamTimer > 0)
+        if (craftData.beamTimer > 0)
         {
-            Debug.Log(craft.craftData.beamTimer);
-            craft.craftData.beamTimer--;
+            Debug.Log(craftData.beamTimer);
+            craftData.beamTimer--;
         }
-        if(craft.craftData.beamTimer == 0)//beam finished
+        if(craftData.beamTimer == 0)//beam finished
         {
             if (audioSource)
                 audioSource.Stop();
 
-            craft.craftData.beamFiring = false;
+            craftData.beamFiring = false;
             HideHits();
             gameObject.SetActive(false);
             beamFlash.SetActive(false);
@@ -143,7 +144,7 @@ public class Beam : MonoBehaviour
                         pos.y += Random.Range(-3f, 3f);
                         beamHits[i].transform.position = pos;
                         beamHits[i].SetActive(true);
-                        lowestShootable.TakeDamage(craft.craftData.beamPower+1,playerIndex);
+                        lowestShootable.TakeDamage(craftData.beamPower+1,playerIndex);
                     }
                     else
                     {

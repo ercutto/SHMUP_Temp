@@ -1543,7 +1543,7 @@ GameObject:
   - component: {fileID: 9072629840258785789}
   m_Layer: 6
   m_Name: CraftA
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

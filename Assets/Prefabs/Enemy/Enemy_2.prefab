@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - {fileID: 8300000, guid: 5262ea3c04d81b44c8f4273dd42de9f7, type: 3}
+  - {fileID: 8300000, guid: 68983eae17f9cf047a39a58cd0ac27d7, type: 3}
 --- !u!1 &3924665841217971440
 GameObject:
   m_ObjectHideFlags: 0

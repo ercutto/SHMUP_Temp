@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq.Expressions;
+
 using UnityEngine;
 
 public class PickUp : MonoBehaviour
@@ -63,7 +63,7 @@ public class PickUp : MonoBehaviour
             case PickupType.Coin:
                 {
                     ScoreManager.instance.PickupCollected(playerIndex, config.coinValue);
-                    //GameManager.Instance.playerCrafts[playerIndex].IncreaseScore(config.coinValue);
+                    
                     break;
 
                 }
@@ -85,7 +85,7 @@ public class PickUp : MonoBehaviour
             case PickupType.Secret:
                 {
                     ScoreManager.instance.PickupCollected(playerIndex, config.coinValue);
-                    //GameManager.Instance.playerCrafts[playerIndex].IncreaseScore(config.coinValue);
+                   
                     break;
                 }
             case PickupType.BeamUp:

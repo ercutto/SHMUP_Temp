@@ -561,7 +561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1639121495982599510, guid: 863027aac016f2f4cb06fc30603b7315, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnReplaysButton
+      value: OnLoadButton
       objectReference: {fileID: 0}
     - target: {fileID: 1639121495982599510, guid: 863027aac016f2f4cb06fc30603b7315, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -577,7 +577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5002257630745148666, guid: 863027aac016f2f4cb06fc30603b7315, type: 3}
       propertyPath: m_Text
-      value: Replays
+      value: Load
       objectReference: {fileID: 0}
     - target: {fileID: 5608648407480889951, guid: 863027aac016f2f4cb06fc30603b7315, type: 3}
       propertyPath: m_Pivot.x

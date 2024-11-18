@@ -107,7 +107,7 @@ public class HUD : MonoBehaviour
             return;
         }
 
-            CraftData data=GameManager.Instance.playerCrafts[playerIndex].craftData;
+            CraftData data=GameManager.Instance.gameSession.craftDatas[playerIndex];
 
             int largeBomb = data.largeBombs;
             int smallBomb = data.smallBombs;
@@ -140,7 +140,8 @@ public class HUD : MonoBehaviour
             return;
         }
 
-        CraftData data = GameManager.Instance.playerCrafts[playerIndex].craftData;
+        CraftData data = GameManager.Instance.gameSession.craftDatas[playerIndex];
+        //CraftData data = GameManager.Instance.playerCrafts[playerIndex].craftData;
         int power=data.ShotPower;
         for (int i = 0; i < 8; i++)
             if(power>i)hud.powerMarks[i].SetActive(true);
@@ -157,7 +158,8 @@ public class HUD : MonoBehaviour
             return;
         }
 
-        CraftData data = GameManager.Instance.playerCrafts[playerIndex].craftData;
+        CraftData data = GameManager.Instance.gameSession.craftDatas[playerIndex];
+        //CraftData data = GameManager.Instance.playerCrafts[playerIndex].craftData;
         int beamPower=data.beamPower;
 
         for (int i = 0; i < 5; i++) 

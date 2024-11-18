@@ -49,11 +49,12 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        Instance = this;
         playerDatas = new PlayerData[2];
         playerDatas[0] = new PlayerData();
         playerDatas[1] = new PlayerData();
 
-        Instance = this;    
+        
         DontDestroyOnLoad(gameObject);
         Debug.Log("GameManager created. ");
         bulletManager = GetComponent<BulletManager>();
@@ -64,16 +65,20 @@ public class GameManager : MonoBehaviour
     public void SpawnPlayer(int playerIndex,int craftType)
     {
         Debug.Assert(craftType < craftPrefab.Length);
-        Debug.Log("Spawning player " + playerIndex);
+
+        playerCrafts[playerIndex] = Instantiate(craftPrefab[craftType]).GetComponent<Craft>();
+        playerCrafts[playerIndex].playerIndex = playerIndex;
+       
 
 
-        playerCrafts[playerIndex]= Instantiate(craftPrefab[craftType]).GetComponent<Craft>();
-        playerCrafts[playerIndex].playerIndex=playerIndex;
     }
 
     public void SpawnPlayers()
     {
-        SpawnPlayer(0, 0);
+        if(twoPlayer==false)
+            SpawnPlayer(0, 0);
+       
+
         if (twoPlayer)
         {
             SpawnPlayer(1, 0);
@@ -93,6 +98,7 @@ public class GameManager : MonoBehaviour
     }
     public void ResetState(int playerIndex)
     {
+        
         CraftData craftData = gameSession.craftDatas[playerIndex];
         craftData.positionX = 0;
         craftData.positionY = 0;
@@ -105,6 +111,7 @@ public class GameManager : MonoBehaviour
         craftData.beamTimer = 0;
         craftData.smallBombs = 3;
         craftData.largeBombs = 0;
+        
 
 
     }
@@ -120,22 +127,26 @@ public class GameManager : MonoBehaviour
             playerCrafts[playerIndex].AddOption(0);
         }
     }
-    public void FixedUpdate()
+    public void Update()
     {
+        CraftData craftData = gameSession.craftDatas[0];
+        Debug.Log(playerDatas[0].lives);
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1)){
-            if (!playerCrafts[0]) SpawnPlayer(0, 0);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha1)){
+        //    if (!playerCrafts[0]) SpawnPlayer(0, 0);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            if (playerCrafts[0] && (int)playerCrafts[0].craftData.ShotPower < CraftConfiguration.MAX_SHOT_POWER-1)
-                playerCrafts[0].craftData.ShotPower++;
-        }
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+ 
+        //    if (playerCrafts[0] && (int)playerCrafts[0].craftData.ShotPower < CraftConfiguration.MAX_SHOT_POWER - 1)
+        //        playerCrafts[0].craftData.ShotPower++;
+        //}
 
         if (Input.GetKeyDown(KeyCode.S))
         {
@@ -154,7 +165,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             EnemyPattern testPattern = GameObject.FindAnyObjectByType<EnemyPattern>();
             testPattern.Spawn();
@@ -181,7 +192,7 @@ public class GameManager : MonoBehaviour
             AudioManager.instance.PlayMusic(AudioManager.Tracks.Level02, true, 2);
         }
 
-       
+      
     }
     public void TogglePause()
     {
@@ -208,10 +219,13 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         gameState=GameState.Playing;
+        
         ResetState(0);
         ResetState(1);
+       
         playerDatas[0].score = 0;
         playerDatas[1].score = 0;
+       
         SceneManager.LoadScene("Stage01");
     }
     public void PickUpFallOffScreen(PickUp pickUp)
@@ -254,5 +268,22 @@ public class GameManager : MonoBehaviour
         }
 
         return p;   
+    }
+
+    public void ResumeGameFromLoad()
+    {
+        gameState = GameState.Playing;
+        switch (gameSession.stage)
+        {
+            case 1:
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Stage01");
+                break;
+            case 2:
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Stage02");
+
+                break;
+
+
+        }
     }
 }

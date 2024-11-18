@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using UnityEngine;
 [Serializable]
 public class Session
@@ -27,4 +28,23 @@ public class Session
     public bool halfspeed =false;
     public bool doubleSpeedPractise = false;
 
+    public void Save(BinaryWriter writer)
+    {
+        craftDatas[0].Save(writer);
+        if(GameManager.Instance.twoPlayer)
+            craftDatas[1].Save(writer);
+
+        writer.Write((Byte)hardness);
+        writer.Write(stage);
+    }
+    public void Load(BinaryReader reader)
+    {
+        craftDatas[0].Load(reader);
+        if(GameManager.Instance.twoPlayer)
+            craftDatas[1].Load(reader);
+
+        hardness=(Hardness)reader.ReadByte();
+        stage=reader.ReadInt32();
+    
+    }
 }

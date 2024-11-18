@@ -84,8 +84,7 @@ public class AudioManager : MonoBehaviour
                 musicSource1.Stop();
             }
             musicSource2.clip = musicTracks[(int)track];
-            musicSource2.Play();
-            
+            musicSource2.Play();          
             activeMusicSource = 2;
 
             if (fade)
@@ -130,7 +129,7 @@ public class AudioManager : MonoBehaviour
             {
                 musicSource1.Stop();
             }
-            else
+            else if(soureceIndex == 2)
             {
                 musicSource2.Stop();
             }

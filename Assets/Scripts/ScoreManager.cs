@@ -80,8 +80,8 @@ public class ScoreManager : MonoBehaviour
 
         for(int s = 7;s > scoreIndex; s--)
         {
-            scores[s,hardness]=scores[s-1,scoreIndex];
-            names[s,hardness]=names[s-1,scoreIndex];
+            scores[s,hardness]=scores[s-1,hardness];
+            names[s,hardness]=names[s-1,hardness];
         }
     }
 

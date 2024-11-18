@@ -57519,10 +57519,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475cd72808356314ca27419f3151d5dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageNumber: 1
+  stageNumber: 2
   gameMode: 2
   gameManagerPrefab: {fileID: 5328556624654870501, guid: 8ffc080027e7060459e539d6da1e9736, type: 3}
-  playMusicTrack: 0
+  playMusicTrack: 1
 --- !u!4 &1055267328
 Transform:
   m_ObjectHideFlags: 0
