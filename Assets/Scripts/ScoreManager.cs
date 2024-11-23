@@ -1,6 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using System.IO;
 using UnityEngine;
 
@@ -185,4 +184,8 @@ public class ScoreManager : MonoBehaviour
         currentMultiplier = (int)Math.Pow((chain + 1), 1.5);
     }
 
+    public int TopScore(int hardness)
+    {
+        return scores[0, hardness];
+    }
 }

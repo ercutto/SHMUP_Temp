@@ -1,6 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class LevelProgress : MonoBehaviour
@@ -11,7 +10,8 @@ public class LevelProgress : MonoBehaviour
     public GameObject midGroudTileGrid=null;
     public float midgroundRate= 0.75f;
 
-    private Craft player1Craft = null;
+    private Craft player1Craft;
+    private Craft player2Craft;
     public bool disableMovement = false;
     // Start is called before the first frame update
     void Start()
@@ -30,19 +30,25 @@ public class LevelProgress : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        CraftData craftdata = GameManager.Instance.gameSession.craftDatas[0];
+        if (!GameManager.Instance) return;
+        
 
         if (data.progress < levelSize)
         {
             if (player1Craft == null)
                  player1Craft = GameManager.Instance.playerCrafts[0];
-            if (player1Craft && !disableMovement)
+            if (player2Craft == null)
+                player2Craft = GameManager.Instance.playerCrafts[1];
+            if (!disableMovement)
             {
-                float ratio = (float)data.progress / (float)levelSize;
-                float movement = speedCurve.Evaluate(ratio);
-                data.progress++;
-                //UpdateProgressWindow(player1Craft.craftData.positionX, movement);
-                UpdateProgressWindow(craftdata.positionX,movement);
+                if (player1Craft || player2Craft)
+                {
+                    float ratio = (float)data.progress / (float)levelSize;
+                    float movement = speedCurve.Evaluate(ratio);
+                    data.progress++;
+                    CraftData craftdata = GameManager.Instance.gameSession.craftDatas[0];
+                    UpdateProgressWindow(craftdata.positionX, movement);
+                }
             }
 
         }

@@ -35,11 +35,19 @@ public class AudioManager : MonoBehaviour
         instance = this;
 
         //Restore References
-        float volume = PlayerPrefs.GetFloat("MasterVolume");
+        float volume = 1;
+        if(PlayerPrefs.HasKey("MasterVolume"))
+            volume = PlayerPrefs.GetFloat("MasterVolume");
         mixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20);
-        volume = PlayerPrefs.GetFloat("EffectsVolume");
+
+        volume = 1;
+        if (PlayerPrefs.HasKey("EffectsVolume"))
+            volume = PlayerPrefs.GetFloat("EffectsVolume");
         mixer.SetFloat("EffectsVolume", Mathf.Log10(volume) * 20);
-        volume = PlayerPrefs.GetFloat("MusicVolume");
+
+        volume = 1;
+        if(PlayerPrefs.HasKey("MusicVolume"))
+            volume = PlayerPrefs.GetFloat("MusicVolume");
         mixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
     }
 
@@ -63,7 +71,7 @@ public class AudioManager : MonoBehaviour
             }
 
             musicSource1.clip=musicTracks[(int)track];
-            musicSource1.Play();
+            StartCoroutine(DelayedPlayMusic(1));
             activeMusicSource = 1;
 
             if (fade)
@@ -84,7 +92,7 @@ public class AudioManager : MonoBehaviour
                 musicSource1.Stop();
             }
             musicSource2.clip = musicTracks[(int)track];
-            musicSource2.Play();          
+            StartCoroutine(DelayedPlayMusic(2));
             activeMusicSource = 2;
 
             if (fade)
@@ -95,13 +103,21 @@ public class AudioManager : MonoBehaviour
         }
         
     }
+    IEnumerator DelayedPlayMusic(int sourceNo)
+    {
+        yield return null;
+        if (sourceNo == 1)
+            musicSource1.Play();
+        else if (sourceNo == 2)
+            musicSource2.Play();
+    }
 
     IEnumerator Fade(int soureceIndex, float duration, float startVolume, float targetvolume)
     {
         float timer = 0;
         while (timer < duration)
         {
-            timer += Time.deltaTime;
+            timer += Time.unscaledDeltaTime;
             float newVol = Mathf.Lerp(startVolume, targetvolume, timer / duration);
             newVol = Mathf.Clamp(newVol, 0.0001f, 0.9999f);
 

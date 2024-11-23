@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   bulletStrength: 1
-  beamStrength: 1
+  beamPower: 0
+  bombPower: 0
+  optionPower: 4
   craftSprite: {fileID: 1755158310, guid: 0b5fd0bbfacf80c438e1c98b20edc709, type: 3}
   shotLevel:
   - spawnerSizes: 00000000ffffffffffffffffffffffffffffffff

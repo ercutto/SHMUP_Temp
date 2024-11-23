@@ -23,14 +23,33 @@ public class GameOverMenu : Menu
     // Update is called once per frame
     public void OnContinueButton()
     {
-        if (ScoreManager.instance.IsHiScore(GameManager.Instance.playerDatas[0].score, (int)GameManager.Instance.gameSession.hardness))
-        {
-            ScoreManager.instance.AddScore(GameManager.Instance.playerDatas[0].score, (int)GameManager.Instance.gameSession.hardness,"Player");
+        if (!GameManager.Instance.twoPlayer) {
+            if (ScoreManager.instance.IsHiScore(GameManager.Instance.playerDatas[0].score, (int)GameManager.Instance.gameSession.hardness))
+            {
 
-            ScoreManager.instance.SaveScore();
+                ScoreManager.instance.AddScore(GameManager.Instance.playerDatas[0].score, (int)GameManager.Instance.gameSession.hardness, "Player");
+
+            }
+        }else if (GameManager.Instance.twoPlayer)
+        {
+            if(ScoreManager.instance.IsHiScore(GameManager.Instance.playerDatas[0].score, (int)GameManager.Instance.gameSession.hardness))
+            {
+                ScoreManager.instance.AddScore(GameManager.Instance.playerDatas[0].score, (int)GameManager.Instance.gameSession.hardness, "Player");
+
+            }else if(ScoreManager.instance.IsHiScore(GameManager.Instance.playerDatas[1].score, (int)GameManager.Instance.gameSession.hardness))
+            {
+                ScoreManager.instance.AddScore(GameManager.Instance.playerDatas[1].score, (int)GameManager.Instance.gameSession.hardness, "Player_2");
+
+            }else if(ScoreManager.instance.IsHiScore(GameManager.Instance.playerDatas[0].score, (int)GameManager.Instance.gameSession.hardness)&&
+                ScoreManager.instance.IsHiScore(GameManager.Instance.playerDatas[1].score, (int)GameManager.Instance.gameSession.hardness))
+            {
+                ScoreManager.instance.AddScore(GameManager.Instance.playerDatas[0].score, (int)GameManager.Instance.gameSession.hardness, "Player");
+                ScoreManager.instance.AddScore(GameManager.Instance.playerDatas[1].score, (int)GameManager.Instance.gameSession.hardness, "Player_2");
+            }
         }
 
-        
+        ScoreManager.instance.SaveScore();
+
         SceneManager.LoadScene("MainMenusScene");
     }
     public void GameOver()
@@ -38,7 +57,7 @@ public class GameOverMenu : Menu
         TurnOn(null);
         AudioManager.instance.PlayMusic(AudioManager.Tracks.GameOver,true,0.5f);
         scoreReaot.text = GameManager.Instance.playerDatas[0].score.ToString();// for sceond player
-
+       
         if (ScoreManager.instance.IsHiScore(GameManager.Instance.playerDatas[0].score,(int)GameManager.Instance.gameSession.hardness))
         {
             hiScoreReaot.gameObject.SetActive(true);

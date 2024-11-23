@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class TitleScreenMenu : Menu
@@ -24,7 +23,7 @@ public class TitleScreenMenu : Menu
             {
                 TurnOff(true);
                 MainMenu.instance.TurnOn(this);
-                Debug.Log("clicked");
+               
 
             }
         }

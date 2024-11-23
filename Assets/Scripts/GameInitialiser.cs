@@ -15,7 +15,7 @@ public class GameInitialiser : MonoBehaviour
     public GameMode gameMode;
     [Space]
     public GameObject gameManagerPrefab = null;
-    private bool menuLoaded=false;
+    private bool initialised=false;
 
     private Scene displayScene;
 
@@ -38,52 +38,52 @@ public class GameInitialiser : MonoBehaviour
       
        
     }
-    private void FixedUpdate()
+    private void Update()
     {
-       if(!menuLoaded)
+       if(!initialised)
         {
+            if(gameMode == GameMode.INVALID)
+                return;
+
             if(!displayScene.isLoaded)
             {
                 SceneManager.LoadScene("DisplayScene",LoadSceneMode.Additive);
 
             }
 
-            ChangeGameMode();
+            switch (gameMode)
+            {
+                case GameMode.Menus:
+                   
+                    MenuManager.instance.SwitchToMainMenuMenus();
+                    GameManager.Instance.gameState = GameManager.GameState.InMenus;
+                    break;
+
+
+                case GameMode.Gameplay:
+                   
+                    MenuManager.instance.SwitchToGameplayMenus();
+                    GameManager.Instance.gameState = GameManager.GameState.Playing;
+                    GameManager.Instance.gameSession.stage = stageNumber;
+
+                    break;
+            };
+
+            if (playMusicTrack != AudioManager.Tracks.None)
+            {
+                AudioManager.instance.PlayMusic(playMusicTrack, true, 1);
+            }
+
+            if (gameMode == GameMode.Gameplay)
+            {
+                SaveManager.instance.SaveGame(0);//0= autosave at beginning stage
+                GameManager.Instance.SpawnPlayers();
+            }
+
+            initialised = true;
+            
         }
     }
 
-    void ChangeGameMode()
-    {
-       
-        switch (gameMode)
-        {
-            case GameMode.Menus:
-                Debug.Log("Menu");
-                MenuManager.instance.SwitchToMainMenuMenus();
-                GameManager.Instance.gameState=GameManager.GameState.InMenus;
-                break;
-        
-
-            case GameMode.Gameplay:
-                Debug.Log("Game");
-                MenuManager.instance.SwitchToGameplayMenus();
-                GameManager.Instance.gameState = GameManager.GameState.Playing;
-                GameManager.Instance.gameSession.stage=stageNumber;
-
-                break;
-        };
-
-        if (playMusicTrack != AudioManager.Tracks.None)
-        {
-            AudioManager.instance.PlayMusic(playMusicTrack, true, 1);
-        }
-
-        if (gameMode == GameMode.Gameplay)
-        {
-            SaveManager.instance.SaveGame(0);//0= autosave at beginning stage
-            GameManager.Instance.SpawnPlayers();
-        }
-
-        menuLoaded = true;
-    }
+  
 }

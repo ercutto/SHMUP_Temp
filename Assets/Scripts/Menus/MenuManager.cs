@@ -36,6 +36,7 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("GameOverMenu", LoadSceneMode.Additive);
         //Debug Scene
         SceneManager.LoadScene("DebugHUDScene", LoadSceneMode.Additive);
+        SceneManager.LoadScene("WellDoneMenu", LoadSceneMode.Additive);
 
     }
     public void SwitchToMainMenuMenus()

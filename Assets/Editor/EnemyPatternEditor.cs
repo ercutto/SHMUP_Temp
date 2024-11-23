@@ -40,6 +40,8 @@ public class EnemyPatternEditor : Editor
             previewMesh.triangles=tris;
         }
     }
+
+    [System.Obsolete]
     private void OnSceneGUI()
     {
         UpdateEditorTime();
@@ -66,6 +68,8 @@ public class EnemyPatternEditor : Editor
         editorDeltaTime = (float)(EditorApplication.timeSinceStartup - lastTimeSinceStartUp) * 60f;
         lastTimeSinceStartUp = EditorApplication.timeSinceStartup;
     }
+
+    [System.Obsolete]
     void UpdatePreview(EnemyPattern pattern)
     {
         Vector2 endOfLastStep= pattern.transform.position;
@@ -131,6 +135,8 @@ public class EnemyPatternEditor : Editor
             path.CalculatePoints(pattern.steps[0].movementSpeed);
         }
     }
+
+    [System.Obsolete]
     Vector2 DrawSpline(Spline spline,Vector2 endOfLastStep,float speed)
     {  // draw controll handle lines
         Handles.color = Color.black;

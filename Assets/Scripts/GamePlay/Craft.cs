@@ -1,6 +1,6 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
+
 using System.IO;
 using UnityEngine;
 
@@ -389,42 +389,65 @@ public class Craft : MonoBehaviour
            
         }
         EffectSystem.instance.CraftExplosion(transform.position);
+        GameManager.Instance.playerCrafts[playerIndex] = null;
         Destroy(gameObject);
-        GameManager.Instance.playerCrafts[0] = null;
-        if (GameManager.Instance.playerDatas[playerIndex].lives <= 0)
+
+
+        bool allLivesGone = false;
+        if (GameManager.Instance.twoPlayer)
+        {
+            if ((GameManager.Instance.playerDatas[playerIndex].lives == 0)&& (GameManager.Instance.playerDatas[playerIndex].lives == 0))
+            {
+                allLivesGone = true;
+            }
+        }
+        else
+        {
+            if (GameManager.Instance.playerDatas[playerIndex].lives == 0)
+            {
+                allLivesGone = true;
+            }
+        }
+
+
+        if (allLivesGone)
         {
             GameOverMenu.instance.GameOver();
-            yield return null;
+          
         }
         else
         {
             //// Eject powerUps and spawn next life
-            //CraftData craftData = GameManager.Instance.gameSession.craftDatas[playerIndex];
-            //int noOfOptionsToReSapwn = craftData.noOfEnableOptions - 1;
-            //int noOfPowrUpsToReSpawn = craftData.ShotPower - 1;
-            //int noOfBeamUpsToReSoawn = craftData.beamPower - 1;
-            //GameManager.Instance.ResetState(playerIndex);
+            CraftData craftData = GameManager.Instance.gameSession.craftDatas[playerIndex];
+            int noOfOptionsToReSapwn = craftData.noOfEnableOptions - 1;
+            int noOfPowrUpsToReSpawn = craftData.ShotPower - 1;
+            int noOfBeamUpsToReSoawn = craftData.beamPower - 1;
+            GameManager.Instance.ResetState(playerIndex);
 
             //for (int o = 0; o < noOfOptionsToReSapwn; o++)
             //{
+                
+                
             //    PickUp pickUp = GameManager.Instance.SpawnPickup(GameManager.Instance.option, transform.position);
-            //    pickUp.transform.position = new Vector3(UnityEngine.Random.Range(-128, 128), UnityEngine.Random.Range(-128, 128), 0);
+            //    pickUp.transform.position += new Vector3(UnityEngine.Random.Range(-128, 128), UnityEngine.Random.Range(-128, 128), 0);
             //}
 
             //for (int o = 0; o < noOfPowrUpsToReSpawn; o++)
             //{
             //    PickUp pickUp = GameManager.Instance.SpawnPickup(GameManager.Instance.powrup, transform.position);
-            //    pickUp.transform.position = new Vector3(UnityEngine.Random.Range(-128, 128), UnityEngine.Random.Range(-128, 128), 0);
+            //    pickUp.transform.position += new Vector3(UnityEngine.Random.Range(-128, 128), UnityEngine.Random.Range(-128, 128), 0);
             //}
 
             //for (int o = 0; o < noOfBeamUpsToReSoawn; o++)
             //{
             //    PickUp pickUp = GameManager.Instance.SpawnPickup(GameManager.Instance.beamup, transform.position);
-            //    pickUp.transform.position = new Vector3(UnityEngine.Random.Range(-128, 128), UnityEngine.Random.Range(-128, 128), 0);
+            //    pickUp.transform.position += new Vector3(UnityEngine.Random.Range(-128, 128), UnityEngine.Random.Range(-128, 128), 0);
             //}
 
-            GameManager.Instance.DelayedRespawn(playerIndex);
-            yield return null;
+            if (GameManager.Instance.playerDatas[playerIndex].lives>0)
+                GameManager.Instance.DelayedRespawn(playerIndex);
+           
+            
         }
 
         yield return null;

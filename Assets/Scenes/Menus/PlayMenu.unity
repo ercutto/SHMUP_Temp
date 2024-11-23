@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 1150348052}
   - component: {fileID: 1150348051}
   - component: {fileID: 1150348050}
+  - component: {fileID: 1150348053}
   m_Layer: 5
   m_Name: NormalLevelButton
   m_TagString: Untagged
@@ -385,6 +386,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150348048}
   m_CullTransparentMesh: 1
+--- !u!114 &1150348053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150348048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ac8b48c9a43a8459b4ea9a354e814a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectSound: {fileID: 8300000, guid: fd2f617018a928741bb7b38297ad73fc, type: 3}
+  submitSound: {fileID: 8300000, guid: fe08a2e52e7a9514eb7b87fa3a14f6c6, type: 3}
 --- !u!1 &1289101753
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,6 +492,7 @@ GameObject:
   - component: {fileID: 1520112563}
   - component: {fileID: 1520112562}
   - component: {fileID: 1520112561}
+  - component: {fileID: 1520112564}
   m_Layer: 5
   m_Name: PressFireButton
   m_TagString: Untagged
@@ -599,6 +615,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1520112559}
   m_CullTransparentMesh: 1
+--- !u!114 &1520112564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520112559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ac8b48c9a43a8459b4ea9a354e814a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectSound: {fileID: 8300000, guid: fd2f617018a928741bb7b38297ad73fc, type: 3}
+  submitSound: {fileID: 8300000, guid: fe08a2e52e7a9514eb7b87fa3a14f6c6, type: 3}
 --- !u!1 &1607325229
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,6 +929,7 @@ GameObject:
   - component: {fileID: 1840641655}
   - component: {fileID: 1840641654}
   - component: {fileID: 1840641653}
+  - component: {fileID: 1840641656}
   m_Layer: 5
   m_Name: BullHellButton
   m_TagString: Untagged
@@ -1021,6 +1052,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840641651}
   m_CullTransparentMesh: 1
+--- !u!114 &1840641656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840641651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ac8b48c9a43a8459b4ea9a354e814a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectSound: {fileID: 8300000, guid: fd2f617018a928741bb7b38297ad73fc, type: 3}
+  submitSound: {fileID: 8300000, guid: fe08a2e52e7a9514eb7b87fa3a14f6c6, type: 3}
 --- !u!1 &1899953701
 GameObject:
   m_ObjectHideFlags: 0

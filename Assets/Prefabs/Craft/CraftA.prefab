@@ -64,7 +64,7 @@ MonoBehaviour:
   hedefeAtes: 0
   hooming: 0
   ShootOutOfScreen: 0
-  playerIndex: 2
+  playerIndex: 0
   shootSounds: {fileID: 0}
 --- !u!1 &934210384823399550
 GameObject:
@@ -130,7 +130,7 @@ MonoBehaviour:
   hedefeAtes: 0
   hooming: 0
   ShootOutOfScreen: 0
-  playerIndex: 2
+  playerIndex: 0
   shootSounds: {fileID: 0}
 --- !u!1 &970638287954419113
 GameObject:
@@ -497,7 +497,7 @@ MonoBehaviour:
   hedefeAtes: 0
   hooming: 0
   ShootOutOfScreen: 0
-  playerIndex: 2
+  playerIndex: 0
   shootSounds: {fileID: 0}
 --- !u!1 &1219220731463155314
 GameObject:
@@ -1655,18 +1655,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44392defe4c87f246bd3bc9a001a5477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftData:
-    positionX: 0
-    positionY: 0
-    ShotPower: 0
-    noOfEnableOptions: 0
-    optionsLayout: 0
-    beamFiring: 0
-    beamPower: 0
-    beamCharge: 100
-    beamTimer: 0
-    smallBombs: 3
-    largeBombs: 3
   aftFlame1: {fileID: 6533612730378922290}
   aftFlame2: {fileID: 7690831937677015760}
   leftFlame1: {fileID: 8332103145658407271}
@@ -3903,7 +3891,7 @@ MonoBehaviour:
   hedefeAtes: 0
   hooming: 0
   ShootOutOfScreen: 0
-  playerIndex: 2
+  playerIndex: 0
   shootSounds: {fileID: 0}
 --- !u!1 &8298989442182023774
 GameObject:

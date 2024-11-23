@@ -1,16 +1,34 @@
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
+    public static HUD Instance = null;
     public AnimatedNumber[]playerScore=new AnimatedNumber[2];
     public AnimatedNumber topScore;
     public GameObject player2Start;
     public PlayerHud[] playerHuds=new PlayerHud[2];
+
+    public Image FadeScreenImage = null;
+
+    public GameObject player2HUD=null;
+    public void Start()
+    {
+        if (Instance)
+        {
+            Debug.LogError("Trying to create more than 1 HUD!");
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
+        TurnOnP2(GameManager.Instance.twoPlayer);
+    }
+
+
     private void FixedUpdate()
     {
         UpdateHud();
@@ -20,10 +38,28 @@ public class HUD : MonoBehaviour
         if (!GameManager.Instance) return;
 
         //score
+        int p1Score = GameManager.Instance.playerDatas[0].score;
+        int p2Score = GameManager.Instance.playerDatas[1].score;
         if (playerScore[0])
         {
-            int p1Score = GameManager.Instance.playerDatas[0].score;
+            
             playerScore[0].UpdateNumber(p1Score);
+        }
+
+        int hardness=(int)GameManager.Instance.gameSession.hardness;
+        int highScore = ScoreManager.instance.TopScore(hardness);
+
+        if (p1Score > highScore)
+        {
+            topScore.UpdateNumber(p1Score);
+        }
+        else if(p2Score>highScore)
+        {
+            topScore.UpdateNumber(p2Score);
+        }
+        else
+        {
+            topScore.UpdateNumber(highScore);
         }
 
         UpdateLives(0);
@@ -47,7 +83,7 @@ public class HUD : MonoBehaviour
 
             if (playerScore[1])
             {
-                int p1Score = GameManager.Instance.playerDatas[1].score;
+                p1Score = GameManager.Instance.playerDatas[1].score;
                 playerScore[1].UpdateNumber(p1Score);
             }
 
@@ -278,6 +314,33 @@ public class HUD : MonoBehaviour
 
         hud.chainScore.UpdateNumber(GameManager.Instance.playerDatas[playerIndex].chain);
         hud.chainGradient.fillAmount = (float)GameManager.Instance.playerDatas[playerIndex].chainTimer / (float)PlayerData.MAXCHAINTIMER;
+    }
+
+    public void TurnOnP2(bool turnOn)
+    {
+        if (turnOn)
+        {
+            player2Start.gameObject.SetActive(false);
+            playerScore[1].gameObject.SetActive(true);
+            player2HUD.SetActive(true);
+        }
+        else
+        {
+            player2Start.gameObject.SetActive(true);
+            playerScore[1].gameObject.SetActive(false);
+            player2HUD.SetActive(false);
+        }
+    }
+
+    public void FadeOutScreen()
+    {
+        FadeScreenImage.gameObject.SetActive(true);
+        FadeScreenImage.color=Color.black;
+    }
+    public void FadeInScreen()
+    {
+        FadeScreenImage.gameObject.SetActive(false);
+        FadeScreenImage.color = new Color(0,0,0,0);
     }
     //--
     [Serializable]

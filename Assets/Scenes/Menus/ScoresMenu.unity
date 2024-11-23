@@ -878,11 +878,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 425316283938837931, guid: 49a9da3caafab5646a1ae49d4474c9f7, type: 3}
   m_PrefabInstance: {fileID: 199470883}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &199470885 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6999231976432830584, guid: 49a9da3caafab5646a1ae49d4474c9f7, type: 3}
-  m_PrefabInstance: {fileID: 199470883}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &273001973
 GameObject:
   m_ObjectHideFlags: 0
@@ -4618,6 +4613,7 @@ GameObject:
   - component: {fileID: 1520112563}
   - component: {fileID: 1520112562}
   - component: {fileID: 1520112561}
+  - component: {fileID: 1520112564}
   m_Layer: 5
   m_Name: PressFireButton
   m_TagString: Untagged
@@ -4740,6 +4736,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1520112559}
   m_CullTransparentMesh: 1
+--- !u!114 &1520112564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520112559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ac8b48c9a43a8459b4ea9a354e814a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectSound: {fileID: 8300000, guid: fd2f617018a928741bb7b38297ad73fc, type: 3}
+  submitSound: {fileID: 8300000, guid: fe08a2e52e7a9514eb7b87fa3a14f6c6, type: 3}
 --- !u!1001 &1527328438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5633,7 +5643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 199470885}
+  m_FirstSelected: {fileID: 1520112559}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!1 &1663033922

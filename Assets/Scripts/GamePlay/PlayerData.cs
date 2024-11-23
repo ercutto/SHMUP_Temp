@@ -1,8 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
-using UnityEngine;
+
 [Serializable]
 public class PlayerData 
 {
@@ -27,5 +25,14 @@ public class PlayerData
     
         score = reader.ReadInt32();
         lives= reader.ReadByte();
+    }
+
+    public void ResetData()
+    {
+        score = 0;
+        stageScore = 0;
+        lives = 0;
+        chain = 0;
+        chainTimer = 0;
     }
 }

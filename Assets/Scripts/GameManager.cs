@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     public PickUp beamup = null;
 
     //Craft playerTwoCraft = null;
-
+    
     public enum GameState
     {
         INVALID,
@@ -48,8 +48,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         Instance = this;
+
         playerDatas = new PlayerData[2];
         playerDatas[0] = new PlayerData();
         playerDatas[1] = new PlayerData();
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         Debug.Log("GameManager created. ");
         bulletManager = GetComponent<BulletManager>();
-
+       
         Application.targetFrameRate = 60;
 
     }
@@ -75,13 +75,17 @@ public class GameManager : MonoBehaviour
 
     public void SpawnPlayers()
     {
-        if(twoPlayer==false)
-            SpawnPlayer(0, 0);
-       
+        
 
         if (twoPlayer)
         {
+            Debug.Log("twoPlayer:" + twoPlayer);
+            SpawnPlayer(0, 0);
             SpawnPlayer(1, 0);
+        }
+        else
+        {
+            SpawnPlayer(0, 0);
         }
     }
 
@@ -95,6 +99,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         SpawnPlayer(playerIndex, 0);// get craft type
         yield return null;
+
+        
     }
     public void ResetState(int playerIndex)
     {
@@ -127,9 +133,9 @@ public class GameManager : MonoBehaviour
             playerCrafts[playerIndex].AddOption(0);
         }
     }
-    public void Update()
+    public void FixedUpdate()
     {
-        CraftData craftData = gameSession.craftDatas[0];
+        //CraftData craftData = gameSession.craftDatas[0];
         Debug.Log(playerDatas[0].lives);
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -137,25 +143,8 @@ public class GameManager : MonoBehaviour
             TogglePause();
         }
 
-        //if (Input.GetKeyDown(KeyCode.Alpha1)){
-        //    if (!playerCrafts[0]) SpawnPlayer(0, 0);
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.P))
-        //{
- 
-        //    if (playerCrafts[0] && (int)playerCrafts[0].craftData.ShotPower < CraftConfiguration.MAX_SHOT_POWER - 1)
-        //        playerCrafts[0].craftData.ShotPower++;
-        //}
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-           if(bulletManager)
-            {
-                
-               // bulletManager.SpawnBullet(BulletManager.BulletType.Bullet1_Size3,0,150,Random.Range(-10f,10), Random.Range(-10f, 10),0);
-            }
-        }
+       
+       
 
         if (Input.GetKeyDown(KeyCode.RightBracket))
         {
@@ -192,7 +181,7 @@ public class GameManager : MonoBehaviour
             AudioManager.instance.PlayMusic(AudioManager.Tracks.Level02, true, 2);
         }
 
-      
+         
     }
     public void TogglePause()
     {
@@ -222,10 +211,10 @@ public class GameManager : MonoBehaviour
         
         ResetState(0);
         ResetState(1);
-       
-        playerDatas[0].score = 0;
-        playerDatas[1].score = 0;
-       
+
+        playerDatas[0].ResetData();
+        playerDatas[1].ResetData();
+
         SceneManager.LoadScene("Stage01");
     }
     public void PickUpFallOffScreen(PickUp pickUp)
@@ -276,14 +265,30 @@ public class GameManager : MonoBehaviour
         switch (gameSession.stage)
         {
             case 1:
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Stage01");
+                SceneManager.LoadScene("Stage01");
                 break;
             case 2:
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Stage02");
+                SceneManager.LoadScene("Stage02");
 
                 break;
 
 
         }
+    }
+
+    public void NextStage()
+    {
+        HUD.Instance.FadeOutScreen();
+        if (gameSession.stage == 1)
+         {
+             gameSession.stage = 2;
+             SceneManager.LoadScene("Stage02");
+
+         }
+         else if (gameSession.stage == 2)
+         {
+             WellDoneMenu.Instance.TurnOn(null);
+         }
+         HUD.Instance.FadeInScreen();
     }
 }

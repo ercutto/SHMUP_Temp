@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,11 +19,19 @@ public class AudioOptionsMenu : Menu
 
         instance = this;
 
-        float volume = PlayerPrefs.GetFloat("MasterVolume");
+        float volume = 1;
+        if(PlayerPrefs.HasKey("MasterVolume"))
+            volume = PlayerPrefs.GetFloat("MasterVolume");
         masterSlider.value = volume;
-        volume = PlayerPrefs.GetFloat("MusicVolume");
+
+        volume = 1;
+        if(PlayerPrefs.HasKey("MusicVolume"))
+            volume = PlayerPrefs.GetFloat("MusicVolume");
         musicSlider.value = volume;
-        volume = PlayerPrefs.GetFloat("EffectsVolume");
+
+        volume = 1;
+        if(PlayerPrefs.HasKey("EffectsVolume"))
+            volume = PlayerPrefs.GetFloat("EffectsVolume");
         FxSlider.value = volume;
     }
     public void OnBackButton()

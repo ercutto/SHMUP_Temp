@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 4461798054588083317}
   - component: {fileID: 8868641514155893708}
   - component: {fileID: 8533227230881568768}
+  - component: {fileID: 8661804055060093391}
   m_Layer: 0
   m_Name: GameMangager
   m_TagString: Untagged
@@ -60,7 +61,7 @@ MonoBehaviour:
   bulletManager: {fileID: 0}
   playerCrafts:
   - {fileID: 3123210103532429661, guid: 5c737d7381584dd4fa7004d0f58d5b19, type: 3}
-  - {fileID: 3123210103532429661, guid: 5c737d7381584dd4fa7004d0f58d5b19, type: 3}
+  - {fileID: 3123210103532429661, guid: f60142f04b33fdb43a696b8e4f965a49, type: 3}
   progressWindow: {fileID: 0}
   playerDatas: []
   gameSession:
@@ -567,3 +568,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fffc284b7024f4eadeb0931ff42a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8661804055060093391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328556624654870501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 259ad6d095d02d74498eee23bc82fe0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullScreen: 1
